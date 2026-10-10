@@ -1,1 +1,7484 @@
-const CLASSROOMS_DATA = {"LEE/OFFİCE (Öğretim Üyesinin Ofisi)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 12, "start": "12:00", "end": "12:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "LEE027 (LEE Orman Ürünleri)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}], "MS/A Blok/208 (MS/A Blok/208)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}], "MS/A Blok/209 (MS/A Blok/209)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/A Blok/210 (MS/A Blok/210)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/A Blok/265 (MS/A Blok/265)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/A Blok/266 (MS/A Blok/266)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/A Blok/267 (MS/A Blok/267)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/A Blok/301 (MS/A Blok/301)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/A Blok/302 (MS/A Blok/302)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "MS/A Blok/307 (MS/A Blok/307)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "MS/A Blok/308 (MS/A Blok/308)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/A Blok/309 (MS/A Blok/309)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/A Blok/357 (MS/A Blok/357)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "MS/A Blok/363 (MS/A Blok/363)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/A Blok/364 (MS/A Blok/364)": [{"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 12, "start": "12:00", "end": "12:45", "status": "DOLU"}], "MS/A Blok/365 (MS/A Blok/365)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/A Blok/B17 (MS/A Blok/B17)": [{"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Cuma", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/E Blok/102 (MS/E Blok/102)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/E Blok/103 (MS/E Blok/103)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/E Blok/104 (MS/E Blok/104)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/E Blok/105 (MS/E Blok/105)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "MS/E Blok/124 (MS/E Blok/124)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/E Blok/125 (MS/E Blok/125)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/E Blok/131 (MS/E Blok/131)": [{"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/E Blok/138 (MS/E Blok/138)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "MS/E Blok/139 (MS/E Blok/139)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/E Blok/140 (MS/E Blok/140)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/E Blok/203 (MS/E Blok/203)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/E Blok/204 (MS/E Blok/204)": [{"day": "Pazartesi", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/E Blok/205 (MS/E Blok/205)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/E Blok/225 (MS/E Blok/225)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/E Blok/240 (MS/E Blok/240)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/E Blok/241 (MS/E Blok/241)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/E Blok/242 (MS/E Blok/242)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "MS/E Blok/304 (MS/E Blok/304)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/E Blok/305 (MS/E Blok/305)": [{"day": "Pazartesi", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/E Blok/306 (MS/E Blok/306)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/E Blok/331 (MS/E Blok/331)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/E Blok/346 (MS/E Blok/346)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/E Blok/347 (MS/E Blok/347)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/E Blok/348 (MS/E Blok/348)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/E Blok/404 (MS/E Blok/404)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/E Blok/405 (MS/E Blok/405)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/E Blok/406 (MS/E Blok/406)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/E Blok/431 (MS/E Blok/431)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/E Blok/446 (MS/E Blok/446)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/E Blok/447 (MS/E Blok/447)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/E Blok/448 (MS/E Blok/448)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/E Blok/Z27 (MS/E Blok/Z27)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}], "MS/E Blok/Z32 (MS/E Blok/Z32)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/E Blok/Z34 (MS/E Blok/Z34)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/G Blok/151 (MS/G Blok/151)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/G Blok/152 (MS/G Blok/152)": [{"day": "Pazartesi", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/G Blok/153 (MS/G Blok/153)": [{"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "MS/G Blok/154 (MS/G Blok/154)": [{"day": "Pazartesi", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/G Blok/201 (MS/G Blok/201)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/G Blok/251 (MS/G Blok/251)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/G Blok/252 (MS/G Blok/252)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/G Blok/253 (MS/G Blok/253)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/G Blok/254 (MS/G Blok/254)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/G Blok/351 (MS/G Blok/351)": [{"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/G Blok/352 (MS/G Blok/352)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/G Blok/353 (MS/G Blok/353)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/G Blok/354 (MS/G Blok/354)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/G Blok/355 (MS/G Blok/355)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/G Blok/357 (MS/G Blok/357)": [{"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/G Blok/366 (MS/G Blok/366)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/G Blok/368 (MS/G Blok/368)": [{"day": "Pazartesi", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/G Blok/369 (MS/G Blok/369)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "MS/G Blok/371 (MS/G Blok/371)": [{"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/G Blok/373 (MS/G Blok/373)": [{"day": "Pazartesi", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "MS/G Blok/374 (MS/G Blok/374)": [{"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}], "MS/G Blok/451 (MS/G Blok/451)": [{"day": "Pazartesi", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/G Blok/453 (MS/G Blok/453)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/G Blok/454 (MS/G Blok/454)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/G Blok/Z03 (MS/G Blok/Z03)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/G Blok/Z04 (MS/G Blok/Z04)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/G Blok/Z05 (MS/G Blok/Z05)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/G Blok/Z51 (MS/G Blok/Z51)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/G Blok/Z52 (MS/G Blok/Z52)": [{"day": "Pazartesi", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "MS/G Blok/Z53 (MS/G Blok/Z53)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/G Blok/Z54 (MS/G Blok/Z54)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "OFİS001 (Öğretim Görevlisi Ofis)": [{"day": "Pazartesi", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Cuma", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "OFİS003 (Öğretim Görevlisi Ofis)": [{"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "OFİS004 (Öğretim Görevlisi Ofis)": [{"day": "Pazartesi", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Salı", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Cuma", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "OFİS005 (Öğretim Görevlisi Ofis)": [{"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "OFİS010 (Öğretim Görevlisi Ofis)": [{"day": "Pazartesi", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Salı", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}], "OFİS014 (Öğretim Görevlisi Ofis)": [{"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "OFİS043 (Öğretim Görevlisi Ofis)": [{"day": "Pazartesi", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 12, "start": "12:00", "end": "12:45", "status": "DOLU"}, {"day": "Salı", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 12, "start": "12:00", "end": "12:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 12, "start": "12:00", "end": "12:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 12, "start": "12:00", "end": "12:45", "status": "DOLU"}, {"day": "Cuma", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 12, "start": "12:00", "end": "12:45", "status": "DOLU"}], "OFİS074 (Öğretim Görevlisi Ofis)": [{"day": "Pazartesi", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 12, "start": "12:00", "end": "12:45", "status": "DOLU"}, {"day": "Salı", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Salı", "hour": 12, "start": "12:00", "end": "12:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 12, "start": "12:00", "end": "12:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 12, "start": "12:00", "end": "12:45", "status": "DOLU"}, {"day": "Cuma", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 12, "start": "12:00", "end": "12:45", "status": "DOLU"}, {"day": "Cuma", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}], "UE01 (Sanal Sınıf (Uzaktan Eğitim))": [{"day": "Pazartesi", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "YB/A Blok/237 (YB/A Blok/237)": [{"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "YB/A Blok/238 (YB/A Blok/238)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 12, "start": "12:00", "end": "12:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "YB/A Blok/336A (YB/A Blok/336A)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "YB/A Blok/336D (YB/A Blok/336D)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}], "YB/A Blok/337 (YB/A Blok/337)": [{"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "YB/A Blok/338 (YB/A Blok/338)": [{"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "YB/A Blok/418B (YB/A Blok/418B)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "YB/A Blok/418C (YB/A Blok/418C)": [{"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 12, "start": "12:00", "end": "12:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "YB/A Blok/436A (YB/A Blok/436A)": [{"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 12, "start": "12:00", "end": "12:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "YB/A Blok/436D (YB/A Blok/436D)": [{"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 12, "start": "12:00", "end": "12:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "YB/A Blok/Z36B (YB/A Blok/Z36B)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 12, "start": "12:00", "end": "12:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "YB/A Blok/Z36D (YB/A Blok/Z36D)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 12, "start": "12:00", "end": "12:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 12, "start": "12:00", "end": "12:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "YB/B Blok/101 (YB/B Blok/101)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "YB/B Blok/103 (YB/B Blok/103)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "YB/B Blok/104 (YB/B Blok/104)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "YB/B Blok/105 (YB/B Blok/105)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "YB/B Blok/106 (YB/B Blok/106)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "YB/B Blok/107 (YB/B Blok/107)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "YB/B Blok/108 (YB/B Blok/108)": [{"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "YB/B Blok/109 (YB/B Blok/109)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "YB/B Blok/201 (YB/B Blok/201)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "YB/B Blok/204 (YB/B Blok/204)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "YB/B Blok/205 (YB/B Blok/205)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "YB/B Blok/206 (YB/B Blok/206)": [{"day": "Pazartesi", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "YB/B Blok/207 (YB/B Blok/207)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "YB/B Blok/208 (YB/B Blok/208)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "YB/B Blok/209 (YB/B Blok/209)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "YB/B Blok/Z03 (YB/B Blok/Z03)": [{"day": "Pazartesi", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Salı", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "YB/B Blok/Z05 (YB/B Blok/Z05)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "YB/B Blok/Z07 (YB/B Blok/Z07)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "YB/B Blok/Z08 (YB/B Blok/Z08)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "YB/B Blok/Z09 (YB/B Blok/Z09)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "YB/B Blok/Z11 (YB/B Blok/Z11)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "YB/PL1 Blok/Z01 (YB/PL1 Blok/Z01)": [{"day": "Pazartesi", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "YB/Spor Sal./Z10 (YB/Spor Sal./Z10)": [{"day": "Pazartesi", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Pazartesi", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/E Blok/432 (MS/E Blok/432)": [{"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/E Blok/B45A (MS/E Blok/B45A)": [{"day": "Salı", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}], "MS/G Blok/356 (MS/G Blok/356)": [{"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/G Blok/361 (MS/G Blok/361)": [{"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}], "MS/G Blok/362 (MS/G Blok/362)": [{"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Salı", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}], "MS/G Blok/370 (MS/G Blok/370)": [{"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/G Blok/452 (MS/G Blok/452)": [{"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "YB/A Blok/235 (YB/A Blok/235)": [{"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "YB/A Blok/236D (YB/A Blok/236D)": [{"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "YB/B Blok/203 (YB/B Blok/203)": [{"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Salı", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Salı", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Salı", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "YB/PL1 Blok/Z02 (YB/PL1 Blok/Z02)": [{"day": "Salı", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Salı", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Salı", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "MS/A Blok/455 (MS/A Blok/455)": [{"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "MS/B Blok/TurkSal (MS/B Blok/TurkuazSal)": [{"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/E Blok/Z23 (MS/E Blok/Z23)": [{"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "MS/E Blok/Z25 (MS/E Blok/Z25)": [{"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}], "MS/G Blok/358 (MS/G Blok/358)": [{"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "OFİS022 (Öğretim Görevlisi Ofis)": [{"day": "Çarşamba", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}], "OFİS105 (Öğretim Görevlisi Ofis)": [{"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "YB/A Blok/232A (YB/A Blok/232A)": [{"day": "Çarşamba", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "YB/A Blok/432H (YB/A Blok/432H)": [{"day": "Çarşamba", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Çarşamba", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}, {"day": "Cuma", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "MS/A Blok/402 (MS/A Blok/402)": [{"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "MS/E Blok/127 (MS/E Blok/127)": [{"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "MS/E Blok/Z33 (MS/E Blok/Z33)": [{"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}], "MS/G Blok/363 (MS/G Blok/363)": [{"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}], "OFİS110 (Öğretim Görevlisi Ofis)": [{"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "OFİS159 (Öğretim Görevlisi Ofis)": [{"day": "Perşembe", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "YB/A Blok/236B (YB/A Blok/236B)": [{"day": "Perşembe", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Perşembe", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}], "OFİS006 (Öğretim Görevlisi Ofis)": [{"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "OFİS016 (Öğretim Görevlisi Ofis)": [{"day": "Cuma", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}], "OFİS045 (Öğretim Görevlisi Ofis)": [{"day": "Cuma", "hour": 8, "start": "08:00", "end": "08:45", "status": "DOLU"}, {"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 12, "start": "12:00", "end": "12:45", "status": "DOLU"}, {"day": "Cuma", "hour": 13, "start": "13:00", "end": "13:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}], "OFİS081 (Öğretim Görevlisi Ofis)": [{"day": "Cuma", "hour": 9, "start": "09:00", "end": "09:45", "status": "DOLU"}, {"day": "Cuma", "hour": 10, "start": "10:00", "end": "10:45", "status": "DOLU"}, {"day": "Cuma", "hour": 11, "start": "11:00", "end": "11:45", "status": "DOLU"}, {"day": "Cuma", "hour": 14, "start": "14:00", "end": "14:45", "status": "DOLU"}, {"day": "Cuma", "hour": 15, "start": "15:00", "end": "15:45", "status": "DOLU"}, {"day": "Cuma", "hour": 16, "start": "16:00", "end": "16:45", "status": "DOLU"}]};
+const CLASSROOMS_DATA = {
+  "E/448 M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / Z05": [
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/347 M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "Z25 Laboratuvar M.Sinan Yer.": [
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    }
+  ],
+  "Z34 Laboratuvar M.Sinan Yer.": [
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/304 M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "BMB0309 Biyomühendislik Laboratuvarı I L": [
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/447 M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Salı",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / 151": [
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / 153": [
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / 373": [
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / 369": [
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / 363": [
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / 371": [
+    {
+      "day": "Pazartesi",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / E Blok / 204": [
+    {
+      "day": "Pazartesi",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / E Blok / 139": [
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / E Blok / Z34": [
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G Blok / Z05": [
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G Blok / 252": [
+    {
+      "day": "Çarşamba",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / E Blok / 305": [
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G Blok / Z53": [
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / E Blok /446": [
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS/ E Blok /204": [
+    {
+      "day": "Cuma",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / Z53": [
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / E Blok /139": [
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / E Blok /204": [
+    {
+      "day": "Cuma",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / 252": [
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS/ G Blok /252": [
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/205 M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / 253": [
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / 251": [
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / 352": [
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "Laboratuvarı L": [
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/204 Bilgisayar Lab. M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Salı",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    }
+  ],
+  "KİM0195 Genel Kimya Laboratuvarı L": [
+    {
+      "day": "Perşembe",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/124 M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/404 M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/346 M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/305 Bilgisayar Lab. M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/125 M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/125 M.Sinan Yer. (E Blok) Ders": [
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/404 M.Sinan Yer. (E Blok) Ders": [
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/125 M.Sinan Yer. (E Blok) (2016 Müfredatı)": [
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/124 M.Sinan Yer. (E Blok) Ders": [
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    }
+  ],
+  "GMB0405 Gıda Teknolojisi Laboratuvarı II L": [
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/B Blok/Z08": [
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/B Blok/BZ08": [
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/B Blok/B205": [
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/B Blok/205": [
+    {
+      "day": "Cuma",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/B Blok//B205": [
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/B Blok/B209": [
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "KİM0103 Genel Kimya Laboratuvarı I L": [
+    {
+      "day": "Çarşamba",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/405 Konf.Sal. M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/331 M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / 351": [
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / 354": [
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "KİM0207 Organik Kimya Laboratuvarı I L": [
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    }
+  ],
+  "KİM0305 Biyokimya Laboratuvarı L": [
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    }
+  ],
+  "KİM0199 Genel Kimya Laboratuvarı I L": [
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/240 M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/242 M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / 152": [
+    {
+      "day": "Cuma",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / 254": [
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    }
+  ],
+  "KMB0416 Kimya Mühendisliği Laboratuvarı II L": [
+    {
+      "day": "Çarşamba",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "Makine Laboratuvarı 1 MAK0311 Uygulama Dr. Öğr. Üyesi Hakan ÜLKER": [
+    {
+      "day": "Cuma",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/348 M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/103 M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/241 M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "A/265 M.Sinan Yer. (A Blok)": [
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/446 M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/346 M.Sinan Yer. (E Blok) Prof. Gökçe BORAND": [
+    {
+      "day": "Pazartesi",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/346 M.Sinan Yer. (E Blok) Doç. Dr. Yakup YÜREKTÜRK ile birlikte yürütülecektir.": [
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/140 M.Sinan sonrası) Şube 1": [
+    {
+      "day": "Perşembe",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/140 M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/436 Laboratuvar M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "MMM0303 Metalurji ve Malzeme Mühendisliği Laboratuvarı I T": [
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    }
+  ],
+  "MMM0303 Metalurji ve Malzeme Laboratuvarı L": [
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/346": [
+    {
+      "day": "Pazartesi",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/B Blok/109": [
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/B Blok/207": [
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/B Blok/107": [
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/ B Blok/109": [
+    {
+      "day": "Cuma",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/ B Blok/!09": [
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/A Blok/Z36D": [
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/B Blok/Z09": [
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/A Blok/236D": [
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / 451": [
+    {
+      "day": "Pazartesi",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / Z04": [
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / 453": [
+    {
+      "day": "Salı",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / 452": [
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/225 M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/431 M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/B Blok/ B105": [
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/B Blok/B103": [
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/B Blok/ B103 SSY209 İlkçağ Felsefe Tarihi Dr. Öğr. Üyesi Oya GÜLER YB/B Blok/ B103 SSY209 İlkçağ Felsefe Tarihi Dr. Öğr. Üyesi Oya GÜLER YB/B Blok/ B103": [
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/B Blok/B107 SSY207 Gelişim Psikolojisi Dr. Öğr. Üyesi Emine KURT YB/B Blok/B107 SSY207 Gelişim Psikolojisi Dr. Öğr. Üyesi Emine KURT YB/B Blok/B107": [
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/B Blok/ B107": [
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/B Blok/B107": [
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/B Blok/B105": [
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/ B Blok/ B204": [
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/ B Blok/ B106": [
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/ B Blok/ B104": [
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/ B Blok/ Z09": [
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/ B Blok/ Z03": [
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/ B Blok/ B104 --- ULU349 İnsan Hakları Hukuku Dr. Mustafa Selman YURDAER YB/ B Blok/ B106": [
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/ B Blok/ BZ03": [
+    {
+      "day": "Cuma",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/ B Blok/ B106 --- ULU267 İran Dış Politikası Dr. Öğr. Üyesi Damla Taşdemir KADERLİ YB/ B Blok/ Z09": [
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/ B Blok/ Z03 UTL113 İşletmecilik Bilimi Prof. Dr. Serkan ÖZDEMİR YB/ B Blok/ Z03 UTL113 İşletmecilik Bilimi Prof. Dr. Serkan ÖZDEMİR YB/ B Blok/ Z03": [
+    {
+      "day": "Cuma",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/ B Blok/ Z03 UTL115 Mikro Ekonominin İlkeleri Doç.Dr. Cevat BİLGİN YB/ B Blok/ Z03 UTL115 Mikro Ekonominin İlkeleri Doç.Dr. Cevat BİLGİN YB/ B Blok/ Z03": [
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/ B Blok/ Z03 UTL111 Hukukun Temel Kavramları Öğr. Gör. Gülcan AFŞİN YB/ B Blok/ Z03 UTL111 Hukukun Temel Kavramları Öğr. Gör. Gülcan AFŞİN YB/ B Blok/ Z03": [
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/ B Blok/ Z03 UTL105 Uluslararası Ticaretin Temelleri Arş. Gör. Dr. Nihal ALTUN YB/ B Blok/ Z03 UTL105 Uluslararası Ticaretin Temelleri Arş. Gör. Dr. Nihal ALTUN YB/ B Blok/ Z03": [
+    {
+      "day": "Cuma",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/ B Blok/ Z03 UTL211 Lojistik Yönetimi Prof. Dr. Orhan ÇAĞLAYAN YB/ B Blok/ Z03 UTL211 Lojistik Yönetimi Prof. Dr. Orhan ÇAĞLAYAN YB/ B Blok/ Z03": [
+    {
+      "day": "Pazartesi",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/ B Blok/ B208 UTL259 Hizmet Pazarlaması Arş. Gör. Dr. Ayşenur EFE PARLAK YB/ B Blok/ B208 UTL259 Hizmet Pazarlaması Arş. Gör. Dr. Ayşenur EFE PARLAK YB/ B Blok/ B208": [
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/ B Blok/ B206 UTL317 Uluslararası Ticaret Teori ve Politikaları Doç. Dr. Ayberk ŞEKER YB/ B Blok/ B206 UTL317 Uluslararası Ticaret Teori ve Politikaları Doç. Dr. Ayberk ŞEKER YB/ B Blok/ B206": [
+    {
+      "day": "Pazartesi",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/ B Blok/ B206 UTL311 Stok Yönetimi Prof. Dr. Orhan ÇAĞLAYAN YB/ B Blok/ B206 UTL311 Stok Yönetimi Prof. Dr. Orhan ÇAĞLAYAN YB/ B Blok/ B206": [
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/ B Blok/ Z-03": [
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / Z03": [
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / 353": [
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / 355": [
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    }
+  ],
+  "Z27 Laboratuvar M.Sinan Yer.": [
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 16,
+      "start": "16:00",
+      "end": "16:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/127 Laboratuvar M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "E/406 M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ]
+};

@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTÜ - Kampüs & Ders Yönetim Platformu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Yerel veri kaynakları -->
+  <script src="data.js"></script>
+  <script src="courses_data.js"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col">
+
+  <!-- Üst Navigasyon -->
+  <header class="border-b border-slate-800 bg-slate-950/90 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center font-bold text-lg text-white shadow-lg shadow-blue-500/30">
+          BTÜ
+        </div>
+        <div>
+          <h1 class="text-base font-bold text-white leading-tight">BTÜ Kampüs Asistanı</h1>
+          <p class="text-xs text-slate-400">Derslik, Program ve Ders Seçim Platformu</p>
+        </div>
+      </div>
+
+      <!-- Modül Sekmeleri -->
+      <nav class="flex items-center bg-slate-900 p-1 rounded-xl border border-slate-800 text-xs font-medium">
+        <button id="tab-btn-empty" onclick="switchTab('empty')" class="px-3.5 py-2 rounded-lg transition-all bg-blue-600 text-white shadow">
+          🏢 Boş Derslikler
+        </button>
+        <button id="tab-btn-timetable" onclick="switchTab('timetable')" class="px-3.5 py-2 rounded-lg transition-all text-slate-400 hover:text-white">
+          📅 Bölüm Timetable
+        </button>
+        <button id="tab-btn-planner" onclick="switchTab('planner')" class="px-3.5 py-2 rounded-lg transition-all text-slate-400 hover:text-white">
+          🧩 Ders Taslak / Çakışma
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ANA İÇERİK ALANI -->
+  <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full space-y-6">
+
+    <!-- ==================== SEKME 1: BOŞ DERSLİK BULUCU ==================== -->
+    <section id="section-empty" class="space-y-6">
+      <div class="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-5 space-y-5 shadow-2xl backdrop-blur">
+        <div>
+          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Gün Seçin</label>
+          <div id="day-buttons" class="grid grid-cols-2 sm:grid-cols-5 gap-2"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 pt-3 border-t border-slate-700/60">
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Kampüs</label>
+            <select id="campus-select" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500">
+              <option value="ALL">Tüm Kampüsler</option>
+              <option value="MS">Mimar Sinan (MS)</option>
+              <option value="YB">Yıldırım Bayezid (YB)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Bina / Blok</label>
+            <select id="block-select" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500">
+              <option value="ALL">Tüm Bloklar</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Başlangıç Saati</label>
+            <select id="start-time-select" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500">
+              <option value="8">08:00</option>
+              <option value="9">09:00</option>
+              <option value="10">10:00</option>
+              <option value="11">11:00</option>
+              <option value="12">12:00</option>
+              <option value="13" selected>13:00</option>
+              <option value="14">14:00</option>
+              <option value="15">15:00</option>
+              <option value="16">16:00</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Bitiş Saati</label>
+            <select id="end-time-select" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500">
+              <option value="9">09:00</option>
+              <option value="10">10:00</option>
+              <option value="11">11:00</option>
+              <option value="12">12:00</option>
+              <option value="13">13:00</option>
+              <option value="14">14:00</option>
+              <option value="15">15:00</option>
+              <option value="16">16:00</option>
+              <option value="17" selected>17:00</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Derslik Ara</label>
+            <input type="text" id="search-input" placeholder="Örn: 208, 448, Amfi..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500">
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between pt-2">
+          <div class="flex items-center gap-2">
+            <button id="filter-all" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900 text-slate-300 hover:bg-slate-700">Tümü</button>
+            <button id="filter-empty" class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-blue-600 text-white">Sadece Boş Olanlar</button>
+            <button id="filter-busy" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900 text-slate-300 hover:bg-slate-700">Dolu Olanlar</button>
+          </div>
+          <div id="stats" class="text-xs text-slate-400"></div>
+        </div>
+      </div>
+
+      <div id="results" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"></div>
+    </section>
+
+    <!-- ==================== SEKME 2: BÖLÜM TIMETABLE ==================== -->
+    <section id="section-timetable" class="space-y-6 hidden">
+      <div class="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-5 shadow-2xl backdrop-blur flex flex-col md:flex-row gap-4 items-center justify-between">
+        <div class="w-full md:w-1/2">
+          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Bölüm / Program Seçin</label>
+          <select id="program-select" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500">
+            <option value="">Program Seçin...</option>
+          </select>
+        </div>
+        <div id="program-info" class="w-full md:w-1/2 text-xs text-slate-400 bg-slate-900/60 p-3 rounded-xl border border-slate-800">
+          Lütfen yukarıdan görüntülemek istediğiniz bölüm ve sınıfı seçin.
+        </div>
+      </div>
+
+      <!-- Haftalık Izgara Tablosu -->
+      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+        <div class="overflow-x-auto custom-scrollbar">
+          <table class="w-full border-collapse text-left min-w-[750px]">
+            <thead>
+              <tr class="bg-slate-950 border-b border-slate-800 text-xs text-slate-400 font-semibold uppercase">
+                <th class="p-3 w-24 text-center border-r border-slate-800">Saat</th>
+                <th class="p-3 text-center border-r border-slate-800">Pazartesi</th>
+                <th class="p-3 text-center border-r border-slate-800">Salı</th>
+                <th class="p-3 text-center border-r border-slate-800">Çarşamba</th>
+                <th class="p-3 text-center border-r border-slate-800">Perşembe</th>
+                <th class="p-3 text-center">Cuma</th>
+              </tr>
+            </thead>
+            <tbody id="timetable-body" class="divide-y divide-slate-800/60 text-xs">
+              <!-- JS ile doldurulacak -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SEKME 3: DERS TASLAĞI & ÇAKIŞMA ==================== -->
+    <section id="section-planner" class="space-y-6 hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Sol: Ders Ekleme Paneli -->
+        <div class="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-5 shadow-2xl space-y-4">
+          <h2 class="text-sm font-bold text-white flex items-center justify-between">
+            <span>Ders Seç & Ekle</span>
+            <span id="planner-count" class="text-xs text-blue-400 font-normal">0 Ders Eklendi</span>
+          </h2>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Program / Bölüm Seçin</label>
+            <select id="planner-prog-select" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500">
+              <option value="">Program Seçin...</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Ders / Şube Seçin</label>
+            <select id="planner-course-select" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500">
+              <option value="">Önce bir program seçin</option>
+            </select>
+          </div>
+
+          <button onclick="addCourseToPlan()" class="w-full py-2.5 bg-blue-600 hover:bg-blue-500 font-semibold text-xs rounded-xl text-white transition-all shadow-lg shadow-blue-600/20">
+            + Listeye Ekle
+          </button>
+
+          <!-- Eklenen Dersler Listesi -->
+          <div class="pt-4 border-t border-slate-700/60 space-y-2">
+            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Taslak Listeniz</h3>
+            <div id="planner-selected-list" class="space-y-2 max-h-72 overflow-y-auto custom-scrollbar">
+              <p class="text-xs text-slate-500">Henüz ders eklenmedi.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sağ: Çakışma Durumu ve Haftalık Önizleme -->
+        <div class="lg:col-span-2 space-y-4">
+          <div id="conflict-alert" class="hidden p-4 rounded-2xl bg-rose-950/40 border border-rose-800 text-xs text-rose-300 flex items-start gap-3">
+            <span class="text-lg">⚠️</span>
+            <div>
+              <h4 class="font-bold text-rose-200">Ders Çakışması Tespit Edildi!</h4>
+              <p id="conflict-desc" class="mt-1 text-rose-300"></p>
+            </div>
+          </div>
+
+          <div class="bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+            <div class="overflow-x-auto custom-scrollbar">
+              <table class="w-full border-collapse text-left min-w-[650px]">
+                <thead>
+                  <tr class="bg-slate-950 border-b border-slate-800 text-xs text-slate-400 font-semibold uppercase">
+                    <th class="p-3 w-20 text-center border-r border-slate-800">Saat</th>
+                    <th class="p-3 text-center border-r border-slate-800">Pazartesi</th>
+                    <th class="p-3 text-center border-r border-slate-800">Salı</th>
+                    <th class="p-3 text-center border-r border-slate-800">Çarşamba</th>
+                    <th class="p-3 text-center border-r border-slate-800">Perşembe</th>
+                    <th class="p-3 text-center">Cuma</th>
+                  </tr>
+                </thead>
+                <tbody id="planner-grid-body" class="divide-y divide-slate-800/60 text-xs">
+                  <!-- JS ile doldurulacak -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let rawClassrooms = (typeof CLASSROOMS_DATA !== "undefined") ? CLASSROOMS_DATA : {};
+    let rawPrograms = (typeof ALL_PROGRAMS_DATA !== "undefined") ? ALL_PROGRAMS_DATA : {};
+    
+    const DAYS = ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma"];
+    const HOURS = [8, 9, 10, 11, 12, 13, 14, 15, 16];
+
+    let selectedDay = "Pazartesi";
+    let statusFilter = "EMPTY";
+    let plannedCourses = [];
+
+    function cleanStr(str) {
+      if (!str) return "";
+      return str.trim().toLowerCase()
+        .replace(/ı/g, "i").replace(/ğ/g, "g").replace(/ü/g, "u")
+        .replace(/ş/g, "s").replace(/ö/g, "o").replace(/ç/g, "c");
+    }
+
+    function switchTab(tab) {
+      ["empty", "timetable", "planner"].forEach(t => {
+        const sec = document.getElementById(`section-${t}`);
+        const btn = document.getElementById(`tab-btn-${t}`);
+        if (t === tab) {
+          sec.classList.remove("hidden");
+          btn.className = "px-3.5 py-2 rounded-lg transition-all bg-blue-600 text-white shadow";
+        } else {
+          sec.classList.add("hidden");
+          btn.className = "px-3.5 py-2 rounded-lg transition-all text-slate-400 hover:text-white";
+        }
+      });
+      if (tab === "timetable") renderTimetable();
+      if (tab === "planner") renderPlannerGrid();
+    }
+
+    // --- 1. MODÜL: BOŞ DERSLİKLER ---
+    function getCampus(room) {
+      const r = (room || "").toUpperCase();
+      if (r.includes("YILDIRIM") || r.includes("YB /") || r.includes("YB-") || r.includes("YB/")) return "YB";
+      return "MS";
+    }
+
+    function getBlock(room) {
+      const r = (room || "").toUpperCase();
+      if (r.includes("A BLOK") || r.startsWith("A/")) return "A Blok";
+      if (r.includes("B BLOK") || r.startsWith("B/")) return "B Blok";
+      if (r.includes("C BLOK") || r.startsWith("C/")) return "C Blok";
+      if (r.includes("D BLOK") || r.startsWith("D/")) return "D Blok";
+      if (r.includes("E BLOK") || r.startsWith("E/")) return "E Blok";
+      if (r.includes("F BLOK") || r.startsWith("F/")) return "F Blok";
+      if (r.includes("G BLOK") || r.startsWith("G/")) return "G Blok";
+      if (r.includes("AMFİ") || r.includes("AMFI")) return "Amfiler";
+      if (r.includes("LAB")) return "Laboratuvarlar";
+      return "Diğer Derslikler";
+    }
+
+    function initEmptyClassrooms() {
+      const dayContainer = document.getElementById("day-buttons");
+      dayContainer.innerHTML = DAYS.map(d => `
+        <button onclick="setDay('${d}')" class="day-btn py-2 px-3 rounded-xl text-sm font-medium transition-all ${d === selectedDay ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20' : 'bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-700'}">
+          ${d}
+        </button>
+      `).join("");
+
+      const blockSelect = document.getElementById("block-select");
+      const foundBlocks = new Set();
+      Object.keys(rawClassrooms).forEach(room => foundBlocks.add(getBlock(room)));
+      Array.from(foundBlocks).sort().forEach(b => {
+        blockSelect.innerHTML += `<option value="${b}">${b}</option>`;
+      });
+
+      document.getElementById("campus-select").addEventListener("change", renderEmptyRooms);
+      document.getElementById("block-select").addEventListener("change", renderEmptyRooms);
+      document.getElementById("start-time-select").addEventListener("change", renderEmptyRooms);
+      document.getElementById("end-time-select").addEventListener("change", renderEmptyRooms);
+      document.getElementById("search-input").addEventListener("input", renderEmptyRooms);
+
+      document.getElementById("filter-all").onclick = () => { statusFilter = "ALL"; renderEmptyRooms(); };
+      document.getElementById("filter-empty").onclick = () => { statusFilter = "EMPTY"; renderEmptyRooms(); };
+      document.getElementById("filter-busy").onclick = () => { statusFilter = "BUSY"; renderEmptyRooms(); };
+
+      renderEmptyRooms();
+    }
+
+    function setDay(day) {
+      selectedDay = day;
+      document.querySelectorAll(".day-btn").forEach(btn => {
+        if (btn.innerText.trim() === day) {
+          btn.className = "day-btn py-2 px-3 rounded-xl text-sm font-medium bg-blue-600 text-white shadow-lg shadow-blue-500/20";
+        } else {
+          btn.className = "day-btn py-2 px-3 rounded-xl text-sm font-medium bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-700";
+        }
+      });
+      renderEmptyRooms();
+    }
+
+    function renderEmptyRooms() {
+      const campusVal = document.getElementById("campus-select").value;
+      const blockVal = document.getElementById("block-select").value;
+      const startH = parseInt(document.getElementById("start-time-select").value, 10);
+      const endH = parseInt(document.getElementById("end-time-select").value, 10);
+      const searchVal = document.getElementById("search-input").value.toLowerCase();
+      const resultsDiv = document.getElementById("results");
+
+      if (endH <= startH) {
+        resultsDiv.innerHTML = `<div class="col-span-full py-12 text-center text-amber-400">Bitiş saati başlangıçtan ileri olmalıdır.</div>`;
+        return;
+      }
+
+      const roomNames = Object.keys(rawClassrooms).sort();
+      let emptyCount = 0, busyCount = 0;
+      let html = "";
+      const normDay = cleanStr(selectedDay);
+
+      roomNames.forEach(room => {
+        const schedule = rawClassrooms[room] || [];
+        const roomCampus = getCampus(room);
+        const roomBlock = getBlock(room);
+
+        if (campusVal !== "ALL" && roomCampus !== campusVal) return;
+        if (blockVal !== "ALL" && roomBlock !== blockVal) return;
+        if (searchVal && !room.toLowerCase().includes(searchVal)) return;
+
+        const conflicts = schedule.filter(s => {
+          if (cleanStr(s.day) !== normDay) return false;
+          let h = -1;
+          if (s.hour !== undefined) h = parseInt(s.hour, 10);
+          else if (s.start) {
+            const m = s.start.toString().match(/\d+/);
+            if (m) h = parseInt(m[0], 10);
+          }
+          return h >= startH && h < endH;
+        });
+
+        const isFullyEmpty = conflicts.length === 0;
+        if (isFullyEmpty) emptyCount++; else busyCount++;
+
+        if (statusFilter === "EMPTY" && !isFullyEmpty) return;
+        if (statusFilter === "BUSY" && isFullyEmpty) return;
+
+        const campusLabel = roomCampus === "MS" ? "Mimar Sinan" : "Yıldırım Bayezid";
+        const rangeText = `${startH.toString().padStart(2, "0")}:00 - ${endH.toString().padStart(2, "0")}:00`;
+
+        html += `
+          <div class="border rounded-2xl p-4 transition-all flex flex-col justify-between ${isFullyEmpty ? 'bg-emerald-950/20 border-emerald-900/40 hover:border-emerald-700' : 'bg-rose-950/20 border-rose-900/40'}">
+            <div>
+              <div class="flex items-start justify-between gap-2 mb-2">
+                <div>
+                  <h3 class="font-bold text-white text-base">${room}</h3>
+                  <div class="flex items-center gap-1.5 mt-1">
+                    <span class="text-[10px] uppercase font-semibold px-2 py-0.5 rounded bg-slate-800 text-blue-400 border border-slate-700">${campusLabel}</span>
+                    <span class="text-[10px] uppercase font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">${roomBlock}</span>
+                  </div>
+                </div>
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold ${isFullyEmpty ? 'bg-emerald-500/20 text-emerald-300' : 'bg-rose-500/20 text-rose-300'}">
+                  ${isFullyEmpty ? 'BOŞ' : 'DOLU'}
+                </span>
+              </div>
+              ${isFullyEmpty ? `
+                <p class="text-xs text-emerald-400 font-medium mt-3">Bu ${endH - startH} saat boyunca tamamen boş</p>
+              ` : `
+                <div class="mt-3 p-2 rounded-xl bg-slate-900 text-xs text-rose-300 space-y-1">
+                  <p class="font-medium">Dolu Saatler:</p>
+                  <div class="flex flex-wrap gap-1">
+                    ${conflicts.map(c => `<span class="bg-rose-900/60 px-1.5 py-0.5 rounded text-[11px]">${c.start || c.hour+':00'}</span>`).join("")}
+                  </div>
+                </div>
+              `}
+            </div>
+            <div class="mt-3 pt-2 border-t border-slate-800 text-[11px] text-slate-500 flex justify-between">
+              <span>${selectedDay}</span>
+              <span>${rangeText}</span>
+            </div>
+          </div>
+        `;
+      });
+
+      resultsDiv.innerHTML = html || `<div class="col-span-full py-12 text-center text-slate-500">Uygun derslik bulunamadı.</div>`;
+      document.getElementById("stats").innerText = `${emptyCount} Boş • ${busyCount} Dolu`;
+    }
+
+    // --- 2. MODÜL: BÖLÜM TIMETABLE ---
+    function initTimetable() {
+      const progSelect = document.getElementById("program-select");
+      const progKeys = Object.keys(rawPrograms).sort();
+
+      progSelect.innerHTML = `<option value="">Bir Bölüm Programı Seçin (${progKeys.length} Program Mevcut)</option>`;
+      progKeys.forEach(key => {
+        const item = rawPrograms[key];
+        const label = item.title || key;
+        progSelect.innerHTML += `<option value="${key}">${label}</option>`;
+      });
+
+      progSelect.addEventListener("change", renderTimetable);
+    }
+
+    function renderTimetable() {
+      const progKey = document.getElementById("program-select").value;
+      const tbody = document.getElementById("timetable-body");
+      const infoDiv = document.getElementById("program-info");
+
+      if (!progKey || !rawPrograms[progKey]) {
+        tbody.innerHTML = `<tr><td colspan="6" class="p-8 text-center text-slate-500">Lütfen yukarıdan bir bölüm seçin.</td></tr>`;
+        infoDiv.innerText = "Program seçildiğinde haftalık ders tablosu burada listelenecektir.";
+        return;
+      }
+
+      const prog = rawPrograms[progKey];
+      infoDiv.innerHTML = `<strong>${prog.title || progKey}</strong> • Toplam ${prog.courses.length} ders saati`;
+
+      let tableHtml = "";
+      HOURS.forEach(h => {
+        const timeLabel = `${h.toString().padStart(2, "0")}:00<br><span class="text-slate-500 font-normal">${h.toString().padStart(2, "0")}:45</span>`;
+        tableHtml += `<tr>`;
+        tableHtml += `<td class="p-3 text-center font-bold bg-slate-950/60 border-r border-slate-800 text-slate-400">${timeLabel}</td>`;
+
+        DAYS.forEach(day => {
+          const matchedCourses = (prog.courses || []).filter(c => cleanStr(c.day) === cleanStr(day) && c.hour === h);
+          tableHtml += `<td class="p-2 border-r border-slate-800/80 align-top ${matchedCourses.length ? 'bg-blue-950/20' : ''}">`;
+          if (matchedCourses.length > 0) {
+            matchedCourses.forEach(c => {
+              tableHtml += `
+                <div class="p-2 rounded-xl bg-blue-900/40 border border-blue-700/50 mb-1.5 space-y-1">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="font-bold text-blue-200">${c.code || ''}</span>
+                    <span class="text-[10px] bg-blue-800 text-blue-200 px-1 rounded">${c.section || ''}</span>
+                  </div>
+                  <p class="font-medium text-slate-200 text-[11px] leading-tight">${c.name || c.raw}</p>
+                  <p class="text-[10px] text-slate-400">${c.classroom || ''} ${c.instructor ? '• ' + c.instructor : ''}</p>
+                </div>
+              `;
+            });
+          }
+          tableHtml += `</td>`;
+        });
+        tableHtml += `</tr>`;
+      });
+
+      tbody.innerHTML = tableHtml;
+    }
+
+    // --- 3. MODÜL: DERS SEÇİM & ÇAKIŞMA ---
+    let distinctCourseList = [];
+
+    function initPlanner() {
+      const progSelect = document.getElementById("planner-prog-select");
+      const progKeys = Object.keys(rawPrograms).sort();
+      progSelect.innerHTML = `<option value="">Bir Bölüm/Program Seçin (${progKeys.length})</option>`;
+      progKeys.forEach(k => {
+        progSelect.innerHTML += `<option value="${k}">${rawPrograms[k].title || k}</option>`;
+      });
+
+      progSelect.addEventListener("change", populateCourseDropdown);
+      populateCourseDropdown();
+    }
+
+    function populateCourseDropdown() {
+      const selectedProg = document.getElementById("planner-prog-select").value;
+      const courseSelect = document.getElementById("planner-course-select");
+      distinctCourseList = [];
+
+      if (!selectedProg || !rawPrograms[selectedProg]) {
+        courseSelect.innerHTML = `<option value="">Lütfen önce yukarıdan bir program seçin</option>`;
+        return;
+      }
+
+      const prog = rawPrograms[selectedProg];
+      const seen = new Set();
+
+      (prog.courses || []).forEach(c => {
+        // Dersin tekil anahtarı: program + kod + ad + şube
+        const uniqueKey = `${selectedProg}__${c.code}__${c.section}__${c.name}`;
+        if (!seen.has(uniqueKey) && (c.code || c.name)) {
+          seen.add(uniqueKey);
+          distinctCourseList.push({
+            uniqueId: uniqueKey,
+            programKey: selectedProg,
+            code: c.code,
+            name: c.name,
+            section: c.section,
+            programTitle: prog.title || selectedProg
+          });
+        }
+      });
+
+      distinctCourseList.sort((a, b) => (a.code || a.name).localeCompare(b.code || b.name));
+
+      courseSelect.innerHTML = distinctCourseList.map((c, i) => `
+        <option value="${i}">[${c.code || 'DERS'}] ${c.name} (${c.section})</option>
+      `).join("");
+    }
+
+    function addCourseToPlan() {
+      const idx = document.getElementById("planner-course-select").value;
+      if (idx === "" || !distinctCourseList[idx]) return;
+
+      const target = distinctCourseList[idx];
+      if (plannedCourses.some(p => p.uniqueId === target.uniqueId)) {
+        alert("Bu ders ve şube zaten taslağınıza eklenmiş.");
+        return;
+      }
+
+      // SADECE SEÇİLEN PROGRAMIN İÇİNDEKİ BU ŞUBENİN SAATLERİNİ AL! (Diğer bölümleri karıştırma)
+      const prog = rawPrograms[target.programKey];
+      const matchingSlots = (prog ? prog.courses : []).filter(c => 
+        c.code === target.code && c.section === target.section && c.name === target.name
+      );
+
+      plannedCourses.push({
+        ...target,
+        slots: matchingSlots
+      });
+
+      renderPlannerList();
+      renderPlannerGrid();
+    }
+
+    function removeCourseFromPlan(uniqueId) {
+      plannedCourses = plannedCourses.filter(c => c.uniqueId !== uniqueId);
+      renderPlannerList();
+      renderPlannerGrid();
+    }
+
+    function renderPlannerList() {
+      const listDiv = document.getElementById("planner-selected-list");
+      document.getElementById("planner-count").innerText = `${plannedCourses.length} Ders Eklendi`;
+
+      if (plannedCourses.length === 0) {
+        listDiv.innerHTML = `<p class="text-xs text-slate-500">Henüz ders eklenmedi.</p>`;
+        return;
+      }
+
+      listDiv.innerHTML = plannedCourses.map(c => `
+        <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-between gap-2">
+          <div class="overflow-hidden">
+            <div class="flex items-center gap-1.5">
+              <span class="font-bold text-xs text-blue-400">${c.code || ''}</span>
+              <span class="text-[10px] bg-slate-800 text-slate-300 px-1 rounded">${c.section}</span>
+            </div>
+            <p class="text-xs text-slate-200 truncate mt-0.5">${c.name}</p>
+            <p class="text-[10px] text-slate-400 truncate">${c.programTitle}</p>
+          </div>
+          <button onclick="removeCourseFromPlan('${c.uniqueId}')" class="text-rose-400 hover:text-rose-300 text-xs px-2 py-1 rounded bg-rose-950/40">Sil</button>
+        </div>
+      `).join("");
+    }
+
+    function renderPlannerGrid() {
+      const tbody = document.getElementById("planner-grid-body");
+      const alertDiv = document.getElementById("conflict-alert");
+      const alertDesc = document.getElementById("conflict-desc");
+
+      const timeSlotMap = {};
+      const conflicts = [];
+
+      plannedCourses.forEach(course => {
+        course.slots.forEach(slot => {
+          const key = `${cleanStr(slot.day)}_${slot.hour}`;
+          if (!timeSlotMap[key]) {
+            timeSlotMap[key] = [];
+          }
+          timeSlotMap[key].push({ course, slot });
+          if (timeSlotMap[key].length > 1) {
+            conflicts.push({
+              day: slot.day,
+              hour: slot.hour,
+              courses: timeSlotMap[key].map(x => x.course.code || x.course.name)
+            });
+          }
+        });
+      });
+
+      if (conflicts.length > 0) {
+        alertDiv.classList.remove("hidden");
+        alertDesc.innerHTML = conflicts.map(c => `<strong>${c.day} ${c.hour}:00</strong> saatinde (${c.courses.join(" ile ")}) çakışıyor!`).join("<br>");
+      } else {
+        alertDiv.classList.add("hidden");
+      }
+
+      let gridHtml = "";
+      HOURS.forEach(h => {
+        const timeLabel = h.toString().padStart(2, "0") + ":00";
+        gridHtml += `<tr>`;
+        gridHtml += `<td class="p-3 text-center font-bold bg-slate-950/60 border-r border-slate-800 text-slate-400">${timeLabel}</td>`;
+
+        DAYS.forEach(day => {
+          const key = `${cleanStr(day)}_${h}`;
+          const items = timeSlotMap[key] || [];
+          const hasConflict = items.length > 1;
+
+          gridHtml += `<td class="p-2 border-r border-slate-800/80 align-top ${hasConflict ? 'bg-rose-950/30' : (items.length ? 'bg-blue-950/20' : '')}">`;
+          if (items.length > 0) {
+            items.forEach(it => {
+              gridHtml += `
+                <div class="p-2 rounded-xl mb-1 text-[11px] ${hasConflict ? 'bg-rose-900/60 border border-rose-600 text-rose-100 animate-pulse' : 'bg-blue-900/40 border border-blue-700/60 text-blue-100'}">
+                  <div class="font-bold">${it.course.code} (${it.course.section})</div>
+                  <div class="truncate">${it.course.name}</div>
+                  <div class="text-[10px] opacity-75">${it.slot.classroom || ''}</div>
+                </div>
+              `;
+            });
+          }
+          gridHtml += `</td>`;
+        });
+        gridHtml += `</tr>`;
+      });
+
+      tbody.innerHTML = gridHtml;
+    }
+
+    // Başlatıcı
+    window.addEventListener("DOMContentLoaded", () => {
+      initEmptyClassrooms();
+      initTimetable();
+      initPlanner();
+    });
+  </script>
+</body>
+</html>

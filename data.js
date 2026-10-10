@@ -1472,6 +1472,27 @@ const CLASSROOMS_DATA = {
       "start": "15:00",
       "end": "15:45",
       "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
     }
   ],
   "MS/ G Blok /252": [
@@ -1483,7 +1504,174 @@ const CLASSROOMS_DATA = {
       "status": "DOLU"
     }
   ],
+  "E/306 Bilgisayar Lab. M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Salı",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / 352": [
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    }
+  ],
+  "KİM0195 Genel Kimya Laboratuvarı L": [
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    }
+  ],
   "E/205 M.Sinan Yer. (E Blok)": [
+    {
+      "day": "Salı",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
     {
       "day": "Salı",
       "hour": 9,
@@ -1532,6 +1720,55 @@ const CLASSROOMS_DATA = {
       "start": "11:00",
       "end": "11:45",
       "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
     }
   ],
   "MS / G blok / 253": [
@@ -1566,43 +1803,6 @@ const CLASSROOMS_DATA = {
       "status": "DOLU"
     }
   ],
-  "MS / G blok / 352": [
-    {
-      "day": "Perşembe",
-      "hour": 13,
-      "start": "13:00",
-      "end": "13:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Perşembe",
-      "hour": 14,
-      "start": "14:00",
-      "end": "14:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Pazartesi",
-      "hour": 9,
-      "start": "09:00",
-      "end": "09:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Pazartesi",
-      "hour": 10,
-      "start": "10:00",
-      "end": "10:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Pazartesi",
-      "hour": 11,
-      "start": "11:00",
-      "end": "11:45",
-      "status": "DOLU"
-    }
-  ],
   "Laboratuvarı L": [
     {
       "day": "Pazartesi",
@@ -1616,6 +1816,143 @@ const CLASSROOMS_DATA = {
       "hour": 16,
       "start": "16:00",
       "end": "16:45",
+      "status": "DOLU"
+    }
+  ],
+  "FİZ0305 Atom Fiziği Laboratuvarı L": [
+    {
+      "day": "Salı",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    }
+  ],
+  "MS / G blok / 355": [
+    {
+      "day": "Pazartesi",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 10,
+      "start": "10:00",
+      "end": "10:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 11,
+      "start": "11:00",
+      "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
       "status": "DOLU"
     }
   ],
@@ -1695,78 +2032,6 @@ const CLASSROOMS_DATA = {
       "hour": 14,
       "start": "14:00",
       "end": "14:45",
-      "status": "DOLU"
-    }
-  ],
-  "KİM0195 Genel Kimya Laboratuvarı L": [
-    {
-      "day": "Perşembe",
-      "hour": 8,
-      "start": "08:00",
-      "end": "08:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Perşembe",
-      "hour": 9,
-      "start": "09:00",
-      "end": "09:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Perşembe",
-      "hour": 10,
-      "start": "10:00",
-      "end": "10:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Perşembe",
-      "hour": 11,
-      "start": "11:00",
-      "end": "11:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Salı",
-      "hour": 8,
-      "start": "08:00",
-      "end": "08:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Salı",
-      "hour": 9,
-      "start": "09:00",
-      "end": "09:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Salı",
-      "hour": 10,
-      "start": "10:00",
-      "end": "10:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Salı",
-      "hour": 11,
-      "start": "11:00",
-      "end": "11:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Çarşamba",
-      "hour": 8,
-      "start": "08:00",
-      "end": "08:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Çarşamba",
-      "hour": 9,
-      "start": "09:00",
-      "end": "09:45",
       "status": "DOLU"
     }
   ],
@@ -2053,6 +2318,13 @@ const CLASSROOMS_DATA = {
       "hour": 11,
       "start": "11:00",
       "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
       "status": "DOLU"
     },
     {
@@ -4519,6 +4791,13 @@ const CLASSROOMS_DATA = {
   "E/346 M.Sinan Yer. (E Blok) Doç. Dr. Yakup YÜREKTÜRK ile birlikte yürütülecektir.": [
     {
       "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
       "hour": 14,
       "start": "14:00",
       "end": "14:45",
@@ -5983,7 +6262,7 @@ const CLASSROOMS_DATA = {
       "status": "DOLU"
     }
   ],
-  "YB/B Blok/ B103 SSY209 İlkçağ Felsefe Tarihi Dr. Öğr. Üyesi Oya GÜLER YB/B Blok/ B103 SSY209 İlkçağ Felsefe Tarihi Dr. Öğr. Üyesi Oya GÜLER YB/B Blok/ B103": [
+  "YB/B Blok/ B103": [
     {
       "day": "Pazartesi",
       "hour": 9,
@@ -5992,39 +6271,14 @@ const CLASSROOMS_DATA = {
       "status": "DOLU"
     }
   ],
-  "YB/B Blok/B107 SSY207 Gelişim Psikolojisi Dr. Öğr. Üyesi Emine KURT YB/B Blok/B107 SSY207 Gelişim Psikolojisi Dr. Öğr. Üyesi Emine KURT YB/B Blok/B107": [
+  "YB/B Blok/B107": [
     {
       "day": "Perşembe",
       "hour": 9,
       "start": "09:00",
       "end": "09:45",
       "status": "DOLU"
-    }
-  ],
-  "YB/B Blok/ B107": [
-    {
-      "day": "Pazartesi",
-      "hour": 13,
-      "start": "13:00",
-      "end": "13:45",
-      "status": "DOLU"
     },
-    {
-      "day": "Pazartesi",
-      "hour": 14,
-      "start": "14:00",
-      "end": "14:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Pazartesi",
-      "hour": 15,
-      "start": "15:00",
-      "end": "15:45",
-      "status": "DOLU"
-    }
-  ],
-  "YB/B Blok/B107": [
     {
       "day": "Çarşamba",
       "hour": 13,
@@ -6083,6 +6337,29 @@ const CLASSROOMS_DATA = {
     },
     {
       "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
+      "status": "DOLU"
+    }
+  ],
+  "YB/B Blok/ B107": [
+    {
+      "day": "Pazartesi",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
       "hour": 15,
       "start": "15:00",
       "end": "15:45",
@@ -6309,6 +6586,27 @@ const CLASSROOMS_DATA = {
       "hour": 11,
       "start": "11:00",
       "end": "11:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 15,
+      "start": "15:00",
+      "end": "15:45",
       "status": "DOLU"
     },
     {
@@ -6547,9 +6845,72 @@ const CLASSROOMS_DATA = {
       "start": "15:00",
       "end": "15:45",
       "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 9,
+      "start": "09:00",
+      "end": "09:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 13,
+      "start": "13:00",
+      "end": "13:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 14,
+      "start": "14:00",
+      "end": "14:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Pazartesi",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Salı",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Çarşamba",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Perşembe",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
+    },
+    {
+      "day": "Cuma",
+      "hour": 8,
+      "start": "08:00",
+      "end": "08:45",
+      "status": "DOLU"
     }
   ],
-  "YB/ B Blok/ B104 --- ULU349 İnsan Hakları Hukuku Dr. Mustafa Selman YURDAER YB/ B Blok/ B106": [
+  "YB/ B Blok/ B104 ---": [
     {
       "day": "Perşembe",
       "hour": 13,
@@ -6581,7 +6942,7 @@ const CLASSROOMS_DATA = {
       "status": "DOLU"
     }
   ],
-  "YB/ B Blok/ B106 --- ULU267 İran Dış Politikası Dr. Öğr. Üyesi Damla Taşdemir KADERLİ YB/ B Blok/ Z09": [
+  "YB/ B Blok/ B106 ---": [
     {
       "day": "Çarşamba",
       "hour": 13,
@@ -6604,80 +6965,7 @@ const CLASSROOMS_DATA = {
       "status": "DOLU"
     }
   ],
-  "YB/ B Blok/ Z03 UTL113 İşletmecilik Bilimi Prof. Dr. Serkan ÖZDEMİR YB/ B Blok/ Z03 UTL113 İşletmecilik Bilimi Prof. Dr. Serkan ÖZDEMİR YB/ B Blok/ Z03": [
-    {
-      "day": "Cuma",
-      "hour": 9,
-      "start": "09:00",
-      "end": "09:45",
-      "status": "DOLU"
-    }
-  ],
-  "YB/ B Blok/ Z03 UTL115 Mikro Ekonominin İlkeleri Doç.Dr. Cevat BİLGİN YB/ B Blok/ Z03 UTL115 Mikro Ekonominin İlkeleri Doç.Dr. Cevat BİLGİN YB/ B Blok/ Z03": [
-    {
-      "day": "Salı",
-      "hour": 13,
-      "start": "13:00",
-      "end": "13:45",
-      "status": "DOLU"
-    }
-  ],
-  "YB/ B Blok/ Z03 UTL111 Hukukun Temel Kavramları Öğr. Gör. Gülcan AFŞİN YB/ B Blok/ Z03 UTL111 Hukukun Temel Kavramları Öğr. Gör. Gülcan AFŞİN YB/ B Blok/ Z03": [
-    {
-      "day": "Pazartesi",
-      "hour": 14,
-      "start": "14:00",
-      "end": "14:45",
-      "status": "DOLU"
-    }
-  ],
-  "YB/ B Blok/ Z03 UTL105 Uluslararası Ticaretin Temelleri Arş. Gör. Dr. Nihal ALTUN YB/ B Blok/ Z03 UTL105 Uluslararası Ticaretin Temelleri Arş. Gör. Dr. Nihal ALTUN YB/ B Blok/ Z03": [
-    {
-      "day": "Cuma",
-      "hour": 14,
-      "start": "14:00",
-      "end": "14:45",
-      "status": "DOLU"
-    }
-  ],
-  "YB/ B Blok/ Z03 UTL211 Lojistik Yönetimi Prof. Dr. Orhan ÇAĞLAYAN YB/ B Blok/ Z03 UTL211 Lojistik Yönetimi Prof. Dr. Orhan ÇAĞLAYAN YB/ B Blok/ Z03": [
-    {
-      "day": "Pazartesi",
-      "hour": 8,
-      "start": "08:00",
-      "end": "08:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Salı",
-      "hour": 8,
-      "start": "08:00",
-      "end": "08:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Çarşamba",
-      "hour": 8,
-      "start": "08:00",
-      "end": "08:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Perşembe",
-      "hour": 8,
-      "start": "08:00",
-      "end": "08:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Cuma",
-      "hour": 8,
-      "start": "08:00",
-      "end": "08:45",
-      "status": "DOLU"
-    }
-  ],
-  "YB/ B Blok/ B208 UTL259 Hizmet Pazarlaması Arş. Gör. Dr. Ayşenur EFE PARLAK YB/ B Blok/ B208 UTL259 Hizmet Pazarlaması Arş. Gör. Dr. Ayşenur EFE PARLAK YB/ B Blok/ B208": [
+  "YB/ B Blok/ B208": [
     {
       "day": "Pazartesi",
       "hour": 13,
@@ -6714,7 +7002,7 @@ const CLASSROOMS_DATA = {
       "status": "DOLU"
     }
   ],
-  "YB/ B Blok/ B206 UTL317 Uluslararası Ticaret Teori ve Politikaları Doç. Dr. Ayberk ŞEKER YB/ B Blok/ B206 UTL317 Uluslararası Ticaret Teori ve Politikaları Doç. Dr. Ayberk ŞEKER YB/ B Blok/ B206": [
+  "YB/ B Blok/ B206": [
     {
       "day": "Pazartesi",
       "hour": 8,
@@ -6749,9 +7037,7 @@ const CLASSROOMS_DATA = {
       "start": "08:00",
       "end": "08:45",
       "status": "DOLU"
-    }
-  ],
-  "YB/ B Blok/ B206 UTL311 Stok Yönetimi Prof. Dr. Orhan ÇAĞLAYAN YB/ B Blok/ B206 UTL311 Stok Yönetimi Prof. Dr. Orhan ÇAĞLAYAN YB/ B Blok/ B206": [
+    },
     {
       "day": "Pazartesi",
       "hour": 14,
@@ -7204,99 +7490,6 @@ const CLASSROOMS_DATA = {
       "hour": 16,
       "start": "16:00",
       "end": "16:45",
-      "status": "DOLU"
-    }
-  ],
-  "MS / G blok / 355": [
-    {
-      "day": "Pazartesi",
-      "hour": 10,
-      "start": "10:00",
-      "end": "10:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Pazartesi",
-      "hour": 11,
-      "start": "11:00",
-      "end": "11:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Salı",
-      "hour": 9,
-      "start": "09:00",
-      "end": "09:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Salı",
-      "hour": 10,
-      "start": "10:00",
-      "end": "10:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Salı",
-      "hour": 11,
-      "start": "11:00",
-      "end": "11:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Pazartesi",
-      "hour": 13,
-      "start": "13:00",
-      "end": "13:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Pazartesi",
-      "hour": 14,
-      "start": "14:00",
-      "end": "14:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Pazartesi",
-      "hour": 15,
-      "start": "15:00",
-      "end": "15:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Perşembe",
-      "hour": 9,
-      "start": "09:00",
-      "end": "09:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Perşembe",
-      "hour": 10,
-      "start": "10:00",
-      "end": "10:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Perşembe",
-      "hour": 11,
-      "start": "11:00",
-      "end": "11:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Perşembe",
-      "hour": 13,
-      "start": "13:00",
-      "end": "13:45",
-      "status": "DOLU"
-    },
-    {
-      "day": "Perşembe",
-      "hour": 14,
-      "start": "14:00",
-      "end": "14:45",
       "status": "DOLU"
     }
   ],

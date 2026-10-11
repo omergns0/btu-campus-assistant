@@ -456,7 +456,10 @@
                 <div class="p-2 rounded-xl bg-blue-900/40 border border-blue-700/50 mb-1.5 space-y-1">
                   <div class="flex items-center justify-between gap-1">
                     <span class="font-bold text-blue-200">${c.code || ''}</span>
-                    <span class="text-[10px] bg-blue-800 text-blue-200 px-1 rounded">${c.section || ''}</span>
+                    <div class="flex items-center gap-1">
+                      ${c.elective ? '<span class="text-[9px] bg-amber-500/20 text-amber-300 border border-amber-500/30 px-1 rounded">Seçmeli</span>' : ''}
+                      <span class="text-[10px] bg-blue-800 text-blue-200 px-1 rounded">${c.section || ''}</span>
+                    </div>
                   </div>
                   <p class="font-medium text-slate-200 text-[11px] leading-tight">${c.name || c.raw}</p>
                   <p class="text-[10px] text-slate-400">${c.classroom || ''} ${c.instructor ? '• ' + c.instructor : ''}</p>
@@ -511,7 +514,8 @@
             code: c.code,
             name: c.name,
             section: c.section,
-            programTitle: prog.title || selectedProg
+            programTitle: prog.title || selectedProg,
+            elective: c.elective
           });
         }
       });
@@ -519,7 +523,7 @@
       distinctCourseList.sort((a, b) => (a.code || a.name).localeCompare(b.code || b.name));
 
       courseSelect.innerHTML = distinctCourseList.map((c, i) => `
-        <option value="${i}">[${c.code || 'DERS'}] ${c.name} (${c.section})</option>
+        <option value="${i}">[${c.code || 'DERS'}] ${c.name} (${c.section})${c.elective ? ' • [Seçmeli]' : ''}</option>
       `).join("");
     }
 

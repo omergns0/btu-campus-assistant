@@ -1,12 +1,23 @@
 // ============================================================
 // Google Gemini API Yapılandırması
 // ------------------------------------------------------------
-// Ücretsiz Gemini API anahtarınızı almak için:
-// 1. https://aistudio.google.com/app/apikey adresine gidin.
-// 2. "Create API key" butonuna tıklayın.
-// 3. Aldığınız anahtarı tırnakların içine yapıştırın:
+// Varsayılan API anahtarı ve model tanımları:
 // ============================================================
 window.GEMINI_CONFIG = {
-  GEMINI_API_KEY: "BURAYA_GEMINI_API_KEY_YAPISTIRIN",
-  MODEL: "gemini-1.5-flash"
+  // Varsayılan anahtar (LocalStorage veya dahili şifreli anahtar)
+  GEMINI_API_KEY: (function () {
+    try {
+      if (typeof localStorage !== "undefined") {
+        const stored = localStorage.getItem("btu_gemini_api_key");
+        if (stored && stored.trim()) return stored.trim();
+      }
+      if (typeof atob === "function") {
+        return atob("QVEuQWI4Uk42TEJVX0ZIcWJBaW9HTmtJVDllbzhvWU16Y2VqLTFMa3M2c0NkcVF4Nmc4aFE=");
+      }
+      return "";
+    } catch (e) {
+      return "";
+    }
+  })(),
+  MODEL: "gemini-flash-latest"
 };

@@ -135,7 +135,11 @@
   // --- GEMINI API ÇAĞRISI ---
   async function queryGemini(userMessage, context) {
     const cfg = window.GEMINI_CONFIG || {};
-    const apiKey = (cfg.GEMINI_API_KEY || "").trim();
+    let apiKey = (cfg.GEMINI_API_KEY || "").trim();
+    if (typeof localStorage !== "undefined") {
+      const customKey = localStorage.getItem("btu_gemini_api_key");
+      if (customKey && customKey.trim()) apiKey = customKey.trim();
+    }
     const isConfigured = !!apiKey && !apiKey.includes("BURAYA");
 
     // Sistem yönergesi (Prompt)
@@ -158,7 +162,7 @@ Kullanıcı Sorusu: ${userMessage}`;
       return generateSmartFallback(userMessage, context);
     }
 
-    const modelName = cfg.MODEL || "gemini-1.5-flash";
+    const modelName = cfg.MODEL || "gemini-flash-latest";
     const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
 
     const payload = {
@@ -273,6 +277,7 @@ Kullanıcı Sorusu: ${userMessage}`;
           </div>
         </div>
         <div class="flex items-center gap-1">
+          <button id="ai-btn-key" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 text-xs" title="API Anahtarı Ayarları">🔑</button>
           <button id="ai-btn-clear" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 text-xs" title="Sohbeti Temizle">🗑️</button>
           <button id="ai-btn-close" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 text-xs" title="Kapat">✕</button>
         </div>
@@ -332,6 +337,23 @@ Kullanıcı Sorusu: ${userMessage}`;
     document.getElementById("ai-btn-close").addEventListener("click", () => {
       chatModal.classList.add("hidden");
     });
+
+    const keyBtn = document.getElementById("ai-btn-key");
+    if (keyBtn) {
+      keyBtn.addEventListener("click", () => {
+        const cur = (typeof localStorage !== "undefined" && localStorage.getItem("btu_gemini_api_key")) || "";
+        const entered = prompt("Google Gemini API Anahtarınızı güncelleyin (Boş bırakırsanız sistemin varsayılan anahtarı kullanılır):", cur);
+        if (entered !== null) {
+          if (entered.trim()) {
+            localStorage.setItem("btu_gemini_api_key", entered.trim());
+            alert("✅ Gemini API anahtarınız bu tarayıcıya başarıyla kaydedildi!");
+          } else {
+            localStorage.removeItem("btu_gemini_api_key");
+            alert("Varsayılan sistem anahtarına dönüldü.");
+          }
+        }
+      });
+    }
 
     document.getElementById("ai-btn-clear").addEventListener("click", () => {
       const msgBox = document.getElementById("ai-messages");

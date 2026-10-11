@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BTÜ - Kampüs & Ders Yönetim Platformu</title>
   <meta name="description" content="BTÜ öğrencileri için boş derslik bulucu, bölüm ve hoca ders programları, ders taslağı ve çakışma kontrolü.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="BTÜ Asistan">
+  <link rel="apple-touch-icon" href="icon-192.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Yerel veri kaynakları -->
@@ -62,11 +68,19 @@
         </button>
       </nav>
 
-      <!-- Üyelik Alanı -->
-      <div class="relative">
-        <button id="auth-login-btn" class="px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 shadow-lg shadow-blue-600/25 transition-all hover:-translate-y-0.5">
-          Giriş Yap / Üye Ol
+      <!-- Sağ Butonlar (Uygulama İndir & Üyelik) -->
+      <div class="flex items-center gap-2.5">
+        <button id="btn-install-app" class="px-3.5 py-2 rounded-xl text-xs font-semibold text-emerald-300 bg-emerald-950/60 hover:bg-emerald-900/70 border border-emerald-500/40 shadow-lg shadow-emerald-950/30 transition-all flex items-center gap-1.5 hover:-translate-y-0.5" title="Telefona veya Bilgisayara Mobil Uygulama Olarak Yükle">
+          <span class="text-sm">📲</span>
+          <span class="hidden sm:inline">Uygulamayı İndir</span>
+          <span class="sm:hidden">Yükle</span>
         </button>
+
+        <!-- Üyelik Alanı -->
+        <div class="relative">
+          <button id="auth-login-btn" class="px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 shadow-lg shadow-blue-600/25 transition-all hover:-translate-y-0.5">
+            Giriş Yap / Üye Ol
+          </button>
         <button id="auth-user-btn" class="hidden flex items-center gap-2 pl-1 pr-3 py-1 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-600 transition-all">
           <span id="auth-avatar" class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-violet-600 flex items-center justify-center text-xs font-bold text-white"></span>
           <span id="auth-user-name" class="text-xs font-medium text-slate-200 max-w-[120px] truncate"></span>
@@ -434,6 +448,74 @@
           </form>
         </div>
       </div>
+    </div>
+  <!-- ==================== PWA MOBİL UYGULAMA İNDİRME MODALI ==================== -->
+  <div id="pwa-install-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4" role="dialog" aria-modal="true">
+    <div id="pwa-backdrop" class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm"></div>
+    <div class="relative w-full max-w-md bg-slate-900/95 border border-slate-700/80 rounded-3xl shadow-2xl p-6 sm:p-7 space-y-5 fade-up">
+      <button id="pwa-modal-close" class="absolute top-4 right-4 w-8 h-8 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition" aria-label="Kapat">✕</button>
+      
+      <div class="flex items-center gap-3.5">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-emerald-500 flex items-center justify-center font-bold text-xl text-white shadow-xl shadow-blue-500/25">
+          BTÜ
+        </div>
+        <div>
+          <h2 class="text-lg font-bold text-white leading-tight">BTÜ Kampüs Asistanı</h2>
+          <p class="text-xs text-emerald-400 font-medium">Resmi Web & Mobil Uygulama</p>
+        </div>
+      </div>
+
+      <div class="p-3.5 rounded-2xl bg-slate-950/60 border border-slate-800 text-xs text-slate-300 space-y-2">
+        <div class="flex items-center gap-2">
+          <span class="text-emerald-400 font-bold">✓</span>
+          <span>Telefonunuzun ana ekranına uygulama ikonu eklenir.</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-emerald-400 font-bold">✓</span>
+          <span>Tarayıcı çubuğu olmadan tam ekran mobil deneyim sunar.</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-emerald-400 font-bold">✓</span>
+          <span>Çevrimdışı (internetsiz) ders programına erişebilirsiniz.</span>
+        </div>
+      </div>
+
+      <!-- Android / Chrome Yükleme Butonu -->
+      <div id="pwa-native-install-box">
+        <button id="btn-pwa-do-install" class="w-full py-3.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 shadow-xl shadow-emerald-600/30 transition-all flex items-center justify-center gap-2">
+          <span>📲</span> <span>Uygulamayı Telefona Yükle</span>
+        </button>
+      </div>
+
+      <!-- iPhone / iOS Safari Yükleme Kılavuzu -->
+      <div id="pwa-ios-guide" class="hidden p-4 rounded-2xl bg-blue-950/30 border border-blue-800/60 text-xs text-slate-300 space-y-2.5">
+        <div class="flex items-center gap-2 text-blue-300 font-bold">
+          <span>🍎</span> <span>iPhone / iPad (iOS) Yükleme Rehberi</span>
+        </div>
+        <p class="text-slate-400">Apple Safari tarayıcısında uygulamayı eklemek için:</p>
+        <ol class="list-decimal list-inside space-y-1.5 text-slate-200">
+          <li>Safari'nin altındaki <strong>Paylaş (Share)</strong> butonuna 📤 dokunun.</li>
+          <li>Açılan menüde aşağı kaydırıp <strong>"Ana Ekrana Ekle"</strong> (Add to Home Screen) ➕ seçeneğini seçin.</li>
+          <li>Sağ üstteki <strong>"Ekle"</strong> butonuna basın.</li>
+        </ol>
+      </div>
+
+      <p class="text-[11px] text-slate-500 text-center">Google Play veya App Store gerektirmez; tek tıkla doğrudan telefonunuza kurulur.</p>
+    </div>
+  </div>
+
+  <!-- Mobil Alt Yükleme Bildirimi (Pill) -->
+  <div id="pwa-floating-pill" class="hidden sm:hidden fixed bottom-4 left-4 right-4 z-40 p-3 rounded-2xl bg-gradient-to-r from-slate-900 to-slate-800 border border-emerald-500/50 shadow-2xl flex items-center justify-between gap-3 fade-up">
+    <div class="flex items-center gap-2.5 min-w-0">
+      <div class="w-9 h-9 shrink-0 rounded-xl bg-blue-600 flex items-center justify-center font-bold text-xs text-white">BTÜ</div>
+      <div class="min-w-0">
+        <p class="text-xs font-bold text-white truncate">BTÜ Asistan Uygulaması</p>
+        <p class="text-[10px] text-emerald-400 truncate">Ana ekrana ekle, hızlı aç</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-1.5 shrink-0">
+      <button id="btn-floating-install" class="px-3 py-1.5 rounded-lg text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-500 shadow">Yükle</button>
+      <button id="btn-floating-dismiss" class="p-1.5 text-slate-400 hover:text-white text-xs">✕</button>
     </div>
   </div>
 
@@ -1210,6 +1292,113 @@
       `).join("");
     }
 
+    // --- PWA (MOBİL UYGULAMA YÜKLEME) MANTIĞI ---
+    let deferredPrompt = null;
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+
+    function initPWA() {
+      // 1. Service Worker Kaydı
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js').then(reg => {
+          console.log('[PWA] Service Worker kayıtlı:', reg.scope);
+        }).catch(err => {
+          console.warn('[PWA] Service Worker hatası:', err);
+        });
+      }
+
+      const btnInstall = document.getElementById('btn-install-app');
+      const modal = document.getElementById('pwa-install-modal');
+      const btnDoInstall = document.getElementById('btn-pwa-do-install');
+      const iosGuide = document.getElementById('pwa-ios-guide');
+      const nativeBox = document.getElementById('pwa-native-install-box');
+      const floatingPill = document.getElementById('pwa-floating-pill');
+      const btnFloatingInstall = document.getElementById('btn-floating-install');
+      const btnFloatingDismiss = document.getElementById('btn-floating-dismiss');
+
+      // Zaten uygulama olarak açıldıysa yükle butonunu güncelle
+      if (isStandalone) {
+        if (btnInstall) {
+          btnInstall.innerHTML = '<span>✓</span> <span class="hidden sm:inline">Uygulama Yüklü</span><span class="sm:hidden">Yüklü</span>';
+          btnInstall.className = 'px-3 py-1.5 rounded-xl text-xs font-semibold text-emerald-400 bg-emerald-950/40 border border-emerald-800/40 opacity-80 cursor-default';
+        }
+        return;
+      }
+
+      // Android / Desktop Chrome Yükleme Olayını Yakala
+      window.addEventListener('beforeinstallprompt', e => {
+        e.preventDefault();
+        deferredPrompt = e;
+        console.log('[PWA] beforeinstallprompt yakalandı');
+
+        // Mobilde alt hapı göster (kullanıcı daha önce kapatmadıysa)
+        if (!localStorage.getItem('pwa_dismissed') && floatingPill) {
+          floatingPill.classList.remove('hidden');
+        }
+      });
+
+      window.addEventListener('appinstalled', () => {
+        deferredPrompt = null;
+        if (floatingPill) floatingPill.classList.add('hidden');
+        if (modal) modal.classList.add('hidden');
+        if (btnInstall) {
+          btnInstall.innerHTML = '<span>✓</span> <span>Yüklendi</span>';
+        }
+        if (window.Auth && Auth.toast) Auth.toast('BTÜ Asistan başarıyla yüklendi! 🎉');
+      });
+
+      function openPwaModal() {
+        if (modal) {
+          modal.classList.remove('hidden');
+          if (isIOS) {
+            iosGuide.classList.remove('hidden');
+            nativeBox.classList.add('hidden');
+          } else {
+            iosGuide.classList.add('hidden');
+            nativeBox.classList.remove('hidden');
+          }
+        }
+      }
+
+      function closePwaModal() {
+        if (modal) modal.classList.add('hidden');
+      }
+
+      if (btnInstall) btnInstall.addEventListener('click', openPwaModal);
+      const btnClose = document.getElementById('pwa-modal-close');
+      if (btnClose) btnClose.addEventListener('click', closePwaModal);
+      const backdrop = document.getElementById('pwa-backdrop');
+      if (backdrop) backdrop.addEventListener('click', closePwaModal);
+
+      if (btnDoInstall) {
+        btnDoInstall.addEventListener('click', async () => {
+          if (deferredPrompt) {
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            console.log('[PWA] Kullanıcı kararı:', outcome);
+            deferredPrompt = null;
+            closePwaModal();
+          } else {
+            // Prompt henüz gelmediyse veya desteklenmiyorsa tarayıcı ipucu göster
+            alert('Uygulamayı yüklemek için tarayıcınızın sağ üstündeki menüden (üç nokta) "Uygulamayı Yükle" veya "Ana Ekrana Ekle" seçeneğine tıklayabilirsiniz.');
+          }
+        });
+      }
+
+      if (btnFloatingInstall) {
+        btnFloatingInstall.addEventListener('click', () => {
+          openPwaModal();
+        });
+      }
+
+      if (btnFloatingDismiss) {
+        btnFloatingDismiss.addEventListener('click', () => {
+          if (floatingPill) floatingPill.classList.add('hidden');
+          localStorage.setItem('pwa_dismissed', '1');
+        });
+      }
+    }
+
     // Başlatıcı
     window.addEventListener("DOMContentLoaded", () => {
       initEmptyClassrooms();
@@ -1219,6 +1408,7 @@
       loadLocalPlan();
       renderPlannerList();
       renderPlannerGrid();
+      initPWA();
     });
   </script>
 </body>

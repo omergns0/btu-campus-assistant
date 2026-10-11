@@ -4,15 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BTÜ - Kampüs & Ders Yönetim Platformu</title>
+  <meta name="description" content="BTÜ öğrencileri için boş derslik bulucu, bölüm ve hoca ders programları, ders taslağı ve çakışma kontrolü.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Yerel veri kaynakları -->
   <script src="data.js?v=2"></script>
   <script src="courses_data.js?v=2"></script>
+  <!-- Üyelik (Supabase Auth) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase_config.js?v=1"></script>
+  <script src="auth.js?v=1" defer></script>
   <style>
     body { font-family: 'Inter', sans-serif; }
     .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
     .custom-scrollbar::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    #auth-modal .auth-panel { opacity: 0; transform: translateY(14px) scale(.97); transition: opacity .2s ease, transform .2s ease; }
+    #auth-modal .auth-bg { opacity: 0; transition: opacity .2s ease; }
+    #auth-modal.auth-open .auth-panel { opacity: 1; transform: none; }
+    #auth-modal.auth-open .auth-bg { opacity: 1; }
+    .auth-input { width: 100%; background: #0f172a; border: 1px solid #334155; border-radius: .75rem; padding: .65rem .8rem; font-size: .875rem; color: #fff; outline: none; transition: border-color .15s, box-shadow .15s; }
+    .auth-input::placeholder { color: #64748b; }
+    .auth-input:focus { border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,.18); }
+    .otp-input { letter-spacing: .6em; text-align: center; font-size: 1.5rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+    .instr-item.active { background: linear-gradient(90deg, rgba(139,92,246,.25), rgba(59,130,246,.12)); border-color: rgba(139,92,246,.55); }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+    .fade-up { animation: fadeUp .25s ease both; }
   </style>
 </head>
 <body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col">
@@ -31,17 +47,40 @@
       </div>
 
       <!-- Modül Sekmeleri -->
-      <nav class="flex items-center bg-slate-900 p-1 rounded-xl border border-slate-800 text-xs font-medium">
+      <nav class="flex items-center bg-slate-900 p-1 rounded-xl border border-slate-800 text-xs font-medium max-w-full overflow-x-auto custom-scrollbar whitespace-nowrap">
         <button id="tab-btn-empty" onclick="switchTab('empty')" class="px-3.5 py-2 rounded-lg transition-all bg-blue-600 text-white shadow">
           🏢 Boş Derslikler
         </button>
         <button id="tab-btn-timetable" onclick="switchTab('timetable')" class="px-3.5 py-2 rounded-lg transition-all text-slate-400 hover:text-white">
           📅 Bölüm Timetable
         </button>
+        <button id="tab-btn-instructor" onclick="switchTab('instructor')" class="px-3.5 py-2 rounded-lg transition-all text-slate-400 hover:text-white">
+          👨‍🏫 Hoca Programı
+        </button>
         <button id="tab-btn-planner" onclick="switchTab('planner')" class="px-3.5 py-2 rounded-lg transition-all text-slate-400 hover:text-white">
           🧩 Ders Taslak / Çakışma
         </button>
       </nav>
+
+      <!-- Üyelik Alanı -->
+      <div class="relative">
+        <button id="auth-login-btn" class="px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 shadow-lg shadow-blue-600/25 transition-all hover:-translate-y-0.5">
+          Giriş Yap / Üye Ol
+        </button>
+        <button id="auth-user-btn" class="hidden flex items-center gap-2 pl-1 pr-3 py-1 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-600 transition-all">
+          <span id="auth-avatar" class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-violet-600 flex items-center justify-center text-xs font-bold text-white"></span>
+          <span id="auth-user-name" class="text-xs font-medium text-slate-200 max-w-[120px] truncate"></span>
+          <span class="text-slate-500 text-[10px]">▼</span>
+        </button>
+        <div id="user-menu" class="hidden absolute right-0 mt-2 w-60 bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl p-2 fade-up z-50">
+          <div class="px-3 py-2 border-b border-slate-800 mb-1">
+            <p id="user-menu-name" class="text-sm font-semibold text-white truncate"></p>
+            <p id="user-menu-email" class="text-[11px] text-slate-400 truncate"></p>
+          </div>
+          <button onclick="switchTab('planner'); document.getElementById('user-menu').classList.add('hidden')" class="w-full text-left px-3 py-2 rounded-lg text-xs text-slate-300 hover:bg-slate-800">🧩 Ders Taslağım</button>
+          <button id="auth-logout" class="w-full text-left px-3 py-2 rounded-lg text-xs text-rose-300 hover:bg-rose-950/50">↩ Çıkış Yap</button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -158,6 +197,54 @@
       </div>
     </section>
 
+    <!-- ==================== SEKME: HOCA DERS PROGRAMI ==================== -->
+    <section id="section-instructor" class="space-y-6 hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <!-- Sol: Hoca Listesi -->
+        <aside class="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-4 shadow-2xl backdrop-blur space-y-3 lg:sticky lg:top-24 self-start">
+          <h2 class="text-sm font-bold text-white flex items-center justify-between">
+            <span>Öğretim Elemanları</span>
+            <span id="instructor-count" class="text-xs text-violet-300 font-normal"></span>
+          </h2>
+          <div class="relative">
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm">🔍</span>
+            <input type="text" id="instructor-search" placeholder="Hoca adı ara..." class="w-full bg-slate-900 border border-slate-700 rounded-xl pl-9 pr-3 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-violet-500">
+          </div>
+          <select id="instructor-dept-filter" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-violet-500">
+            <option value="">Tüm Bölümler</option>
+          </select>
+          <div id="instructor-list" class="space-y-1 max-h-[60vh] overflow-y-auto custom-scrollbar pr-1"></div>
+        </aside>
+
+        <!-- Sağ: Seçilen Hocanın Programı -->
+        <div class="lg:col-span-3 space-y-4">
+          <div id="instructor-header" class="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-5 shadow-2xl backdrop-blur">
+            <p class="text-sm text-slate-400">Soldaki listeden bir öğretim elemanı seçerek haftalık ders programını görüntüleyin.</p>
+          </div>
+
+          <div class="bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+            <div class="overflow-x-auto custom-scrollbar">
+              <table class="w-full border-collapse text-left min-w-[700px]">
+                <thead>
+                  <tr class="bg-slate-950 border-b border-slate-800 text-xs text-slate-400 font-semibold uppercase">
+                    <th class="p-3 w-20 text-center border-r border-slate-800">Saat</th>
+                    <th class="p-3 text-center border-r border-slate-800">Pazartesi</th>
+                    <th class="p-3 text-center border-r border-slate-800">Salı</th>
+                    <th class="p-3 text-center border-r border-slate-800">Çarşamba</th>
+                    <th class="p-3 text-center border-r border-slate-800">Perşembe</th>
+                    <th class="p-3 text-center">Cuma</th>
+                  </tr>
+                </thead>
+                <tbody id="instructor-grid-body" class="divide-y divide-slate-800/60 text-xs"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="instructor-courses" class="grid grid-cols-1 md:grid-cols-2 gap-3"></div>
+        </div>
+      </div>
+    </section>
+
     <!-- ==================== SEKME 3: DERS TASLAĞI & ÇAKIŞMA ==================== -->
     <section id="section-planner" class="space-y-6 hidden">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -168,6 +255,7 @@
             <span>Ders Seç & Ekle</span>
             <span id="planner-count" class="text-xs text-blue-400 font-normal">0 Ders Eklendi</span>
           </h2>
+          <p id="planner-sync" class="text-[11px] text-slate-400"></p>
 
           <div>
             <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Program / Bölüm Seçin</label>
@@ -232,6 +320,126 @@
 
   </main>
 
+  <!-- ==================== ÜYELİK MODALI ==================== -->
+  <div id="auth-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+    <div id="auth-backdrop" class="auth-bg absolute inset-0 bg-slate-950/80 backdrop-blur-sm"></div>
+    <div class="auth-panel relative w-full max-w-md bg-slate-900/95 border border-slate-700/70 rounded-3xl shadow-2xl shadow-blue-900/30 overflow-hidden">
+      <div class="absolute -top-24 -right-24 w-56 h-56 bg-violet-600/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-56 h-56 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="relative p-6 sm:p-7">
+        <button id="auth-close" class="absolute top-4 right-4 w-8 h-8 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition" aria-label="Kapat">✕</button>
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-600 to-violet-600 flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/30">BTÜ</div>
+          <div>
+            <h2 id="auth-title" class="text-lg font-bold text-white leading-tight"></h2>
+            <p id="auth-subtitle" class="text-xs text-slate-400 mt-0.5"></p>
+          </div>
+        </div>
+
+        <div id="auth-tabs" class="flex bg-slate-950/70 p-1 rounded-xl border border-slate-800 mb-5">
+          <button id="auth-tab-login" type="button">Giriş Yap</button>
+          <button id="auth-tab-register" type="button">Üye Ol</button>
+        </div>
+
+        <div id="auth-message" class="hidden"></div>
+
+        <!-- Giriş -->
+        <div id="auth-view-login">
+          <form id="auth-form-login" class="space-y-3">
+            <div>
+              <label for="login-email" class="block text-xs font-semibold text-slate-400 mb-1.5">E-posta</label>
+              <input id="login-email" type="email" required autocomplete="email" placeholder="ornek@ogrenci.btu.edu.tr" class="auth-input">
+            </div>
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <label for="login-password" class="text-xs font-semibold text-slate-400">Şifre</label>
+                <button type="button" id="goto-forgot" class="text-[11px] text-blue-400 hover:text-blue-300">Şifremi unuttum</button>
+              </div>
+              <div class="relative">
+                <input id="login-password" type="password" required autocomplete="current-password" placeholder="••••••••" class="auth-input pr-10">
+                <button type="button" data-toggle-pass="login-password" class="absolute right-2 top-1/2 -translate-y-1/2 text-sm opacity-70 hover:opacity-100">👁️</button>
+              </div>
+            </div>
+            <button id="login-submit" type="submit" class="w-full py-3 mt-2 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 shadow-lg shadow-blue-600/25 transition-all disabled:opacity-60">Giriş Yap</button>
+          </form>
+        </div>
+
+        <!-- Kayıt -->
+        <div id="auth-view-register" class="hidden">
+          <form id="auth-form-register" class="space-y-3">
+            <div>
+              <label for="register-name" class="block text-xs font-semibold text-slate-400 mb-1.5">Ad Soyad</label>
+              <input id="register-name" type="text" required autocomplete="name" placeholder="Adınız Soyadınız" class="auth-input">
+            </div>
+            <div>
+              <label for="register-email" class="block text-xs font-semibold text-slate-400 mb-1.5">E-posta</label>
+              <input id="register-email" type="email" required autocomplete="email" placeholder="ornek@ogrenci.btu.edu.tr" class="auth-input">
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label for="register-password" class="block text-xs font-semibold text-slate-400 mb-1.5">Şifre</label>
+                <div class="relative">
+                  <input id="register-password" type="password" required minlength="6" autocomplete="new-password" placeholder="En az 6 karakter" class="auth-input pr-9">
+                  <button type="button" data-toggle-pass="register-password" class="absolute right-2 top-1/2 -translate-y-1/2 text-sm opacity-70 hover:opacity-100">👁️</button>
+                </div>
+              </div>
+              <div>
+                <label for="register-password2" class="block text-xs font-semibold text-slate-400 mb-1.5">Şifre (tekrar)</label>
+                <input id="register-password2" type="password" required minlength="6" autocomplete="new-password" placeholder="Tekrar girin" class="auth-input">
+              </div>
+            </div>
+            <button id="register-submit" type="submit" class="w-full py-3 mt-2 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 shadow-lg shadow-blue-600/25 transition-all disabled:opacity-60">Üye Ol ve Kod Gönder</button>
+            <p class="text-[11px] text-slate-500 text-center">Kayıt sonrası e-posta adresine 6 haneli bir onay kodu gönderilecek.</p>
+          </form>
+        </div>
+
+        <!-- E-posta Onay Kodu -->
+        <div id="auth-view-verify" class="hidden">
+          <form id="auth-form-verify" class="space-y-4">
+            <div class="text-center text-4xl">📬</div>
+            <input id="verify-code" type="text" inputmode="numeric" autocomplete="one-time-code" required placeholder="••••••" class="auth-input otp-input">
+            <button id="verify-submit" type="submit" class="w-full py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 shadow-lg shadow-emerald-600/25 transition-all disabled:opacity-60">Doğrula ve Hesabı Aktifleştir</button>
+            <div class="flex items-center justify-between text-[11px]">
+              <button type="button" data-auth-back class="text-slate-400 hover:text-white">← Girişe dön</button>
+              <button type="button" id="verify-resend" class="text-blue-400 hover:text-blue-300 disabled:text-slate-500 disabled:cursor-not-allowed">Kodu tekrar gönder</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Şifremi Unuttum -->
+        <div id="auth-view-forgot" class="hidden">
+          <form id="auth-form-forgot" class="space-y-3">
+            <div>
+              <label for="forgot-email" class="block text-xs font-semibold text-slate-400 mb-1.5">E-posta</label>
+              <input id="forgot-email" type="email" required autocomplete="email" placeholder="ornek@ogrenci.btu.edu.tr" class="auth-input">
+            </div>
+            <button id="forgot-submit" type="submit" class="w-full py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-500 hover:to-violet-500 transition-all disabled:opacity-60">Sıfırlama Kodu Gönder</button>
+            <button type="button" data-auth-back class="w-full text-[11px] text-slate-400 hover:text-white">← Girişe dön</button>
+          </form>
+        </div>
+
+        <!-- Kod ile Yeni Şifre -->
+        <div id="auth-view-recover" class="hidden">
+          <form id="auth-form-recover" class="space-y-3">
+            <input id="recover-code" type="text" inputmode="numeric" autocomplete="one-time-code" required placeholder="••••••" class="auth-input otp-input">
+            <div class="relative">
+              <input id="recover-password" type="password" required minlength="6" autocomplete="new-password" placeholder="Yeni şifre (en az 6 karakter)" class="auth-input pr-10">
+              <button type="button" data-toggle-pass="recover-password" class="absolute right-2 top-1/2 -translate-y-1/2 text-sm opacity-70 hover:opacity-100">👁️</button>
+            </div>
+            <button id="recover-submit" type="submit" class="w-full py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 transition-all disabled:opacity-60">Şifreyi Güncelle</button>
+            <div class="flex items-center justify-between text-[11px]">
+              <button type="button" data-auth-back class="text-slate-400 hover:text-white">← Girişe dön</button>
+              <button type="button" id="recover-resend" class="text-blue-400 hover:text-blue-300 disabled:text-slate-500 disabled:cursor-not-allowed">Kodu tekrar gönder</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bildirim -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[110] px-4 py-3 rounded-xl bg-slate-800 border border-slate-600 text-sm text-white shadow-2xl transition-all duration-300 opacity-0 translate-y-4 pointer-events-none"></div>
+
   <script>
     let rawClassrooms = (typeof CLASSROOMS_DATA !== "undefined") ? CLASSROOMS_DATA : {};
     let rawPrograms = (typeof ALL_PROGRAMS_DATA !== "undefined") ? ALL_PROGRAMS_DATA : {};
@@ -242,6 +450,11 @@
     let selectedDay = "Pazartesi";
     let statusFilter = "EMPTY";
     let plannedCourses = [];
+    const PLAN_STORAGE_KEY = "btu_planned_courses_v1";
+
+    function escapeHtml(str) {
+      return String(str ?? "").replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
+    }
 
     function cleanStr(str) {
       if (!str) return "";
@@ -251,7 +464,7 @@
     }
 
     function switchTab(tab) {
-      ["empty", "timetable", "planner"].forEach(t => {
+      ["empty", "timetable", "instructor", "planner"].forEach(t => {
         const sec = document.getElementById(`section-${t}`);
         const btn = document.getElementById(`tab-btn-${t}`);
         if (t === tab) {
@@ -462,7 +675,7 @@
                     </div>
                   </div>
                   <p class="font-medium text-slate-200 text-[11px] leading-tight">${c.name || c.raw}</p>
-                  <p class="text-[10px] text-slate-400">${c.classroom || ''} ${c.instructor ? '• ' + c.instructor : ''}</p>
+                  <p class="text-[10px] text-slate-400">${c.classroom || ''} ${c.instructor ? `• <button type="button" class="underline decoration-dotted hover:text-violet-300" data-raw="${escapeHtml(c.instructor)}" onclick="openInstructorFromRaw(this.dataset.raw)" title="Hocanın programını gör">${escapeHtml(c.instructor)}</button>` : ''}</p>
                 </div>
               `;
             });
@@ -548,12 +761,14 @@
         slots: matchingSlots
       });
 
+      persistPlan();
       renderPlannerList();
       renderPlannerGrid();
     }
 
-    function removeCourseFromPlan(uniqueId) {
-      plannedCourses = plannedCourses.filter(c => c.uniqueId !== uniqueId);
+    function removeCourseFromPlan(index) {
+      plannedCourses.splice(index, 1);
+      persistPlan();
       renderPlannerList();
       renderPlannerGrid();
     }
@@ -567,7 +782,7 @@
         return;
       }
 
-      listDiv.innerHTML = plannedCourses.map(c => `
+      listDiv.innerHTML = plannedCourses.map((c, i) => `
         <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-between gap-2">
           <div class="overflow-hidden">
             <div class="flex items-center gap-1.5">
@@ -577,7 +792,7 @@
             <p class="text-xs text-slate-200 truncate mt-0.5">${c.name}</p>
             <p class="text-[10px] text-slate-400 truncate">${c.programTitle}</p>
           </div>
-          <button onclick="removeCourseFromPlan('${c.uniqueId}')" class="text-rose-400 hover:text-rose-300 text-xs px-2 py-1 rounded bg-rose-950/40">Sil</button>
+          <button onclick="removeCourseFromPlan(${i})" class="text-rose-400 hover:text-rose-300 text-xs px-2 py-1 rounded bg-rose-950/40">Sil</button>
         </div>
       `).join("");
     }
@@ -645,11 +860,365 @@
       tbody.innerHTML = gridHtml;
     }
 
+    // --- TASLAK KAYDI (localStorage + Supabase hesabı) ---
+    function rehydrateCourse(c) {
+      // Veri güncellenmiş olabilir; saatleri güncel programdan yeniden çek
+      const prog = rawPrograms[c.programKey];
+      if (prog) {
+        const fresh = (prog.courses || []).filter(s => s.code === c.code && s.section === c.section && s.name === c.name);
+        if (fresh.length) c.slots = fresh;
+      }
+      c.slots = c.slots || [];
+      return c;
+    }
+
+    function loadLocalPlan() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(PLAN_STORAGE_KEY) || "[]");
+        plannedCourses = Array.isArray(saved) ? saved.map(rehydrateCourse) : [];
+      } catch { plannedCourses = []; }
+    }
+
+    function persistPlan() {
+      try { localStorage.setItem(PLAN_STORAGE_KEY, JSON.stringify(plannedCourses)); } catch {}
+      if (window.Auth && Auth.getUser()) Auth.savePlan(plannedCourses);
+    }
+
+    window.addEventListener("btu-auth", async (e) => {
+      const user = e.detail.user;
+      if (!user) {
+        // Çıkışta taslak bu cihazda başkasına görünmesin
+        plannedCourses = [];
+        try { localStorage.removeItem(PLAN_STORAGE_KEY); } catch {}
+        renderPlannerList(); renderPlannerGrid();
+        return;
+      }
+      const remote = await Auth.loadPlan();
+      if (remote === null) return;
+      const merged = remote.map(rehydrateCourse);
+      const known = new Set(merged.map(c => c.uniqueId));
+      const localOnly = plannedCourses.filter(c => !known.has(c.uniqueId));
+      plannedCourses = merged.concat(localOnly);
+      try { localStorage.setItem(PLAN_STORAGE_KEY, JSON.stringify(plannedCourses)); } catch {}
+      if (localOnly.length) {
+        Auth.savePlan(plannedCourses);
+        Auth.toast(`${localOnly.length} ders taslak hesabına aktarıldı.`);
+      }
+      renderPlannerList(); renderPlannerGrid();
+    });
+
+    // --- HOCA DERS PROGRAMI MODÜLÜ ---
+    let instructorIndex = {};
+    let instructorAliases = {}; // birleştirilen kısa/kesik isim -> asıl anahtar
+    let selectedInstructorKey = "";
+
+    const TITLE_TOKEN_RE = /^((?:prof|do[çc]|dr|[öo][ğg]r|g[öo]r|ar[şs]|lect)\.?|[üu]yesi)(?=\s|$)\s*/iu;
+    const TITLE_WORD_RE = /^(?:(?:prof|do[çc]|dr|[öo][ğg]r|g[öo]r|ar[şs]|lect)\.?|[üu]yesi)$/iu;
+
+    function instrKey(s) {
+      return (s || "").toLocaleLowerCase("tr-TR")
+        .replace(/ı/g, "i").replace(/ğ/g, "g").replace(/ü/g, "u")
+        .replace(/ş/g, "s").replace(/ö/g, "o").replace(/ç/g, "c")
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        .replace(/\s+/g, " ").trim();
+    }
+
+    function canonicalTitle(raw) {
+      const t = instrKey(raw);
+      if (!t) return "";
+      if (t.includes("prof")) return "Prof. Dr.";
+      if (t.includes("doc")) return "Doç. Dr.";
+      if (t.includes("uyesi")) return "Dr. Öğr. Üyesi";
+      if (t.includes("ogr") && t.includes("gor")) return t.includes("dr") ? "Öğr. Gör. Dr." : "Öğr. Gör.";
+      if (t.includes("ars") && t.includes("gor")) return t.includes("dr") ? "Arş. Gör. Dr." : "Arş. Gör.";
+      if (t.includes("lect")) return t.includes("dr") ? "Öğr. Gör. Dr." : "Öğr. Gör.";
+      if (t.includes("dr")) return "Dr.";
+      return "";
+    }
+
+    // "Emre Dr. Öğr. Üyesi Enes" gibi ortaya gömülü unvanlarda metni parçalara ayırır
+    function splitOnEmbeddedTitles(s) {
+      const parts = [];
+      let cur = [], prevTitle = false;
+      s.split(/\s+/).filter(Boolean).forEach(w => {
+        const isTitle = TITLE_WORD_RE.test(w);
+        if (isTitle && cur.length && !prevTitle) { parts.push(cur.join(" ")); cur = []; }
+        cur.push(w);
+        prevTitle = isTitle;
+      });
+      if (cur.length) parts.push(cur.join(" "));
+      return parts;
+    }
+
+    // Ham hoca alanını temiz isim(ler)e dönüştürür: unvan, derslik kodu, "Çevrimiçi" vb. ayıklanır
+    function parseInstructorField(raw) {
+      if (!raw) return [];
+      const result = [];
+      String(raw).split(/\s*\/\s*(?=(?:Prof|Do[çc]|Dr|[ÖO][ğg]r|Ar[şs])\.)/u).forEach(seg => {
+        let base = seg.split(",")[0].replace(/\.(?=\S)/g, ". ").trim();
+        base = base.replace(/\s+(?:YB\/.*|[A-Z]\s?-\s?\S*\d.*)$/u, "");
+        base = base.replace(/\s*-?\s*(?:uzaktan eğitim|mavi salon|çevrimiçi|online).*$/iu, "").trim();
+        splitOnEmbeddedTitles(base).forEach(part => {
+          let s = part;
+          const titleTokens = [];
+          let m;
+          while ((m = s.match(TITLE_TOKEN_RE))) { titleTokens.push(m[1]); s = s.slice(m[0].length); }
+          // Sonda kalan unvan kırıntılarını at (ör. "... Arş.", "... Dr")
+          let words = s.replace(/\s+/g, " ").trim().split(" ").filter(Boolean);
+          while (words.length && TITLE_WORD_RE.test(words[words.length - 1])) words.pop();
+          s = words.join(" ");
+          if (!s || s.length < 5 || /[\d()\-]/.test(s) || words.length < 2) return;
+          result.push({ key: instrKey(s), name: s, title: canonicalTitle(titleTokens.join(" ")) });
+        });
+      });
+      return result;
+    }
+
+    const TITLE_RANK = ["Prof. Dr.", "Doç. Dr.", "Dr. Öğr. Üyesi", "Öğr. Gör. Dr.", "Arş. Gör. Dr.", "Dr.", "Öğr. Gör.", "Arş. Gör."];
+
+    function buildInstructorIndex() {
+      instructorIndex = {};
+      Object.entries(rawPrograms).forEach(([progKey, prog]) => {
+        (prog.courses || []).forEach(c => {
+          parseInstructorField(c.instructor).forEach(p => {
+            if (!instructorIndex[p.key]) {
+              instructorIndex[p.key] = { key: p.key, name: p.name, title: "", depts: new Set(), slots: new Map() };
+            }
+            const inst = instructorIndex[p.key];
+            // En yüksek unvanı sakla
+            if (p.title && (!inst.title || TITLE_RANK.indexOf(p.title) < TITLE_RANK.indexOf(inst.title))) inst.title = p.title;
+            if (c.department || prog.department) inst.depts.add(c.department || prog.department);
+
+            const slotKey = `${cleanStr(c.day)}_${c.hour}_${c.code}_${c.section}_${c.classroom}`;
+            if (!inst.slots.has(slotKey)) {
+              inst.slots.set(slotKey, {
+                day: c.day, hour: c.hour, code: c.code, name: c.name, type: c.type,
+                section: c.section, classroom: c.classroom, programs: new Set()
+              });
+            }
+            inst.slots.get(slotKey).programs.add(prog.title || progKey);
+          });
+        });
+      });
+      mergeTruncatedInstructors();
+    }
+
+    // Tabloda kesik yazılmış isimleri (ör. "Ali İhsan") tam isimle ("Ali İhsan KADIOĞULLARI") birleştirir
+    function mergeTruncatedInstructors() {
+      instructorAliases = {};
+      const rank = t => (t ? TITLE_RANK.indexOf(t) : 99);
+      const keys = Object.keys(instructorIndex).sort((a, b) => a.length - b.length);
+      keys.forEach(k => {
+        const a = instructorIndex[k];
+        if (!a) return;
+        let cands = Object.keys(instructorIndex).filter(o => o !== k && o.startsWith(k + " "));
+        if (cands.length > 1) cands = cands.filter(o => [...a.depts].some(d => instructorIndex[o].depts.has(d)));
+        if (cands.length !== 1) return;
+        const b = instructorIndex[cands[0]];
+        a.slots.forEach((s, sk) => {
+          if (b.slots.has(sk)) s.programs.forEach(p => b.slots.get(sk).programs.add(p));
+          else b.slots.set(sk, s);
+        });
+        a.depts.forEach(d => b.depts.add(d));
+        if (rank(a.title) < rank(b.title)) b.title = a.title;
+        instructorAliases[k] = b.key;
+        Object.keys(instructorAliases).forEach(x => { if (instructorAliases[x] === k) instructorAliases[x] = b.key; });
+        delete instructorIndex[k];
+      });
+    }
+
+    function resolveInstructorKey(key) {
+      return instructorIndex[key] ? key : (instructorAliases[key] || "");
+    }
+
+    function initInstructors() {
+      buildInstructorIndex();
+      const all = Object.values(instructorIndex);
+      document.getElementById("instructor-count").innerText = `${all.length} kişi`;
+
+      const depts = new Set();
+      all.forEach(i => i.depts.forEach(d => depts.add(d)));
+      const deptSelect = document.getElementById("instructor-dept-filter");
+      Array.from(depts).sort((a, b) => a.localeCompare(b, "tr")).forEach(d => {
+        deptSelect.innerHTML += `<option value="${escapeHtml(d)}">${escapeHtml(d)}</option>`;
+      });
+
+      document.getElementById("instructor-search").addEventListener("input", renderInstructorList);
+      deptSelect.addEventListener("change", renderInstructorList);
+      renderInstructorList();
+      renderInstructorSchedule();
+    }
+
+    function weeklyHours(inst) {
+      return new Set(Array.from(inst.slots.values()).map(s => `${cleanStr(s.day)}_${s.hour}`)).size;
+    }
+
+    function initialsOf(name) {
+      return name.split(" ").filter(Boolean).slice(0, 2).map(w => w[0]).join("").toLocaleUpperCase("tr-TR");
+    }
+
+    function renderInstructorList() {
+      const q = instrKey(document.getElementById("instructor-search").value);
+      const dept = document.getElementById("instructor-dept-filter").value;
+      const listDiv = document.getElementById("instructor-list");
+
+      const items = Object.values(instructorIndex)
+        .filter(i => (!q || i.key.includes(q)) && (!dept || i.depts.has(dept)))
+        .sort((a, b) => a.name.localeCompare(b.name, "tr"));
+
+      if (!items.length) {
+        listDiv.innerHTML = `<p class="text-xs text-slate-500 p-3 text-center">Eşleşen öğretim elemanı bulunamadı.</p>`;
+        return;
+      }
+
+      listDiv.innerHTML = items.map(i => `
+        <button type="button" onclick="selectInstructor('${i.key.replace(/'/g, "\\'")}')" class="instr-item ${i.key === selectedInstructorKey ? 'active' : ''} w-full flex items-center gap-2.5 p-2 rounded-xl border border-transparent hover:bg-slate-900/80 hover:border-slate-700 text-left transition-all">
+          <span class="w-8 h-8 shrink-0 rounded-lg bg-gradient-to-br from-violet-600/80 to-blue-600/80 flex items-center justify-center text-[11px] font-bold text-white">${escapeHtml(initialsOf(i.name))}</span>
+          <span class="min-w-0 flex-1">
+            <span class="block text-xs font-semibold text-slate-100 truncate">${escapeHtml(i.name)}</span>
+            <span class="block text-[10px] text-slate-400 truncate">${escapeHtml(i.title || "Öğretim Elemanı")} • ${weeklyHours(i)} saat/hafta</span>
+          </span>
+        </button>
+      `).join("");
+    }
+
+    function selectInstructor(key) {
+      selectedInstructorKey = key;
+      document.querySelectorAll(".instr-item").forEach(el => el.classList.remove("active"));
+      renderInstructorList();
+      renderInstructorSchedule();
+      if (window.innerWidth < 1024) document.getElementById("instructor-header").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function openInstructorFromRaw(raw) {
+      const key = parseInstructorField(raw).map(p => resolveInstructorKey(p.key)).find(Boolean);
+      if (!key) return;
+      document.getElementById("instructor-search").value = "";
+      document.getElementById("instructor-dept-filter").value = "";
+      switchTab("instructor");
+      selectInstructor(key);
+    }
+
+    function getNowStatus(slots) {
+      const now = new Date();
+      const dayIdx = now.getDay() - 1; // 0 = Pazartesi
+      if (dayIdx < 0 || dayIdx > 4) return { cls: "text-slate-400", text: "🌙 Bugün hafta sonu, ders yok." };
+      const today = cleanStr(DAYS[dayIdx]);
+      const h = now.getHours();
+      const todays = slots.filter(s => cleanStr(s.day) === today).sort((a, b) => a.hour - b.hour);
+      const current = todays.find(s => s.hour === h && now.getMinutes() < 45);
+      if (current) return { cls: "text-emerald-300", text: `🟢 Şu an derste: ${current.code || ""} ${current.name || ""} — ${current.classroom || "Derslik belirtilmemiş"}` };
+      const next = todays.find(s => s.hour > h || (s.hour === h && now.getMinutes() < 45));
+      if (next) return { cls: "text-amber-300", text: `🕛 Sıradaki ders bugün ${String(next.hour).padStart(2, "0")}:00 — ${next.code || ""} (${next.classroom || "-"})` };
+      return { cls: "text-slate-400", text: todays.length ? "✅ Bugünkü dersleri tamamlandı." : "📭 Bugün dersi bulunmuyor." };
+    }
+
+    function renderInstructorSchedule() {
+      const header = document.getElementById("instructor-header");
+      const tbody = document.getElementById("instructor-grid-body");
+      const coursesDiv = document.getElementById("instructor-courses");
+      const inst = instructorIndex[selectedInstructorKey];
+
+      if (!inst) {
+        header.innerHTML = `
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-2xl bg-slate-900 border border-slate-700 flex items-center justify-center text-2xl">👨‍🏫</div>
+            <div>
+              <h2 class="text-base font-bold text-white">Hoca Ders Programı</h2>
+              <p class="text-xs text-slate-400 mt-1">Soldaki listeden bir öğretim elemanı seçin ya da isimle arayın. Bölüm programında hoca adına tıklayarak da buraya gelebilirsiniz.</p>
+            </div>
+          </div>`;
+        tbody.innerHTML = `<tr><td colspan="6" class="p-8 text-center text-slate-500">Henüz bir öğretim elemanı seçilmedi.</td></tr>`;
+        coursesDiv.innerHTML = "";
+        return;
+      }
+
+      const slots = Array.from(inst.slots.values());
+      const courseGroups = {};
+      slots.forEach(s => {
+        const k = `${s.code}__${s.name}`;
+        if (!courseGroups[k]) courseGroups[k] = { code: s.code, name: s.name, sections: new Set(), rooms: new Set(), programs: new Set(), hours: 0 };
+        const g = courseGroups[k];
+        if (s.section) g.sections.add(s.section);
+        if (s.classroom) g.rooms.add(s.classroom);
+        s.programs.forEach(p => g.programs.add(p));
+        g.hours++;
+      });
+      const groups = Object.values(courseGroups).sort((a, b) => (a.code || "").localeCompare(b.code || ""));
+      const status = getNowStatus(slots);
+      const days = new Set(slots.map(s => cleanStr(s.day))).size;
+
+      header.innerHTML = `
+        <div class="fade-up flex flex-col md:flex-row md:items-center gap-4 justify-between">
+          <div class="flex items-center gap-4 min-w-0">
+            <div class="w-14 h-14 shrink-0 rounded-2xl bg-gradient-to-br from-violet-600 to-blue-600 flex items-center justify-center text-lg font-bold text-white shadow-lg shadow-violet-600/30">${escapeHtml(initialsOf(inst.name))}</div>
+            <div class="min-w-0">
+              <p class="text-[11px] font-semibold uppercase tracking-wider text-violet-300">${escapeHtml(inst.title || "Öğretim Elemanı")}</p>
+              <h2 class="text-lg font-bold text-white truncate">${escapeHtml(inst.name)}</h2>
+              <div class="flex flex-wrap gap-1 mt-1">
+                ${Array.from(inst.depts).map(d => `<span class="text-[10px] px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-300">${escapeHtml(d)}</span>`).join("")}
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-3 gap-2 text-center shrink-0">
+            <div class="px-3 py-2 rounded-xl bg-slate-900/80 border border-slate-700"><div class="text-lg font-bold text-white">${weeklyHours(inst)}</div><div class="text-[10px] text-slate-400">Saat/Hafta</div></div>
+            <div class="px-3 py-2 rounded-xl bg-slate-900/80 border border-slate-700"><div class="text-lg font-bold text-white">${groups.length}</div><div class="text-[10px] text-slate-400">Ders</div></div>
+            <div class="px-3 py-2 rounded-xl bg-slate-900/80 border border-slate-700"><div class="text-lg font-bold text-white">${days}</div><div class="text-[10px] text-slate-400">Gün</div></div>
+          </div>
+        </div>
+        <p class="mt-4 pt-3 border-t border-slate-700/60 text-xs font-medium ${status.cls}">${escapeHtml(status.text)}</p>
+      `;
+
+      let html = "";
+      HOURS.forEach(h => {
+        html += `<tr><td class="p-3 text-center font-bold bg-slate-950/60 border-r border-slate-800 text-slate-400">${String(h).padStart(2, "0")}:00<br><span class="text-slate-500 font-normal">${String(h).padStart(2, "0")}:45</span></td>`;
+        DAYS.forEach(day => {
+          const items = slots.filter(s => cleanStr(s.day) === cleanStr(day) && s.hour === h);
+          html += `<td class="p-2 border-r border-slate-800/80 align-top ${items.length ? 'bg-violet-950/20' : ''}">`;
+          items.forEach(s => {
+            const progs = Array.from(s.programs);
+            html += `
+              <div class="p-2 rounded-xl bg-violet-900/30 border border-violet-700/50 mb-1.5 space-y-1 hover:border-violet-400 transition-colors" title="${escapeHtml(progs.join(', '))}">
+                <div class="flex items-center justify-between gap-1">
+                  <span class="font-bold text-violet-200">${escapeHtml(s.code || '')}</span>
+                  <span class="text-[10px] bg-violet-800/70 text-violet-100 px-1 rounded">${escapeHtml(s.section || '')}</span>
+                </div>
+                <p class="font-medium text-slate-200 text-[11px] leading-tight">${escapeHtml(s.name || '')}</p>
+                <p class="text-[10px] text-slate-400">${escapeHtml(s.classroom || '')}</p>
+                <p class="text-[10px] text-slate-500 truncate">${escapeHtml(progs[0] || '')}${progs.length > 1 ? ` +${progs.length - 1}` : ''}</p>
+              </div>`;
+          });
+          html += `</td>`;
+        });
+        html += `</tr>`;
+      });
+      tbody.innerHTML = html;
+
+      coursesDiv.innerHTML = groups.map(g => `
+        <div class="fade-up p-4 rounded-2xl bg-slate-800/60 border border-slate-700/60 space-y-2">
+          <div class="flex items-start justify-between gap-2">
+            <div class="min-w-0">
+              <span class="text-xs font-bold text-violet-300">${escapeHtml(g.code || 'DERS')}</span>
+              <h3 class="text-sm font-semibold text-white leading-tight">${escapeHtml(g.name || '')}</h3>
+            </div>
+            <span class="shrink-0 text-[10px] px-2 py-1 rounded-full bg-violet-500/15 text-violet-200 border border-violet-500/30">${g.hours} saat</span>
+          </div>
+          <p class="text-[11px] text-slate-400"><span class="text-slate-500">Şube:</span> ${escapeHtml(Array.from(g.sections).join(', ') || '-')}</p>
+          <p class="text-[11px] text-slate-400"><span class="text-slate-500">Derslik:</span> ${escapeHtml(Array.from(g.rooms).join(' • ') || '-')}</p>
+          <p class="text-[11px] text-slate-400"><span class="text-slate-500">Programlar:</span> ${escapeHtml(Array.from(g.programs).join(', '))}</p>
+        </div>
+      `).join("");
+    }
+
     // Başlatıcı
     window.addEventListener("DOMContentLoaded", () => {
       initEmptyClassrooms();
       initTimetable();
+      initInstructors();
       initPlanner();
+      loadLocalPlan();
+      renderPlannerList();
+      renderPlannerGrid();
     });
   </script>
 </body>

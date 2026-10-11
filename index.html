@@ -452,55 +452,78 @@
   <!-- ==================== PWA MOBİL UYGULAMA İNDİRME MODALI ==================== -->
   <div id="pwa-install-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4" role="dialog" aria-modal="true">
     <div id="pwa-backdrop" class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm"></div>
-    <div class="relative w-full max-w-md bg-slate-900/95 border border-slate-700/80 rounded-3xl shadow-2xl p-6 sm:p-7 space-y-5 fade-up">
+    <div class="relative w-full max-w-md bg-slate-900/95 border border-slate-700/80 rounded-3xl shadow-2xl p-6 sm:p-7 space-y-4 fade-up">
       <button id="pwa-modal-close" class="absolute top-4 right-4 w-8 h-8 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition" aria-label="Kapat">✕</button>
       
       <div class="flex items-center gap-3.5">
-        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-emerald-500 flex items-center justify-center font-bold text-xl text-white shadow-xl shadow-blue-500/25">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-600 to-emerald-500 flex items-center justify-center font-bold text-lg text-white shadow-xl shadow-blue-500/25">
           BTÜ
         </div>
         <div>
-          <h2 class="text-lg font-bold text-white leading-tight">BTÜ Kampüs Asistanı</h2>
-          <p class="text-xs text-emerald-400 font-medium">Resmi Web & Mobil Uygulama</p>
+          <h2 class="text-base font-bold text-white leading-tight">Uygulamayı Cihazınıza Yükleyin</h2>
+          <p class="text-xs text-emerald-400 font-medium">Hızlı, internetsiz ve tam ekran erişim</p>
         </div>
       </div>
 
-      <div class="p-3.5 rounded-2xl bg-slate-950/60 border border-slate-800 text-xs text-slate-300 space-y-2">
-        <div class="flex items-center gap-2">
-          <span class="text-emerald-400 font-bold">✓</span>
-          <span>Telefonunuzun ana ekranına uygulama ikonu eklenir.</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <span class="text-emerald-400 font-bold">✓</span>
-          <span>Tarayıcı çubuğu olmadan tam ekran mobil deneyim sunar.</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <span class="text-emerald-400 font-bold">✓</span>
-          <span>Çevrimdışı (internetsiz) ders programına erişebilirsiniz.</span>
-        </div>
-      </div>
-
-      <!-- Android / Chrome Yükleme Butonu -->
-      <div id="pwa-native-install-box">
-        <button id="btn-pwa-do-install" class="w-full py-3.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 shadow-xl shadow-emerald-600/30 transition-all flex items-center justify-center gap-2">
-          <span>📲</span> <span>Uygulamayı Telefona Yükle</span>
+      <!-- Cihaz Seçim Sekmeleri -->
+      <div class="flex bg-slate-950/70 p-1 rounded-xl border border-slate-800 text-xs font-semibold">
+        <button id="pwa-tab-android" class="flex-1 py-2 rounded-lg transition-all bg-emerald-600 text-white shadow">
+          📱 Android
+        </button>
+        <button id="pwa-tab-ios" class="flex-1 py-2 rounded-lg transition-all text-slate-400 hover:text-white">
+          🍎 iPhone (iOS)
+        </button>
+        <button id="pwa-tab-pc" class="flex-1 py-2 rounded-lg transition-all text-slate-400 hover:text-white">
+          💻 Bilgisayar
         </button>
       </div>
 
-      <!-- iPhone / iOS Safari Yükleme Kılavuzu -->
-      <div id="pwa-ios-guide" class="hidden p-4 rounded-2xl bg-blue-950/30 border border-blue-800/60 text-xs text-slate-300 space-y-2.5">
-        <div class="flex items-center gap-2 text-blue-300 font-bold">
-          <span>🍎</span> <span>iPhone / iPad (iOS) Yükleme Rehberi</span>
+      <!-- 1. ANDROID İÇERİĞİ -->
+      <div id="pwa-content-android" class="space-y-3">
+        <div id="pwa-prompt-container">
+          <button id="btn-pwa-do-install" class="w-full py-3 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 shadow-xl shadow-emerald-600/30 transition-all flex items-center justify-center gap-2">
+            <span>📲</span> <span>Tek Tıkla Telefona Kur</span>
+          </button>
         </div>
-        <p class="text-slate-400">Apple Safari tarayıcısında uygulamayı eklemek için:</p>
-        <ol class="list-decimal list-inside space-y-1.5 text-slate-200">
-          <li>Safari'nin altındaki <strong>Paylaş (Share)</strong> butonuna 📤 dokunun.</li>
-          <li>Açılan menüde aşağı kaydırıp <strong>"Ana Ekrana Ekle"</strong> (Add to Home Screen) ➕ seçeneğini seçin.</li>
-          <li>Sağ üstteki <strong>"Ekle"</strong> butonuna basın.</li>
-        </ol>
+
+        <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-slate-800 text-xs text-slate-300 space-y-2">
+          <p class="font-bold text-emerald-400">💡 Alternatif Manuel Kurulum (2 Adım):</p>
+          <ol class="list-decimal list-inside space-y-1.5 text-slate-300">
+            <li>Chrome'da sağ üstteki <strong>3 noktaya (⋮)</strong> dokunun.</li>
+            <li>Açılan menüde <strong>"Uygulamayı Yükle"</strong> veya <strong>"Ana ekrana ekle"</strong> seçeneğine dokunun.</li>
+          </ol>
+          <p class="text-[11px] text-slate-500 pt-1 border-t border-slate-800/80">Uygulama telefonunuzun ana ekranına BTÜ logosuyla eklenir ve internetsiz çalışır.</p>
+        </div>
       </div>
 
-      <p class="text-[11px] text-slate-500 text-center">Google Play veya App Store gerektirmez; tek tıkla doğrudan telefonunuza kurulur.</p>
+      <!-- 2. IPHONE (IOS) İÇERİĞİ -->
+      <div id="pwa-content-ios" class="hidden space-y-3">
+        <div class="p-4 rounded-2xl bg-blue-950/30 border border-blue-800/60 text-xs text-slate-300 space-y-2.5">
+          <p class="font-bold text-blue-300">🍎 Safari Üzerinden Yükleme:</p>
+          <ol class="list-decimal list-inside space-y-2 text-slate-200">
+            <li>Safari tarayıcısının altındaki <strong>Paylaş (Share)</strong> simgesine 📤 dokunun.</li>
+            <li>Açılan pencerede aşağı kaydırıp <strong>"Ana Ekrana Ekle"</strong> (Add to Home Screen) ➕ seçeneğini seçin.</li>
+            <li>Sağ üstteki <strong>"Ekle"</strong> butonuna basın.</li>
+          </ol>
+        </div>
+        <p class="text-[11px] text-slate-500 text-center">Apple App Store indirmesi gerektirmeden tam ekran çalışır.</p>
+      </div>
+
+      <!-- 3. BİLGİSAYAR / EKLENTİ İÇERİĞİ -->
+      <div id="pwa-content-pc" class="hidden space-y-3">
+        <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-slate-800 text-xs text-slate-300 space-y-2">
+          <p class="font-bold text-blue-400">🖥️ Masaüstü Programı Olarak Kurma:</p>
+          <p class="text-slate-300">Chrome veya Edge adres çubuğunun sağ tarafındaki <strong>Yükle (🖥️)</strong> simgesine tıklayarak masaüstünüze kurabilirsiniz.</p>
+        </div>
+
+        <div class="pt-1 border-t border-slate-800">
+          <p class="text-xs font-semibold text-slate-300 mb-2">Veya Chrome Eklentisi Olarak İndirin:</p>
+          <a href="btu-kampus-asistan-chrome-eklentisi.zip" download class="w-full py-2.5 rounded-xl text-xs font-bold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 flex items-center justify-center gap-2 transition-all">
+            <span>📦</span> <span>Chrome Eklentisi ZIP Paketini İndir</span>
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -1347,15 +1370,38 @@
         if (window.Auth && Auth.toast) Auth.toast('BTÜ Asistan başarıyla yüklendi! 🎉');
       });
 
+      function setPwaTab(tab) {
+        ['android', 'ios', 'pc'].forEach(t => {
+          const btn = document.getElementById(`pwa-tab-${t}`);
+          const content = document.getElementById(`pwa-content-${t}`);
+          if (btn) {
+            btn.className = t === tab
+              ? 'flex-1 py-2 rounded-lg transition-all bg-emerald-600 text-white shadow'
+              : 'flex-1 py-2 rounded-lg transition-all text-slate-400 hover:text-white';
+          }
+          if (content) {
+            content.classList.toggle('hidden', t !== tab);
+          }
+        });
+      }
+
+      const tabAndroid = document.getElementById('pwa-tab-android');
+      const tabIos = document.getElementById('pwa-tab-ios');
+      const tabPc = document.getElementById('pwa-tab-pc');
+      if (tabAndroid) tabAndroid.addEventListener('click', () => setPwaTab('android'));
+      if (tabIos) tabIos.addEventListener('click', () => setPwaTab('ios'));
+      if (tabPc) tabPc.addEventListener('click', () => setPwaTab('pc'));
+
       function openPwaModal() {
         if (modal) {
           modal.classList.remove('hidden');
+          // Cihazı otomatik algılayıp uygun sekmeyi aç
           if (isIOS) {
-            iosGuide.classList.remove('hidden');
-            nativeBox.classList.add('hidden');
+            setPwaTab('ios');
+          } else if (/Android/i.test(navigator.userAgent)) {
+            setPwaTab('android');
           } else {
-            iosGuide.classList.add('hidden');
-            nativeBox.classList.remove('hidden');
+            setPwaTab('pc');
           }
         }
       }
@@ -1379,8 +1425,12 @@
             deferredPrompt = null;
             closePwaModal();
           } else {
-            // Prompt henüz gelmediyse veya desteklenmiyorsa tarayıcı ipucu göster
-            alert('Uygulamayı yüklemek için tarayıcınızın sağ üstündeki menüden (üç nokta) "Uygulamayı Yükle" veya "Ana Ekrana Ekle" seçeneğine tıklayabilirsiniz.');
+            // Tarayıcı otomatik promt'a henüz izin vermiyorsa bilgilendir
+            btnDoInstall.innerHTML = '<span>👆</span> <span>Chrome menüsünden (⋮) "Yükle"yi seçin</span>';
+            btnDoInstall.className = 'w-full py-3 rounded-xl text-xs font-bold text-emerald-300 bg-emerald-950/80 border border-emerald-500/50 transition-all flex items-center justify-center gap-2';
+            if (window.Auth && Auth.toast) {
+              Auth.toast('Chrome menüsünden (⋮) "Uygulamayı Yükle"ye dokunun.');
+            }
           }
         });
       }

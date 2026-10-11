@@ -109,6 +109,16 @@ def run_pipeline():
     with open("data.js", "w", encoding="utf-8") as f:
         f.write("const CLASSROOMS_DATA = " + json.dumps(classrooms_data, ensure_ascii=False, indent=2) + ";\n")
 
+    # 3. Eklenti (extension) klasörünü de senkronize et
+    if os.path.isdir("extension"):
+        try:
+            import shutil
+            shutil.copyfile("courses_data.js", os.path.join("extension", "courses_data.js"))
+            shutil.copyfile("data.js", os.path.join("extension", "data.js"))
+            print("[OK] Extension verileri güncellendi.")
+        except Exception as e:
+            print(f"[-] Extension kopyalama uyarisi: {e}")
+
     print(f"\n[OK] ISLEM BASARIYLA TAMAMLANDI!")
     print(f"Toplam Program Sayısı: {len(all_programs)}")
     print(f"Toplam Ders Saati: {total_slots}")

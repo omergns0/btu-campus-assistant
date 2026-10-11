@@ -44,15 +44,32 @@ Kullanıcılar e-posta ile üye olabilir; e-postalarına 6 haneli doğrulama kod
 
 Giriş yapan kullanıcıların ders taslakları buluta (Supabase `user_plans` tablosuna) otomatik kaydedilir ve tüm cihazlardan erişilebilir.
 
+6. 🧩 Google Chrome Eklentisi (Manifest V3)
+
+Tarayıcının sağ üst köşesinden tek tıkla açılan kompakt ve hızlı eklenti.
+
+O anki saat ve günü otomatik algılayarak tek tıkla boş sınıfları ve o günkü dersleri listeler.
+
+Seçilen bölümü tarayıcı hafızasında saklar, her açılışta tekrar arama gerektirmez.
+
 🛠️ Teknik Mimari & Teknolojiler
 
 | Katman | Teknoloji / Kütüphane | Kullanım Amacı |
 | --- | --- | --- |
 | Frontend UI | HTML5, Tailwind CSS | Modern, koyu tema odaklı ve responsive arayüz |
+| Chrome Eklentisi | Manifest V3, Vanilla CSS/JS | Kompakt popup, çevrimdışı çalışma, depolama |
 | İstemci Mantığı | Vanilla JavaScript (ES6+) | State yönetimi, filtreleme, hoca ayrıştırma, çakışma çözümleme |
 | Kimlik & Bulut | Supabase Auth & Postgres | E-posta OTP doğrulama ve kullanıcı taslak senkronizasyonu |
 | Veri Boru Hattı | Python 3, pdfplumber, openpyxl | Ham PDF ve Excel programlarından veri ayıklama |
 | Dağıtım | GitHub Pages | Statik web barındırma |
+
+🔌 Google Chrome Eklentisi Nasıl Kurulur?
+
+1. Google Chrome veya Chromium tabanlı tarayıcınızda (Brave, Edge, Opera vb.) adres çubuğuna `chrome://extensions` yazın ve **Enter**'a basın.
+2. Sağ üst köşedeki **Geliştirici Modu (Developer mode)** anahtarını açın.
+3. Sol üstte beliren **Paketlenmemiş öge yükle (Load unpacked)** butonuna tıklayın.
+4. Proje klasöründeki `extension` dizinini seçin.
+5. Artık tarayıcınızın eklentiler menüsünden **BTÜ Kampüs Asistanı**'na tıklayarak anında boş sınıfları ve ders programınızı görebilirsiniz!
 
 ⚙️ Supabase Kurulumu (Üyelik & Onay Kodu İçin)
 
@@ -75,6 +92,14 @@ Giriş yapan kullanıcıların ders taslakları buluta (Supabase `user_plans` ta
 ```
 btu-campus-assistant/
 ├── index.html            # Ana web uygulaması arayüzü ve istemci mantığı
+├── extension/            # Google Chrome Eklentisi (Manifest V3)
+│   ├── manifest.json     # Eklenti yapılandırması
+│   ├── popup.html        # Eklenti arayüzü
+│   ├── popup.css         # Eklenti karanlık tema stili
+│   ├── popup.js          # Eklenti etkileşim & depolama mantığı
+│   ├── icon16.png        # Eklenti simgeleri (16, 48, 128)
+│   ├── courses_data.js   # Program veri seti
+│   └── data.js           # Derslik veri seti
 ├── auth.js               # Üyelik, giriş, e-posta onay kodu ve taslak senkronizasyonu
 ├── supabase_config.js    # Supabase URL ve anon key yapılandırması
 ├── supabase_setup.sql    # Veritabanı tablo ve RLS şeması

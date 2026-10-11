@@ -366,6 +366,15 @@ def main():
     with open("data.js", "w", encoding="utf-8") as f:
         f.write("const CLASSROOMS_DATA = " + json.dumps(classrooms_data, ensure_ascii=False, indent=2) + ";")
 
+    # 3. Eklenti (extension) klasörünü de senkronize et
+    if os.path.isdir("extension"):
+        try:
+            import shutil
+            shutil.copyfile("courses_data.js", os.path.join("extension", "courses_data.js"))
+            shutil.copyfile("data.js", os.path.join("extension", "data.js"))
+        except Exception as e:
+            print(f"[-] Extension senkronizasyon uyarisi: {e}")
+
     print("\n[✓] İŞLEM TAMAMLANDI!")
     print(f"Toplam Ayrıştırılan Bölüm Programı: {len(all_programs)}")
     print(f"Toplam Ders Saati Slotu: {total_slots}")

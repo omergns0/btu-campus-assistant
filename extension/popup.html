@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>BTÜ Kampüs Asistanı</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="data.js"></script>
+  <script src="courses_data.js"></script>
+  <script src="popup.js" defer></script>
+</head>
+<body>
+  <!-- Üst Başlık & Butonlar -->
+  <header class="app-header">
+    <div class="brand">
+      <div class="logo">BTÜ</div>
+      <div class="brand-text">
+        <h1>BTÜ Kampüs Asistanı</h1>
+        <span class="subtitle">Hızlı Ders & Sınıf Rehberi</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <a href="https://omergns0.github.io/btu-campus-assistant/" target="_blank" class="btn-external" id="btn-open-web" title="Tam Ekran Web Sitesinde Aç">
+        🌐 Web
+      </a>
+    </div>
+  </header>
+
+  <!-- Modül Sekmeleri -->
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="empty" id="tab-btn-empty">
+      <span class="icon">🏢</span> Boş Sınıf
+    </button>
+    <button class="tab-btn" data-tab="timetable" id="tab-btn-timetable">
+      <span class="icon">📅</span> Program
+    </button>
+    <button class="tab-btn" data-tab="instructor" id="tab-btn-instructor">
+      <span class="icon">👨‍🏫</span> Hoca
+    </button>
+    <button class="tab-btn" data-tab="planner" id="tab-btn-planner">
+      <span class="icon">🧩</span> Taslak
+    </button>
+  </nav>
+
+  <!-- ANA İÇERİK -->
+  <main class="content">
+
+    <!-- SEKME 1: BOŞ DERSLİKLER -->
+    <section id="section-empty" class="tab-section active">
+      <div class="filter-card">
+        <!-- Gün Seçici -->
+        <div class="days-row" id="empty-day-buttons">
+          <button class="chip-btn" data-day="Pazartesi">Pzt</button>
+          <button class="chip-btn" data-day="Salı">Sal</button>
+          <button class="chip-btn" data-day="Çarşamba">Çar</button>
+          <button class="chip-btn" data-day="Perşembe">Per</button>
+          <button class="chip-btn" data-day="Cuma">Cum</button>
+        </div>
+
+        <!-- Saat, Kampüs, Arama -->
+        <div class="filter-grid">
+          <div class="filter-group">
+            <label>Başlangıç</label>
+            <select id="empty-start-time">
+              <option value="8">08:00</option>
+              <option value="9">09:00</option>
+              <option value="10">10:00</option>
+              <option value="11">11:00</option>
+              <option value="12">12:00</option>
+              <option value="13" selected>13:00</option>
+              <option value="14">14:00</option>
+              <option value="15">15:00</option>
+              <option value="16">16:00</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Bitiş</label>
+            <select id="empty-end-time">
+              <option value="9">09:00</option>
+              <option value="10">10:00</option>
+              <option value="11">11:00</option>
+              <option value="12">12:00</option>
+              <option value="13">13:00</option>
+              <option value="14" selected>14:00</option>
+              <option value="15">15:00</option>
+              <option value="16">16:00</option>
+              <option value="17">17:00</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Kampüs</label>
+            <select id="empty-campus">
+              <option value="ALL">Tümü</option>
+              <option value="MS">Mimar Sinan</option>
+              <option value="YB">Yıldırım B.</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Blok</label>
+            <select id="empty-block">
+              <option value="ALL">Tümü</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="search-row">
+          <input type="text" id="empty-search" placeholder="Derslik ara (örn: 208, Amfi, A- Blok)..." class="input-text">
+        </div>
+
+        <div class="stats-bar">
+          <div class="filter-chips">
+            <button class="chip-filter active" id="btn-filter-empty">Sadece Boş</button>
+            <button class="chip-filter" id="btn-filter-all">Tümü</button>
+          </div>
+          <span id="empty-stats" class="stats-text">0 Boş</span>
+        </div>
+      </div>
+
+      <!-- Sonuç Listesi -->
+      <div id="empty-results" class="results-container"></div>
+    </section>
+
+    <!-- SEKME 2: BÖLÜM DERS PROGRAMI -->
+    <section id="section-timetable" class="tab-section">
+      <div class="filter-card">
+        <div class="filter-group full-width">
+          <label>Bölüm / Program Seçin</label>
+          <select id="tt-program-select">
+            <option value="">Program Seçin...</option>
+          </select>
+        </div>
+
+        <!-- Gün Filtresi (Tümü / Bugün / Pzt...) -->
+        <div class="days-row" id="tt-day-buttons">
+          <button class="chip-btn active" data-day="TODAY">Bugün</button>
+          <button class="chip-btn" data-day="ALL">Tüm Hafta</button>
+          <button class="chip-btn" data-day="Pazartesi">Pzt</button>
+          <button class="chip-btn" data-day="Salı">Sal</button>
+          <button class="chip-btn" data-day="Çarşamba">Çar</button>
+          <button class="chip-btn" data-day="Perşembe">Per</button>
+          <button class="chip-btn" data-day="Cuma">Cum</button>
+        </div>
+      </div>
+
+      <div id="tt-results" class="results-container"></div>
+    </section>
+
+    <!-- SEKME 3: HOCA DERS PROGRAMI -->
+    <section id="section-instructor" class="tab-section">
+      <div class="filter-card">
+        <div class="search-row">
+          <input type="text" id="inst-search" placeholder="Hoca adı ara (örn: Ali İhsan, Burak)..." class="input-text">
+        </div>
+        <div class="filter-group full-width">
+          <select id="inst-dept-filter">
+            <option value="">Tüm Bölümler</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Hoca Detayı (varsa) veya Hoca Listesi -->
+      <div id="inst-detail-box" class="detail-box hidden">
+        <div class="detail-header">
+          <div class="detail-title-wrap">
+            <button id="btn-inst-back" class="btn-back">← Listeye Dön</button>
+            <h2 id="inst-name" class="detail-name"></h2>
+            <span id="inst-title" class="detail-badge"></span>
+          </div>
+          <div id="inst-now-status" class="now-badge"></div>
+        </div>
+        <div id="inst-schedule-list" class="schedule-list"></div>
+      </div>
+
+      <div id="inst-results" class="results-container"></div>
+    </section>
+
+    <!-- SEKME 4: TASLAK & ÇAKIŞMA -->
+    <section id="section-planner" class="tab-section">
+      <div class="planner-box">
+        <div class="planner-header">
+          <h3>Kayıtlı Ders Taslağım</h3>
+          <span id="planner-count" class="badge">0 Ders</span>
+        </div>
+        <div id="planner-conflict-banner" class="conflict-alert hidden">
+          ⚠️ <strong>Saat Çakışması Var!</strong>
+          <p id="planner-conflict-text"></p>
+        </div>
+        <div id="planner-courses-list" class="results-container"></div>
+        <div class="planner-footer">
+          <a href="https://omergns0.github.io/btu-campus-assistant/" target="_blank" class="btn-primary full-width">
+            🧩 Web Sürümünde Taslağı Düzenle & Detay Gör
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>

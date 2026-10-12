@@ -129,6 +129,39 @@
       contextParts.push(`[${dayForRooms} günü saat ${checkHour}:00 itibariyle boş dersliklerden bazıları (Toplam ${emptyRooms.length} boş sınıf)]:\n${emptyRooms.slice(0, 15).join(", ")}`);
     }
 
+    // 5. Sınav Takvimi ve Duyuruları Arama
+    if (qNorm.includes("sinav") || qNorm.includes("vize") || qNorm.includes("final") || qNorm.includes("butunleme") || qNorm.includes("takvim")) {
+      const rawExams = (typeof EXAM_DATA !== "undefined" && EXAM_DATA && EXAM_DATA.departments) ? EXAM_DATA.departments : {};
+      let examHits = [];
+      const words = qNorm.split(/\s+/).filter(w => w.length > 3);
+      Object.entries(rawExams).forEach(([k, d]) => {
+        if (k === "_genel") return;
+        const nameNorm = cleanStr(d.name || "");
+        const facNorm = cleanStr(d.faculty || "");
+        const matches = words.filter(w => nameNorm.includes(w) || facNorm.includes(w));
+        if (matches.length > 0) {
+          examHits.push({ dept: d, score: matches.length });
+        }
+      });
+
+      examHits.sort((a, b) => b.score - a.score);
+      const targetDepts = examHits.length > 0 
+        ? examHits.slice(0, 5).map(h => h.dept) 
+        : Object.values(rawExams).filter(d => d.has_announcement).slice(0, 6);
+
+      if (targetDepts.length > 0) {
+        const examSummary = targetDepts.map(d => {
+          if (d.has_announcement && d.announcements && d.announcements.length > 0) {
+            const a = d.announcements[0];
+            return `- ${d.name}: [YAYINDA] "${a.title}" (Tarih: ${a.date}) Duyuru: ${a.url}`;
+          } else {
+            return `- ${d.name}: [HENÜZ DUYURULMADI] Resmi sitede henüz yayınlanmadı.`;
+          }
+        }).join("\n");
+        contextParts.push(`[GÜNCEL BTÜ SINAV TAKVİMİ DURUMU]:\n${examSummary}`);
+      }
+    }
+
     return contextParts.join("\n\n");
   }
 

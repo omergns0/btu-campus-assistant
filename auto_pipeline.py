@@ -372,13 +372,26 @@ def main():
             import shutil
             shutil.copyfile("courses_data.js", os.path.join("extension", "courses_data.js"))
             shutil.copyfile("data.js", os.path.join("extension", "data.js"))
+            if os.path.exists("exam_schedules.js"):
+                shutil.copyfile("exam_schedules.js", os.path.join("extension", "exam_schedules.js"))
         except Exception as e:
             print(f"[-] Extension senkronizasyon uyarisi: {e}")
+
+    # 4. Sınav Takvimlerini Tara ve Güncelle
+    try:
+        from scrape_exams import main as scrape_exams_main
+        print("\n=== Sınav Takvimleri Taranıyor ===")
+        scrape_exams_main()
+        if os.path.isdir("extension") and os.path.exists("exam_schedules.js"):
+            import shutil
+            shutil.copyfile("exam_schedules.js", os.path.join("extension", "exam_schedules.js"))
+    except Exception as e:
+        print(f"[-] Sınav takvimi tarama uyarisi: {e}")
 
     print("\n[✓] İŞLEM TAMAMLANDI!")
     print(f"Toplam Ayrıştırılan Bölüm Programı: {len(all_programs)}")
     print(f"Toplam Ders Saati Slotu: {total_slots}")
-    print(f"Oluşturulan/Güncellenen Dosyalar: courses_data.js & data.js")
+    print(f"Oluşturulan/Güncellenen Dosyalar: courses_data.js, data.js & exam_schedules.js")
 
 if __name__ == "__main__":
     main()

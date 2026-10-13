@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="popup.css">
   <script src="data.js"></script>
   <script src="courses_data.js"></script>
+  <script src="exam_schedules.js"></script>
+  <script src="supabase_config.js"></script>
   <script src="popup.js" defer></script>
 </head>
 <body>
@@ -15,20 +17,38 @@
       <div class="logo">BTÜ</div>
       <div class="brand-text">
         <h1>BTÜ Kampüs Asistanı</h1>
-        <span class="subtitle">Hızlı Ders & Sınıf Rehberi</span>
+        <span class="subtitle">Ders & Sınav Portalı</span>
       </div>
     </div>
     <div class="header-actions">
+      <!-- Kullanıcı / Giriş Alanı -->
+      <button id="btn-ext-auth" class="btn-auth-header" title="Giriş Yap veya Web Sitesiyle Eşitle">
+        👤 Giriş Yap
+      </button>
+      <div id="ext-user-profile" class="user-profile-header hidden">
+        <span id="ext-user-email" class="user-email-text truncate"></span>
+        <button id="btn-ext-logout" class="btn-icon-tiny" title="Çıkış Yap">✕</button>
+      </div>
+
       <a href="https://omergns0.github.io/btu-campus-assistant/" target="_blank" class="btn-external" id="btn-open-web" title="Tam Ekran Web Sitesinde Aç">
         🌐 Web
       </a>
     </div>
   </header>
 
+  <!-- Yaklaşan Sınav Bildirim Çubuğu (Varsa) -->
+  <div id="ext-exam-alert" class="exam-alert-pill hidden">
+    <span class="alert-icon">⏰</span>
+    <div class="alert-content">
+      <strong id="ext-exam-alert-title">YARIN SINAVIN VAR!</strong>
+      <span id="ext-exam-alert-desc"></span>
+    </div>
+  </div>
+
   <!-- Modül Sekmeleri -->
   <nav class="tabs">
     <button class="tab-btn active" data-tab="empty" id="tab-btn-empty">
-      <span class="icon">🏢</span> Boş Sınıf
+      <span class="icon">🏢</span> Sınıf
     </button>
     <button class="tab-btn" data-tab="timetable" id="tab-btn-timetable">
       <span class="icon">📅</span> Program
@@ -38,6 +58,9 @@
     </button>
     <button class="tab-btn" data-tab="planner" id="tab-btn-planner">
       <span class="icon">🧩</span> Taslak
+    </button>
+    <button class="tab-btn" data-tab="exams" id="tab-btn-exams">
+      <span class="icon">📝</span> Sınavlar
     </button>
   </nav>
 
@@ -115,7 +138,6 @@
         </div>
       </div>
 
-      <!-- Sonuç Listesi -->
       <div id="empty-results" class="results-container"></div>
     </section>
 
@@ -129,7 +151,6 @@
           </select>
         </div>
 
-        <!-- Gün Filtresi (Tümü / Bugün / Pzt...) -->
         <div class="days-row" id="tt-day-buttons">
           <button class="chip-btn active" data-day="TODAY">Bugün</button>
           <button class="chip-btn" data-day="ALL">Tüm Hafta</button>
@@ -157,7 +178,6 @@
         </div>
       </div>
 
-      <!-- Hoca Detayı (varsa) veya Hoca Listesi -->
       <div id="inst-detail-box" class="detail-box hidden">
         <div class="detail-header">
           <div class="detail-title-wrap">
@@ -177,22 +197,98 @@
     <section id="section-planner" class="tab-section">
       <div class="planner-box">
         <div class="planner-header">
-          <h3>Kayıtlı Ders Taslağım</h3>
+          <div>
+            <h3>Kayıtlı Ders Taslağım</h3>
+            <span class="planner-subtext">Devam zorunluluğu olmayan dersler çakışma hatası vermez.</span>
+          </div>
           <span id="planner-count" class="badge">0 Ders</span>
         </div>
+
+        <!-- Senkronize Butonları -->
+        <div class="sync-actions-row">
+          <button id="btn-sync-from-web" class="btn-action-small" title="Web Sitesindeki Açık Taslağı Eklentiye Çek">
+            🔄 Web Sitesiyle Eşitle
+          </button>
+          <span id="planner-sync-status" class="sync-text">Yerel</span>
+        </div>
+
         <div id="planner-conflict-banner" class="conflict-alert hidden">
-          ⚠️ <strong>Saat Çakışması Var!</strong>
+          ⚠️ <strong>Zorunlu Saat Çakışması Var!</strong>
           <p id="planner-conflict-text"></p>
         </div>
+
         <div id="planner-courses-list" class="results-container"></div>
+        
         <div class="planner-footer">
           <a href="https://omergns0.github.io/btu-campus-assistant/" target="_blank" class="btn-primary full-width">
-            🧩 Web Sürümünde Taslağı Düzenle & Detay Gör
+            🧩 Web Sürümünde Taslağa Ders Ekle / Tablo Gör
           </a>
         </div>
       </div>
     </section>
 
+    <!-- SEKME 5: SINAV TAKVİMİ (YENİ) -->
+    <section id="section-exams" class="tab-section">
+      <div class="filter-card">
+        <!-- Aktif Bölüm Seçici -->
+        <div class="dept-selector-row">
+          <div class="dept-info">
+            <span class="label">Bölümünüz:</span>
+            <strong id="ext-user-dept-name">Bilgisayar Mühendisliği</strong>
+          </div>
+          <select id="ext-dept-select" class="select-tiny">
+            <option value="">Bölüm Değiştir...</option>
+          </select>
+        </div>
+
+        <div class="search-row">
+          <input type="text" id="ext-exam-search" placeholder="🔍 Ders veya sınav ara..." class="input-text">
+        </div>
+
+        <div class="filter-chips">
+          <button class="chip-filter active" id="ext-exam-filter-all">Tümü</button>
+          <button class="chip-filter" id="ext-exam-filter-my">🎯 Derslerim</button>
+          <button class="chip-filter" id="ext-exam-filter-announced">🟢 Yayında</button>
+        </div>
+      </div>
+
+      <div id="ext-exam-results" class="results-container"></div>
+    </section>
+
   </main>
+
+  <!-- GİRİŞ & ÜYELİK MODALI (EKLENTİ İÇİ) -->
+  <div id="ext-auth-modal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="ext-auth-title">Giriş Yap</h3>
+        <button id="ext-auth-close" class="btn-close">✕</button>
+      </div>
+
+      <div class="auth-tabs-row">
+        <button id="tab-auth-login" class="auth-tab active">Giriş Yap</button>
+        <button id="tab-auth-register" class="auth-tab">Üye Ol</button>
+      </div>
+
+      <div id="ext-auth-msg" class="auth-msg hidden"></div>
+
+      <form id="ext-auth-form" class="auth-form">
+        <div class="form-group">
+          <label>E-posta</label>
+          <input type="email" id="ext-auth-email" required placeholder="ornek@ogrenci.btu.edu.tr" class="input-text">
+        </div>
+        <div class="form-group">
+          <label>Şifre</label>
+          <input type="password" id="ext-auth-password" required minlength="6" placeholder="En az 6 karakter" class="input-text">
+        </div>
+        <button type="submit" id="ext-auth-submit" class="btn-primary full-width">Giriş Yap</button>
+      </form>
+
+      <div class="auth-footer-help">
+        <button id="btn-modal-sync-tab" class="btn-link">🌐 Açık web sekmesinden oturumu tanı</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

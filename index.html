@@ -13,6 +13,100 @@
   <link rel="apple-touch-icon" href="icon-192.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Güvenlik & Kod Koruma (Anti-DevTools, Anti-F12, Anti-Inspect, Anti-Source) -->
+  <script>
+    (function () {
+      var isKilled = false;
+
+      function lockScreen() {
+        if (isKilled) return;
+        isKilled = true;
+        try {
+          if (document.body) {
+            document.body.innerHTML = '';
+          }
+          document.documentElement.innerHTML = '<head><title>Erişim Engellendi</title><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;min-height:100vh;background:#030712;color:#f43f5e;font-family:system-ui,-apple-system,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;box-sizing:border-box;"><div style="background:#0f172a;border:1px solid #1e293b;padding:36px;border-radius:20px;max-width:540px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.5);"><div style="font-size:48px;margin-bottom:16px;">⛔</div><h1 style="color:#fff;font-size:20px;font-weight:700;margin:0 0 10px 0;">Geliştirici Araçları Engellendi</h1><p style="color:#94a3b8;font-size:14px;line-height:1.6;margin:0 0 20px 0;">Bu platformun kaynak kodlarını ve ağ trafiğini incelemek telif ve güvenlik nedeniyle yasaklanmıştır.<br><br>Lütfen <b>Geliştirici Araçları (F12)</b> penceresini kapatıp sayfayı yenileyiniz.</p><button onclick="location.reload()" style="background:#2563eb;color:#fff;border:none;padding:10px 24px;border-radius:10px;font-weight:600;font-size:14px;cursor:pointer;">Sayfayı Yenile</button></div></body>';
+        } catch (_) {}
+
+        // Kilit döngüsü: Geliştirici araçlarını dondurur
+        setInterval(function () {
+          try {
+            (function () { return false; }['constructor']('debugger')['call']());
+          } catch (_) {}
+        }, 50);
+      }
+
+      // 1. Sağ Tık Engelleme
+      document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }, true);
+
+      // 2. Kısayol Tuşlarını Engelleme (F12, Ctrl+Shift+I/J/C, Ctrl+U, Ctrl+S)
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'F12' || e.keyCode === 123) {
+          e.preventDefault();
+          e.stopPropagation();
+          lockScreen();
+          return false;
+        }
+        if ((e.ctrlKey && e.shiftKey) || (e.metaKey && e.altKey)) {
+          var k = (e.key || '').toUpperCase();
+          if (k === 'I' || k === 'J' || k === 'C' || e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67) {
+            e.preventDefault();
+            e.stopPropagation();
+            lockScreen();
+            return false;
+          }
+        }
+        if (e.ctrlKey || e.metaKey) {
+          var k2 = (e.key || '').toUpperCase();
+          if (k2 === 'U' || k2 === 'S' || e.keyCode === 85 || e.keyCode === 83) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+        }
+      }, true);
+
+      // 3. Konsol Çıktılarını Devre Dışı Bırakma
+      try {
+        var _noop = function () {};
+        ['log', 'debug', 'info', 'warn', 'error', 'table', 'dir', 'trace', 'clear'].forEach(function (m) {
+          if (window.console && window.console[m]) {
+            window.console[m] = _noop;
+          }
+        });
+      } catch (_) {}
+
+      // 4. Boyut Farkından DevTools Tespiti (Ekran görüntüsündeki gibi yanaşık DevTools açıldığında anında yakalar)
+      function checkDevToolsDocked() {
+        var threshold = 160;
+        var ratio = window.devicePixelRatio || 1;
+        var widthDiff = window.outerWidth - (window.innerWidth * ratio);
+        var heightDiff = window.outerHeight - (window.innerHeight * ratio);
+        // Eğer fark belirginse ve pencere küçülmüşse
+        if ((window.outerWidth - window.innerWidth > threshold) || (window.outerHeight - window.innerHeight > threshold)) {
+          lockScreen();
+        }
+      }
+      window.addEventListener('resize', checkDevToolsDocked);
+      setInterval(checkDevToolsDocked, 500);
+
+      // 5. Zamanlama (Timing Attack) ile DevTools Tespiti (Debugger duraksarsa yakalar)
+      setInterval(function () {
+        var t0 = performance.now();
+        try {
+          (function () { return false; }['constructor']('debugger')['call']());
+        } catch (_) {}
+        var t1 = performance.now();
+        if (t1 - t0 > 100) {
+          lockScreen();
+        }
+      }, 250);
+    })();
+  </script>
   <!-- Yerel veri kaynakları -->
   <script src="data.js?v=2"></script>
   <script src="courses_data.js?v=2"></script>
@@ -1281,6 +1375,14 @@
       renderPlannerGrid();
     }
 
+    function toggleCourseAttendance(index) {
+      if (!plannedCourses[index]) return;
+      plannedCourses[index].noAttendance = !plannedCourses[index].noAttendance;
+      persistPlan();
+      renderPlannerList();
+      renderPlannerGrid();
+    }
+
     function renderPlannerList() {
       const listDiv = document.getElementById("planner-selected-list");
       document.getElementById("planner-count").innerText = `${plannedCourses.length} Ders Eklendi`;
@@ -1291,16 +1393,28 @@
       }
 
       listDiv.innerHTML = plannedCourses.map((c, i) => `
-        <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-between gap-2">
-          <div class="overflow-hidden">
-            <div class="flex items-center gap-1.5">
-              <span class="font-bold text-xs text-blue-400">${c.code || ''}</span>
-              <span class="text-[10px] bg-slate-800 text-slate-300 px-1 rounded">${c.section}</span>
+        <div class="p-2.5 rounded-xl bg-slate-900 border ${c.noAttendance ? 'border-emerald-500/40 shadow-sm shadow-emerald-950/30' : 'border-slate-700/80'} flex flex-col gap-1.5">
+          <div class="flex items-start justify-between gap-2">
+            <div class="overflow-hidden min-w-0">
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="font-bold text-xs text-blue-400">${c.code || ''}</span>
+                <span class="text-[10px] bg-slate-800 text-slate-300 px-1 rounded">${c.section}</span>
+                ${c.noAttendance ? `
+                  <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[9px] font-bold">✓ Devam Muafiyeti</span>
+                ` : ''}
+              </div>
+              <p class="text-xs font-medium text-slate-200 truncate mt-0.5">${c.name}</p>
+              <p class="text-[10px] text-slate-400 truncate">${c.programTitle}</p>
             </div>
-            <p class="text-xs text-slate-200 truncate mt-0.5">${c.name}</p>
-            <p class="text-[10px] text-slate-400 truncate">${c.programTitle}</p>
+            <button onclick="removeCourseFromPlan(${i})" class="text-rose-400 hover:text-rose-300 text-xs px-2 py-1 rounded bg-rose-950/40 shrink-0">Sil</button>
           </div>
-          <button onclick="removeCourseFromPlan(${i})" class="text-rose-400 hover:text-rose-300 text-xs px-2 py-1 rounded bg-rose-950/40">Sil</button>
+          <!-- Devam Zorunluluğu Yok (Alttan Ders) Seçeneği -->
+          <div class="pt-1.5 border-t border-slate-800/80">
+            <label class="flex items-center gap-2 cursor-pointer text-[11px] text-slate-300 hover:text-white select-none">
+              <input type="checkbox" onchange="toggleCourseAttendance(${i})" ${c.noAttendance ? 'checked' : ''} class="w-3.5 h-3.5 rounded border-slate-700 bg-slate-800 text-emerald-600 focus:ring-0 cursor-pointer">
+              <span class="${c.noAttendance ? 'text-emerald-300 font-semibold' : 'text-slate-400'}">Devam zorunluluğum yok (Alttan ders)</span>
+            </label>
+          </div>
         </div>
       `).join("");
     }
@@ -1314,25 +1428,36 @@
       const conflicts = [];
 
       plannedCourses.forEach(course => {
-        course.slots.forEach(slot => {
+        (course.slots || []).forEach(slot => {
           const key = `${cleanStr(slot.day)}_${slot.hour}`;
           if (!timeSlotMap[key]) {
             timeSlotMap[key] = [];
           }
           timeSlotMap[key].push({ course, slot });
-          if (timeSlotMap[key].length > 1) {
+        });
+      });
+
+      // ÇAKIŞMA KONTROLÜ:
+      // Eğer bir saatte birden fazla ders varsa ama aralarından biri "Devam Zorunluluğum Yok" olarak
+      // işaretlendiyse ÇAKIŞMA HATASI VERİLMEZ!
+      // Yalnızca devam zorunluluğu olan ders sayısı > 1 ise çakışma sayılır.
+      Object.entries(timeSlotMap).forEach(([key, items]) => {
+        if (items.length > 1) {
+          const mandatoryItems = items.filter(x => !x.course.noAttendance);
+          if (mandatoryItems.length > 1) {
+            const firstSlot = items[0].slot;
             conflicts.push({
-              day: slot.day,
-              hour: slot.hour,
-              courses: timeSlotMap[key].map(x => x.course.code || x.course.name)
+              day: firstSlot.day,
+              hour: firstSlot.hour,
+              courses: mandatoryItems.map(x => x.course.code || x.course.name)
             });
           }
-        });
+        }
       });
 
       if (conflicts.length > 0) {
         alertDiv.classList.remove("hidden");
-        alertDesc.innerHTML = conflicts.map(c => `<strong>${c.day} ${c.hour}:00</strong> saatinde (${c.courses.join(" ile ")}) çakışıyor!`).join("<br>");
+        alertDesc.innerHTML = conflicts.map(c => `<strong>${c.day} ${c.hour}:00</strong> saatinde (${c.courses.join(" ile ")}) zorunlu devam çakışması var!`).join("<br>");
       } else {
         alertDiv.classList.add("hidden");
       }
@@ -1346,14 +1471,42 @@
         DAYS.forEach(day => {
           const key = `${cleanStr(day)}_${h}`;
           const items = timeSlotMap[key] || [];
-          const hasConflict = items.length > 1;
+          
+          const mandatoryCount = items.filter(x => !x.course.noAttendance).length;
+          const hasConflict = mandatoryCount > 1; // Gerçek çakışma
+          const hasExempt = items.length > 1 && !hasConflict; // Alttan ders muafiyetiyle çakışma önlendi
 
-          gridHtml += `<td class="p-2 border-r border-slate-800/80 align-top ${hasConflict ? 'bg-rose-950/30' : (items.length ? 'bg-blue-950/20' : '')}">`;
+          let cellBg = "";
+          if (hasConflict) cellBg = "bg-rose-950/30";
+          else if (hasExempt) cellBg = "bg-emerald-950/20";
+          else if (items.length > 0) cellBg = "bg-blue-950/20";
+
+          gridHtml += `<td class="p-2 border-r border-slate-800/80 align-top ${cellBg}">`;
           if (items.length > 0) {
-            items.forEach(it => {
+            if (hasExempt) {
               gridHtml += `
-                <div class="p-2 rounded-xl mb-1 text-[11px] ${hasConflict ? 'bg-rose-900/60 border border-rose-600 text-rose-100 animate-pulse' : 'bg-blue-900/40 border border-blue-700/60 text-blue-100'}">
-                  <div class="font-bold">${it.course.code} (${it.course.section})</div>
+                <div class="mb-1 px-1.5 py-0.5 rounded bg-emerald-500/20 border border-emerald-500/40 text-[9px] font-bold text-emerald-300 text-center">
+                  ✓ Devam Muafiyeti (Çakışma Engeli Yok)
+                </div>
+              `;
+            }
+            items.forEach(it => {
+              const isNoAtt = !!it.course.noAttendance;
+              let cardStyle = "";
+              if (hasConflict) {
+                cardStyle = isNoAtt ? "bg-amber-950/50 border border-amber-600/60 text-amber-100" : "bg-rose-900/60 border border-rose-600 text-rose-100 animate-pulse";
+              } else if (isNoAtt) {
+                cardStyle = "bg-emerald-950/50 border border-emerald-600/60 text-emerald-100";
+              } else {
+                cardStyle = "bg-blue-900/40 border border-blue-700/60 text-blue-100";
+              }
+
+              gridHtml += `
+                <div class="p-2 rounded-xl mb-1 text-[11px] ${cardStyle}">
+                  <div class="flex items-center justify-between gap-1 font-bold">
+                    <span>${it.course.code} (${it.course.section})</span>
+                    ${isNoAtt ? '<span class="text-[9px] font-normal text-emerald-300">Muaf</span>' : ''}
+                  </div>
                   <div class="truncate">${it.course.name}</div>
                   <div class="text-[10px] opacity-75">${it.slot.classroom || ''}</div>
                 </div>
@@ -1370,13 +1523,13 @@
 
     // --- TASLAK KAYDI (localStorage + Supabase hesabı) ---
     function rehydrateCourse(c) {
-      // Veri güncellenmiş olabilir; saatleri güncel programdan yeniden çek
       const prog = rawPrograms[c.programKey];
       if (prog) {
         const fresh = (prog.courses || []).filter(s => s.code === c.code && s.section === c.section && s.name === c.name);
         if (fresh.length) c.slots = fresh;
       }
       c.slots = c.slots || [];
+      c.noAttendance = !!c.noAttendance;
       return c;
     }
 

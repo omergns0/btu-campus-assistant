@@ -1,16 +1,1 @@
-// ============================================================
-// Supabase Yapılandırması
-// ------------------------------------------------------------
-// Supabase panelinde: Project Settings → API bölümünden
-//   - Project URL  → SUPABASE_URL
-//   - anon public  → SUPABASE_ANON_KEY
-// değerlerini kopyalayıp aşağıya yapıştırın.
-//
-// NOT: "anon" anahtarı tarayıcıda herkese açık olacak şekilde
-// tasarlanmıştır; veriler Row Level Security (RLS) ile korunur.
-// "service_role" anahtarını ASLA buraya koymayın!
-// ============================================================
-window.SUPABASE_CONFIG = {
-  SUPABASE_URL: "https://lgdddnhxdpmjzegotxmu.supabase.co",
-  SUPABASE_ANON_KEY: "sb_publishable_4tn02rFpOCaxvVc3mLBv1g_SaKOW_MA"
-};
+function a0_0x2632(_0x1c5ca8,_0x414141){_0x1c5ca8=_0x1c5ca8-0x127;var _0x2b2c72=a0_0x2b2c();var _0x263274=_0x2b2c72[_0x1c5ca8];if(a0_0x2632['DjTwHZ']===undefined){var _0x391642=function(_0x36b708){var _0x6738ac='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';var _0x2c0fe5='',_0xe0149f='';for(var _0x3695b=0x0,_0x342fcb,_0x9eb438,_0x5a3de3=0x0;_0x9eb438=_0x36b708['charAt'](_0x5a3de3++);~_0x9eb438&&(_0x342fcb=_0x3695b%0x4?_0x342fcb*0x40+_0x9eb438:_0x9eb438,_0x3695b++%0x4)?_0x2c0fe5+=String['fromCharCode'](0xff&_0x342fcb>>(-0x2*_0x3695b&0x6)):0x0){_0x9eb438=_0x6738ac['indexOf'](_0x9eb438);}for(var _0x12613c=0x0,_0x4b4581=_0x2c0fe5['length'];_0x12613c<_0x4b4581;_0x12613c++){_0xe0149f+='%'+('00'+_0x2c0fe5['charCodeAt'](_0x12613c)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0xe0149f);};a0_0x2632['lhcsBh']=_0x391642,a0_0x2632['bQLlFL']={},a0_0x2632['DjTwHZ']=!![];}var _0x288813=_0x2b2c72[0x0];a0_0x2632['joggfI']!==_0x288813&&(a0_0x2632['bQLlFL']={},a0_0x2632['joggfI']=_0x288813);var _0x5591ab=a0_0x2632['bQLlFL'][_0x1c5ca8];return _0x5591ab===undefined?(_0x263274=a0_0x2632['lhcsBh'](_0x263274),a0_0x2632['bQLlFL'][_0x1c5ca8]=_0x263274):_0x263274=_0x5591ab,_0x263274;}var a0_0x2a78e1=a0_0x2632;(function(_0x12c312,_0x42cf38){var _0xf6d49=a0_0x2632,_0x269a63=_0x12c312();while(!![]){try{var _0x2e478b=-parseInt(_0xf6d49(0x12b))/0x1+parseInt(_0xf6d49(0x127))/0x2+-parseInt(_0xf6d49(0x12f))/0x3+parseInt(_0xf6d49(0x12e))/0x4+-parseInt(_0xf6d49(0x130))/0x5*(parseInt(_0xf6d49(0x12c))/0x6)+parseInt(_0xf6d49(0x12a))/0x7+parseInt(_0xf6d49(0x12d))/0x8;if(_0x2e478b===_0x42cf38)break;else _0x269a63['push'](_0x269a63['shift']());}catch(_0x5ee0fc){_0x269a63['push'](_0x269a63['shift']());}}}(a0_0x2b2c,0x38a9b),window['SUPABASE_CONFIG']={'SUPABASE_URL':a0_0x2a78e1(0x129),'SUPABASE_ANON_KEY':a0_0x2a78e1(0x128)});function a0_0x2b2c(){var _0x5da2c1=['mteWmZeYne10C01KDq','mZa1nxvMB2neCa','odC1odzmr1HdD1a','C2jFChvIBgLZAgfIBgvFnhrUmdjYrNbpq2f4DLzJm21mqNyXz19tyuTpv19nqq','Ahr0Chm6lY9Sz2rKzg5OEgrWBwP6zwDVDhHTDs5ZDxbHyMfZzs5JBW','mtG3otC1ovbPuwvPyG','ndyYmJaWAff0tKTk','mJGWmKr5shfArW','ndK2ntGWmgT0vhLLDW','mty1nZeYnhH3ywvbzW'];a0_0x2b2c=function(){return _0x5da2c1;};return a0_0x2b2c();}

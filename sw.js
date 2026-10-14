@@ -1,1 +1,100 @@
-const a0_0x560460=a0_0x532e;(function(_0x470dcc,_0x327f8b){const _0x4edd49=a0_0x532e,_0x3285f6=_0x470dcc();while(!![]){try{const _0x5b6a7a=-parseInt(_0x4edd49(0x145))/0x1*(parseInt(_0x4edd49(0x136))/0x2)+-parseInt(_0x4edd49(0x142))/0x3+parseInt(_0x4edd49(0x12f))/0x4*(parseInt(_0x4edd49(0x149))/0x5)+parseInt(_0x4edd49(0x13f))/0x6*(-parseInt(_0x4edd49(0x14b))/0x7)+parseInt(_0x4edd49(0x141))/0x8+parseInt(_0x4edd49(0x138))/0x9+parseInt(_0x4edd49(0x12b))/0xa;if(_0x5b6a7a===_0x327f8b)break;else _0x3285f6['push'](_0x3285f6['shift']());}catch(_0x5c8221){_0x3285f6['push'](_0x3285f6['shift']());}}}(a0_0x2ce8,0x6fc71));function a0_0x2ce8(){const _0x11eb74=['y2f0y2G','Aw5ZDgfSBa','CMvXDwvZDa','Chv0','lI9PBMrLEc5ODg1S','ALLNq3K','Bwf0y2G','yNr1lxb3ys12mq','DNPev3G','mtG3mZKYmhnKvuvWzW','Bwv0Ag9K','lI9HDxrOlMPZ','y2XHAw0','mJy4mtyWnhLIDfz1ua','B3jPz2LU','ELnvCgu','C3rHDhvZ','we95Cvy','BMf2AwDHDgu','ywrKrxzLBNrmAxn0zw5LCG','mtm0tw5ksgD1','tKnYrgm','nJe5mtuXnenZBwPvtW','zMv0y2G','zMLSDgvY','zgvSzxrL','zKvhzxu','DgHLBG','tujvzgC','mJi0nZzMsg1Qwgy','Bg9JyxrPB24','mZG2mJC2me1quwXfAa','nZCZmtKWuvzAtLv1','CMvZCg9UzfDPDgG','y2XVBMu','mta5odDTDMvKuhi','Ahzxs0y','y2XPzw50CW','lI9ZDxbHyMfZzv9JB25MAwCUANm','nu5ctenzDG','ywn0AxzHDgu','mta3ogLszKLJzq','B3bLBG','ywXS','lI9Tyw5PzMvZDc53zwjTyw5PzMvZDa','lI9Py29Ulte5mI5WBMC','ywrKqwXS','Bw9Kzq','D2fPDfvUDgLS','BwfW','C2TPCfDHAxrPBMC'];a0_0x2ce8=function(){return _0x11eb74;};return a0_0x2ce8();}function a0_0x532e(_0x5beff5,_0x2ee591){_0x5beff5=_0x5beff5-0x125;const _0x2ce80a=a0_0x2ce8();let _0x532ef6=_0x2ce80a[_0x5beff5];if(a0_0x532e['ZcVURt']===undefined){var _0x22b484=function(_0x3760ff){const _0x56393f='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x47c16b='',_0x41c0a0='';for(let _0x23463e=0x0,_0xaae1b8,_0x41dea3,_0x2a2048=0x0;_0x41dea3=_0x3760ff['charAt'](_0x2a2048++);~_0x41dea3&&(_0xaae1b8=_0x23463e%0x4?_0xaae1b8*0x40+_0x41dea3:_0x41dea3,_0x23463e++%0x4)?_0x47c16b+=String['fromCharCode'](0xff&_0xaae1b8>>(-0x2*_0x23463e&0x6)):0x0){_0x41dea3=_0x56393f['indexOf'](_0x41dea3);}for(let _0x42c64b=0x0,_0x33c53c=_0x47c16b['length'];_0x42c64b<_0x33c53c;_0x42c64b++){_0x41c0a0+='%'+('00'+_0x47c16b['charCodeAt'](_0x42c64b)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x41c0a0);};a0_0x532e['NXwqWi']=_0x22b484,a0_0x532e['RQtXSI']={},a0_0x532e['ZcVURt']=!![];}const _0x1eb192=_0x2ce80a[0x0];a0_0x532e['wIRHEB']!==_0x1eb192&&(a0_0x532e['RQtXSI']={},a0_0x532e['wIRHEB']=_0x1eb192);const _0x24ccb6=a0_0x532e['RQtXSI'][_0x5beff5];return _0x24ccb6===undefined?(_0x532ef6=a0_0x532e['NXwqWi'](_0x532ef6),a0_0x532e['RQtXSI'][_0x5beff5]=_0x532ef6):_0x532ef6=_0x24ccb6,_0x532ef6;}const CACHE_NAME=a0_0x560460(0x129),PRECACHE_ASSETS=['./','./index.html',a0_0x560460(0x14e),a0_0x560460(0x14f),'./icon-512.png',a0_0x560460(0x148),a0_0x560460(0x12d)];self[a0_0x560460(0x135)](a0_0x560460(0x156),_0x3a50e9=>{const _0x3febe2=a0_0x560460;_0x3a50e9[_0x3febe2(0x152)](caches[_0x3febe2(0x14c)](CACHE_NAME)['then'](_0x54548d=>{const _0x2081dd=_0x3febe2;return _0x54548d[_0x2081dd(0x150)](PRECACHE_ASSETS);})['then'](()=>self[_0x3febe2(0x154)]()));}),self[a0_0x560460(0x135)](a0_0x560460(0x14a),_0x3d8d62=>{const _0x3369be=a0_0x560460;_0x3d8d62['waitUntil'](caches['keys']()[_0x3369be(0x13d)](_0x10a8f6=>{const _0x48abba=_0x3369be;return Promise[_0x48abba(0x14d)](_0x10a8f6[_0x48abba(0x13a)](_0x36e5d2=>_0x36e5d2!==CACHE_NAME)[_0x48abba(0x153)](_0x59f432=>caches[_0x48abba(0x13b)](_0x59f432)));})[_0x3369be(0x13d)](()=>self[_0x3369be(0x147)][_0x3369be(0x12e)]()));}),self['addEventListener'](a0_0x560460(0x139),_0x58c056=>{const _0x399628=a0_0x560460,_0x3c2a8f={'zSUpe':function(_0x176f25,_0x323e5f){return _0x176f25===_0x323e5f;},'fEGeu':function(_0x55a3dc,_0x11ecdc){return _0x55a3dc(_0x11ecdc);},'NCrDc':function(_0x24d390,_0x439955){return _0x24d390===_0x439955;},'hvWKF':_0x399628(0x134),'XOyqV':'GET','xJHTS':function(_0x1d5175,_0x4e3ace){return _0x1d5175(_0x4e3ace);}};if(_0x58c056[_0x399628(0x157)][_0x399628(0x12c)]!==_0x3c2a8f[_0x399628(0x133)])return;const _0x3567b7=new URL(_0x58c056[_0x399628(0x157)]['url']);if(_0x3567b7[_0x399628(0x130)]!==self[_0x399628(0x140)][_0x399628(0x130)]){_0x58c056[_0x399628(0x143)](caches[_0x399628(0x14c)](CACHE_NAME)[_0x399628(0x13d)](_0x4bf41d=>{const _0x299906=_0x399628,_0x5ba4c1={'MBUdg':function(_0x459e96,_0x3410ec){const _0x5b60ac=a0_0x532e;return _0x3c2a8f[_0x5b60ac(0x131)](_0x459e96,_0x3410ec);},'vzDWx':function(_0x6ae8f1,_0x4e59bb){const _0x17fc53=a0_0x532e;return _0x3c2a8f[_0x17fc53(0x13c)](_0x6ae8f1,_0x4e59bb);}};return _0x4bf41d[_0x299906(0x128)](_0x58c056[_0x299906(0x157)])['then'](_0x1adb1c=>{const _0x40b099=_0x299906,_0x222c4d={'jYgCy':function(_0x4a66f2,_0x216d64){const _0x1a84af=a0_0x532e;return _0x5ba4c1[_0x1a84af(0x13e)](_0x4a66f2,_0x216d64);}},_0x55a410=_0x5ba4c1[_0x40b099(0x12a)](fetch,_0x58c056['request'])['then'](_0x2b9466=>{const _0x1e8b8d=_0x40b099;return _0x2b9466&&_0x222c4d[_0x1e8b8d(0x127)](_0x2b9466[_0x1e8b8d(0x132)],0xc8)&&_0x4bf41d[_0x1e8b8d(0x125)](_0x58c056['request'],_0x2b9466[_0x1e8b8d(0x144)]()),_0x2b9466;})[_0x40b099(0x155)](()=>_0x1adb1c);return _0x1adb1c||_0x55a410;});}));return;}_0x58c056[_0x399628(0x143)](_0x3c2a8f['xJHTS'](fetch,_0x58c056[_0x399628(0x157)])[_0x399628(0x13d)](_0x46749f=>{const _0x40deee=_0x399628;if(_0x46749f&&_0x3c2a8f[_0x40deee(0x131)](_0x46749f[_0x40deee(0x132)],0xc8)){const _0x346b9e=_0x46749f[_0x40deee(0x144)]();caches[_0x40deee(0x14c)](CACHE_NAME)[_0x40deee(0x13d)](_0x390d2d=>{const _0xb99880=_0x40deee;_0x390d2d[_0xb99880(0x125)](_0x58c056[_0xb99880(0x157)],_0x346b9e);});}return _0x46749f;})['catch'](()=>{const _0x563e3f=_0x399628;return caches['match'](_0x58c056[_0x563e3f(0x157)])[_0x563e3f(0x13d)](_0x1a0f91=>{const _0xedc1dc=_0x563e3f;if(_0x1a0f91)return _0x1a0f91;if(_0x3c2a8f[_0xedc1dc(0x137)](_0x58c056[_0xedc1dc(0x157)][_0xedc1dc(0x151)],_0x3c2a8f[_0xedc1dc(0x146)]))return caches['match'](_0xedc1dc(0x126));});}));});
+// ============================================================
+// BTÜ Kampüs Asistanı - PWA Service Worker (sw.js)
+// ============================================================
+
+const CACHE_NAME = "btu-pwa-v2";
+
+const PRECACHE_ASSETS = [
+  "./",
+  "./index.html",
+  "./manifest.webmanifest",
+  "./icon-192.png",
+  "./icon-512.png",
+  "./supabase_config.js",
+  "./auth.js"
+];
+
+// 1. Kurulum (Install)
+self.addEventListener("install", event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(PRECACHE_ASSETS);
+    }).then(() => self.skipWaiting())
+  );
+});
+
+// 2. Aktifleştirme (Activate) & Eski Önbellekleri Temizleme
+self.addEventListener("activate", event => {
+  event.waitUntil(
+    caches.keys().then(keys => {
+      return Promise.all(
+        keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
+      );
+    }).then(() => self.clients.claim())
+  );
+});
+
+// 3. İstek Yakalama (Fetch): Network-First, Çevrimdışıysa Cache
+self.addEventListener("fetch", event => {
+  if (event.request.method !== "GET") return;
+
+  const url = new URL(event.request.url);
+
+  // Harici CDN veya analytics istekleri
+  if (url.origin !== self.location.origin) {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(cache => {
+        return cache.match(event.request).then(cached => {
+          const fetchPromise = fetch(event.request).then(networkResponse => {
+            if (networkResponse && networkResponse.status === 200) {
+              cache.put(event.request, networkResponse.clone());
+            }
+            return networkResponse;
+          }).catch(() => cached);
+          return cached || fetchPromise;
+        });
+      })
+    );
+    return;
+  }
+
+  // Dinamik sınav programı verileri ve versiyonlu istekler DAİMA taze ağdan gelsin
+  if (url.pathname.includes("exam_schedules") || url.search.includes("v=") || url.search.includes("t=")) {
+    event.respondWith(
+      fetch(event.request)
+        .then(networkResponse => {
+          if (networkResponse && networkResponse.status === 200) {
+            const resClone = networkResponse.clone();
+            caches.open(CACHE_NAME).then(cache => {
+              cache.put(event.request, resClone);
+            });
+          }
+          return networkResponse;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
+  // Yerel dosyalar için Network-First stratejisi (yeni veri varsa çek, yoksa cache'den ver)
+  event.respondWith(
+    fetch(event.request)
+      .then(networkResponse => {
+        if (networkResponse && networkResponse.status === 200) {
+          const resClone = networkResponse.clone();
+          caches.open(CACHE_NAME).then(cache => {
+            cache.put(event.request, resClone);
+          });
+        }
+        return networkResponse;
+      })
+      .catch(() => {
+        return caches.match(event.request).then(cachedResponse => {
+          if (cachedResponse) return cachedResponse;
+          if (event.request.mode === "navigate") {
+            return caches.match("./index.html");
+          }
+        });
+      })
+  );
+});

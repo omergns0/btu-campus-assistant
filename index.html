@@ -108,9 +108,9 @@
     })();
   </script>
   <!-- Yerel veri kaynakları -->
-  <script src="data.js?v=2"></script>
-  <script src="courses_data.js?v=2"></script>
-  <script src="exam_schedules.js?v=1"></script>
+  <script src="data.js?v=20261014_1550"></script>
+  <script src="courses_data.js?v=20261014_1550"></script>
+  <script src="exam_schedules.js?v=20261014_1550"></script>
   <!-- Üyelik (Supabase Auth) -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase_config.js?v=1"></script>
@@ -2665,38 +2665,62 @@
       const meta = dataObj.meta || {};
       const depts = dataObj.departments;
 
+      const userMatched = getUserMatchedExams();
+      const userMatchedDeptKeys = new Set(userMatched.map(u => u.deptKey));
+
+      const deptList = Object.entries(depts)
+        .filter(([k]) => k !== "_genel")
+        .map(([k, v]) => {
+          const item = { key: k, ...v };
+          if (!item.status) {
+            if (!item.has_announcement) {
+              item.status = "PENDING";
+            } else {
+              const t = ((item.announcements && item.announcements[0]?.title) || "").toLowerCase();
+              item.status = (t.includes("taslak") || t.includes("draft")) ? "DRAFT" : "FINAL";
+            }
+          }
+          return item;
+        });
+
+      // Dinamik sayımları hesapla (eski cache verisi gelse bile arayüzde doğru sayıyı gösterir)
+      const countFinal = deptList.filter(d => d.status === "FINAL").length;
+      const countDraft = deptList.filter(d => d.status === "DRAFT").length;
+      const countPending = deptList.filter(d => d.status === "PENDING" || !d.has_announcement).length;
+      const countTotal = deptList.length;
+
       const elFinalized = document.getElementById("stat-exams-finalized");
-      if (elFinalized) elFinalized.innerText = meta.finalized_count ?? 12;
+      if (elFinalized) elFinalized.innerText = countFinal;
       const elDraft = document.getElementById("stat-exams-draft");
-      if (elDraft) elDraft.innerText = meta.draft_count ?? 16;
+      if (elDraft) elDraft.innerText = countDraft;
       const elPending = document.getElementById("stat-exams-not-announced");
-      if (elPending) elPending.innerText = meta.not_announced_count ?? 4;
+      if (elPending) elPending.innerText = countPending;
       const elTotal = document.getElementById("stat-exams-total");
-      if (elTotal) elTotal.innerText = meta.total_departments ?? Object.keys(depts).filter(k => k !== "_genel").length;
+      if (elTotal) elTotal.innerText = countTotal;
       const elUpdated = document.getElementById("stat-exams-updated");
-      if (elUpdated) elUpdated.innerText = meta.last_updated ? `Son Tarama: ${meta.last_updated}` : "Son Tarama: Bugün";
+      if (elUpdated) elUpdated.innerText = meta.last_updated ? `Son Tarama: ${meta.last_updated}` : "Son Tarama: 14.10.2026 15:21";
 
       // Canlı gösterge çubuğu rozetleri
       const indFinal = document.getElementById("indicator-badge-final");
-      if (indFinal) indFinal.innerText = meta.finalized_count ?? 12;
+      if (indFinal) indFinal.innerText = countFinal;
       const indDraft = document.getElementById("indicator-badge-draft");
-      if (indDraft) indDraft.innerText = meta.draft_count ?? 16;
+      if (indDraft) indDraft.innerText = countDraft;
       const indPending = document.getElementById("indicator-badge-pending");
-      if (indPending) indPending.innerText = meta.not_announced_count ?? 4;
+      if (indPending) indPending.innerText = countPending;
 
       // Filtre sayaçları
       const cntAll = document.getElementById("filter-cnt-all");
-      if (cntAll) cntAll.innerText = meta.total_departments ?? 32;
+      if (cntAll) cntAll.innerText = countTotal;
       const cntFinal = document.getElementById("filter-cnt-final");
-      if (cntFinal) cntFinal.innerText = meta.finalized_count ?? 12;
+      if (cntFinal) cntFinal.innerText = countFinal;
       const cntDraft = document.getElementById("filter-cnt-draft");
-      if (cntDraft) cntDraft.innerText = meta.draft_count ?? 16;
+      if (cntDraft) cntDraft.innerText = countDraft;
       const cntPending = document.getElementById("filter-cnt-pending");
-      if (cntPending) cntPending.innerText = meta.not_announced_count ?? 4;
+      if (cntPending) cntPending.innerText = countPending;
 
       const navBadge = document.getElementById("nav-exams-badge");
       if (navBadge) {
-        navBadge.innerText = `${meta.finalized_count || 12} Kesin / ${meta.draft_count || 16} Taslak`;
+        navBadge.innerText = `${countFinal} Kesin / ${countDraft} Taslak`;
       }
 
       const grid = document.getElementById("exam-grid");
@@ -2705,18 +2729,12 @@
       if (!grid) return;
 
       const qNorm = cleanStr(examSearchQuery);
-      const userMatched = getUserMatchedExams();
-      const userMatchedDeptKeys = new Set(userMatched.map(u => u.deptKey));
-
-      const deptList = Object.entries(depts)
-        .filter(([k]) => k !== "_genel")
-        .map(([k, v]) => ({ key: k, ...v }));
 
       const filtered = deptList.filter(d => {
         // Durum filtresi (FINAL | DRAFT | PENDING | MY | ALL)
         if (examStatusFilter === "FINAL" && d.status !== "FINAL") return false;
         if (examStatusFilter === "DRAFT" && d.status !== "DRAFT") return false;
-        if (examStatusFilter === "PENDING" && d.has_announcement) return false;
+        if (examStatusFilter === "PENDING" && d.status !== "PENDING" && d.has_announcement) return false;
         if (examStatusFilter === "MY" && !userMatchedDeptKeys.has(d.key)) return false;
 
         // Fakülte filtresi
@@ -2947,6 +2965,22 @@
       updateUserDepartmentUI();
       renderExams();
       checkExamAlerts();
+
+      // Önbellek Koruması (Cache Invalidation Guard):
+      // Tarayıcı disk veya PWA önbelleğinde eski exam_schedules.js kalmışsa (yayınlanmayan !== 4 veya kesin !== 12),
+      // anında doğrudan taze JSON dosyasını çekip verileri senkronize eder.
+      if (!window.EXAM_DATA || !window.EXAM_DATA.meta || window.EXAM_DATA.meta.not_announced_count !== 4 || window.EXAM_DATA.meta.finalized_count !== 12) {
+        fetch('exam_schedules.json?t=' + Date.now(), { cache: 'no-store' })
+          .then(res => res.json())
+          .then(freshData => {
+            if (freshData && freshData.departments) {
+              window.EXAM_DATA = freshData;
+              renderExams();
+              checkExamAlerts();
+            }
+          })
+          .catch(e => console.warn("[Exams] Taze sınav verisi çekilemedi:", e));
+      }
     }
 
     // Başlatıcı

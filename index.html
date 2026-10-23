@@ -80,19 +80,8 @@
         });
       } catch (_) {}
 
-      // 4. Boyut Farkından DevTools Tespiti (Ekran görüntüsündeki gibi yanaşık DevTools açıldığında anında yakalar)
-      function checkDevToolsDocked() {
-        var threshold = 160;
-        var ratio = window.devicePixelRatio || 1;
-        var widthDiff = window.outerWidth - (window.innerWidth * ratio);
-        var heightDiff = window.outerHeight - (window.innerHeight * ratio);
-        // Eğer fark belirginse ve pencere küçülmüşse
-        if ((window.outerWidth - window.innerWidth > threshold) || (window.outerHeight - window.innerHeight > threshold)) {
-          lockScreen();
-        }
-      }
-      window.addEventListener('resize', checkDevToolsDocked);
-      setInterval(checkDevToolsDocked, 500);
+      // 4. Pencere boyutu farkına dayalı tespit kaldırıldı: tarayıcı yakınlaştırması (%125, %150),
+      // kenar çubukları ve bazı mobil tarayıcılarda normal kullanıcıların sayfasını yanlışlıkla kilitliyordu.
 
       // 5. Zamanlama (Timing Attack) ile DevTools Tespiti (Debugger duraksarsa yakalar)
       setInterval(function () {
@@ -321,6 +310,9 @@
               <option value="14">14:00</option>
               <option value="15">15:00</option>
               <option value="16">16:00</option>
+              <option value="17">17:00</option>
+              <option value="18">18:00</option>
+              <option value="19">19:00</option>
             </select>
           </div>
 
@@ -336,6 +328,9 @@
               <option value="15">15:00</option>
               <option value="16">16:00</option>
               <option value="17" selected>17:00</option>
+              <option value="18">18:00</option>
+              <option value="19">19:00</option>
+              <option value="20">20:00</option>
             </select>
           </div>
 
@@ -1101,7 +1096,15 @@
     const DAYS = ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma"];
     const HOURS = [8, 9, 10, 11, 12, 13, 14, 15, 16];
 
-    let selectedDay = "Pazartesi";
+    // Standart saatlere ek olarak verideki akşam/erken saatleri de tabloya ekler (ör. 17:00-19:00 dersleri)
+    function visibleHours(slots) {
+      const set = new Set(HOURS);
+      (slots || []).forEach(s => { const h = parseInt(s.hour, 10); if (h >= 7 && h <= 22) set.add(h); });
+      return Array.from(set).sort((a, b) => a - b);
+    }
+
+    // Hafta içiyse bugünün günü, hafta sonuysa Pazartesi
+    let selectedDay = DAYS[new Date().getDay() - 1] || "Pazartesi";
     let statusFilter = "EMPTY";
     let plannedCourses = [];
     const PLAN_STORAGE_KEY = "btu_planned_courses_v1";
@@ -1169,7 +1172,7 @@
       const foundBlocks = new Set();
       Object.keys(rawClassrooms).forEach(room => foundBlocks.add(getBlock(room)));
       Array.from(foundBlocks).sort().forEach(b => {
-        blockSelect.innerHTML += `<option value="${b}">${b}</option>`;
+        blockSelect.innerHTML += `<option value="${escapeHtml(b)}">${escapeHtml(b)}</option>`;
       });
 
       document.getElementById("campus-select").addEventListener("change", renderEmptyRooms);
@@ -1202,7 +1205,7 @@
       const blockVal = document.getElementById("block-select").value;
       const startH = parseInt(document.getElementById("start-time-select").value, 10);
       const endH = parseInt(document.getElementById("end-time-select").value, 10);
-      const searchVal = document.getElementById("search-input").value.toLowerCase();
+      const searchVal = cleanStr(document.getElementById("search-input").value);
       const resultsDiv = document.getElementById("results");
 
       if (endH <= startH) {
@@ -1222,7 +1225,7 @@
 
         if (campusVal !== "ALL" && roomCampus !== campusVal) return;
         if (blockVal !== "ALL" && roomBlock !== blockVal) return;
-        if (searchVal && !room.toLowerCase().includes(searchVal)) return;
+        if (searchVal && !cleanStr(room).includes(searchVal)) return;
 
         const conflicts = schedule.filter(s => {
           if (cleanStr(s.day) !== normDay) return false;
@@ -1249,7 +1252,7 @@
             <div>
               <div class="flex items-start justify-between gap-2 mb-2">
                 <div>
-                  <h3 class="font-bold text-white text-base">${room}</h3>
+                  <h3 class="font-bold text-white text-base">${escapeHtml(room)}</h3>
                   <div class="flex items-center gap-1.5 mt-1">
                     <span class="text-[10px] uppercase font-semibold px-2 py-0.5 rounded bg-slate-800 text-blue-400 border border-slate-700">${campusLabel}</span>
                     <span class="text-[10px] uppercase font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">${roomBlock}</span>
@@ -1265,7 +1268,7 @@
                 <div class="mt-3 p-2 rounded-xl bg-slate-900 text-xs text-rose-300 space-y-1">
                   <p class="font-medium">Dolu Saatler:</p>
                   <div class="flex flex-wrap gap-1">
-                    ${conflicts.map(c => `<span class="bg-rose-900/60 px-1.5 py-0.5 rounded text-[11px]">${c.start || c.hour+':00'}</span>`).join("")}
+                    ${conflicts.map(c => `<span class="bg-rose-900/60 px-1.5 py-0.5 rounded text-[11px]">${escapeHtml(c.start || c.hour+':00')}</span>`).join("")}
                   </div>
                 </div>
               `}
@@ -1291,7 +1294,7 @@
       progKeys.forEach(key => {
         const item = rawPrograms[key];
         const label = item.title || key;
-        progSelect.innerHTML += `<option value="${key}">${label}</option>`;
+        progSelect.innerHTML += `<option value="${escapeHtml(key)}">${escapeHtml(label)}</option>`;
       });
 
       progSelect.addEventListener("change", renderTimetable);
@@ -1309,10 +1312,10 @@
       }
 
       const prog = rawPrograms[progKey];
-      infoDiv.innerHTML = `<strong>${prog.title || progKey}</strong> • Toplam ${prog.courses.length} ders saati`;
+      infoDiv.innerHTML = `<strong>${escapeHtml(prog.title || progKey)}</strong> • Toplam ${(prog.courses || []).length} ders saati`;
 
       let tableHtml = "";
-      HOURS.forEach(h => {
+      visibleHours(prog.courses).forEach(h => {
         const timeLabel = `${h.toString().padStart(2, "0")}:00<br><span class="text-slate-500 font-normal">${h.toString().padStart(2, "0")}:45</span>`;
         tableHtml += `<tr>`;
         tableHtml += `<td class="p-3 text-center font-bold bg-slate-950/60 border-r border-slate-800 text-slate-400">${timeLabel}</td>`;
@@ -1325,14 +1328,14 @@
               tableHtml += `
                 <div class="p-2 rounded-xl bg-blue-900/40 border border-blue-700/50 mb-1.5 space-y-1">
                   <div class="flex items-center justify-between gap-1">
-                    <span class="font-bold text-blue-200">${c.code || ''}</span>
+                    <span class="font-bold text-blue-200">${escapeHtml(c.code || '')}</span>
                     <div class="flex items-center gap-1">
                       ${c.elective ? '<span class="text-[9px] bg-amber-500/20 text-amber-300 border border-amber-500/30 px-1 rounded">Seçmeli</span>' : ''}
-                      <span class="text-[10px] bg-blue-800 text-blue-200 px-1 rounded">${c.section || ''}</span>
+                      <span class="text-[10px] bg-blue-800 text-blue-200 px-1 rounded">${escapeHtml(c.section || '')}</span>
                     </div>
                   </div>
-                  <p class="font-medium text-slate-200 text-[11px] leading-tight">${c.name || c.raw}</p>
-                  <p class="text-[10px] text-slate-400">${c.classroom || ''} ${c.instructor ? `• <button type="button" class="underline decoration-dotted hover:text-violet-300" data-raw="${escapeHtml(c.instructor)}" onclick="openInstructorFromRaw(this.dataset.raw)" title="Hocanın programını gör">${escapeHtml(c.instructor)}</button>` : ''}</p>
+                  <p class="font-medium text-slate-200 text-[11px] leading-tight">${escapeHtml(c.name || c.raw)}</p>
+                  <p class="text-[10px] text-slate-400">${escapeHtml(c.classroom || '')} ${c.instructor ? `• <button type="button" class="underline decoration-dotted hover:text-violet-300" data-raw="${escapeHtml(c.instructor)}" onclick="openInstructorFromRaw(this.dataset.raw)" title="Hocanın programını gör">${escapeHtml(c.instructor)}</button>` : ''}</p>
                 </div>
               `;
             });
@@ -1353,7 +1356,7 @@
       const progKeys = Object.keys(rawPrograms).sort();
       progSelect.innerHTML = `<option value="">Bir Bölüm/Program Seçin (${progKeys.length})</option>`;
       progKeys.forEach(k => {
-        progSelect.innerHTML += `<option value="${k}">${rawPrograms[k].title || k}</option>`;
+        progSelect.innerHTML += `<option value="${escapeHtml(k)}">${escapeHtml(rawPrograms[k].title || k)}</option>`;
       });
 
       progSelect.addEventListener("change", populateCourseDropdown);
@@ -1393,7 +1396,7 @@
       distinctCourseList.sort((a, b) => (a.code || a.name).localeCompare(b.code || b.name));
 
       courseSelect.innerHTML = distinctCourseList.map((c, i) => `
-        <option value="${i}">[${c.code || 'DERS'}] ${c.name} (${c.section})${c.elective ? ' • [Seçmeli]' : ''}</option>
+        <option value="${i}">[${escapeHtml(c.code || 'DERS')}] ${escapeHtml(c.name)} (${escapeHtml(c.section)})${c.elective ? ' • [Seçmeli]' : ''}</option>
       `).join("");
     }
 
@@ -1452,14 +1455,14 @@
           <div class="flex items-start justify-between gap-2">
             <div class="overflow-hidden min-w-0">
               <div class="flex items-center gap-1.5 flex-wrap">
-                <span class="font-bold text-xs text-blue-400">${c.code || ''}</span>
-                <span class="text-[10px] bg-slate-800 text-slate-300 px-1 rounded">${c.section}</span>
+                <span class="font-bold text-xs text-blue-400">${escapeHtml(c.code || '')}</span>
+                <span class="text-[10px] bg-slate-800 text-slate-300 px-1 rounded">${escapeHtml(c.section)}</span>
                 ${c.noAttendance ? `
                   <span class="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[9px] font-bold">✓ Devam Muafiyeti</span>
                 ` : ''}
               </div>
-              <p class="text-xs font-medium text-slate-200 truncate mt-0.5">${c.name}</p>
-              <p class="text-[10px] text-slate-400 truncate">${c.programTitle}</p>
+              <p class="text-xs font-medium text-slate-200 truncate mt-0.5">${escapeHtml(c.name)}</p>
+              <p class="text-[10px] text-slate-400 truncate">${escapeHtml(c.programTitle)}</p>
             </div>
             <button onclick="removeCourseFromPlan(${i})" class="text-rose-400 hover:text-rose-300 text-xs px-2 py-1 rounded bg-rose-950/40 shrink-0">Sil</button>
           </div>
@@ -1512,13 +1515,13 @@
 
       if (conflicts.length > 0) {
         alertDiv.classList.remove("hidden");
-        alertDesc.innerHTML = conflicts.map(c => `<strong>${c.day} ${c.hour}:00</strong> saatinde (${c.courses.join(" ile ")}) zorunlu devam çakışması var!`).join("<br>");
+        alertDesc.innerHTML = conflicts.map(c => `<strong>${escapeHtml(c.day)} ${c.hour}:00</strong> saatinde (${escapeHtml(c.courses.join(" ile "))}) zorunlu devam çakışması var!`).join("<br>");
       } else {
         alertDiv.classList.add("hidden");
       }
 
       let gridHtml = "";
-      HOURS.forEach(h => {
+      visibleHours(plannedCourses.flatMap(c => c.slots || [])).forEach(h => {
         const timeLabel = h.toString().padStart(2, "0") + ":00";
         gridHtml += `<tr>`;
         gridHtml += `<td class="p-3 text-center font-bold bg-slate-950/60 border-r border-slate-800 text-slate-400">${timeLabel}</td>`;
@@ -1559,11 +1562,11 @@
               gridHtml += `
                 <div class="p-2 rounded-xl mb-1 text-[11px] ${cardStyle}">
                   <div class="flex items-center justify-between gap-1 font-bold">
-                    <span>${it.course.code} (${it.course.section})</span>
+                    <span>${escapeHtml(it.course.code)} (${escapeHtml(it.course.section)})</span>
                     ${isNoAtt ? '<span class="text-[9px] font-normal text-emerald-300">Muaf</span>' : ''}
                   </div>
-                  <div class="truncate">${it.course.name}</div>
-                  <div class="text-[10px] opacity-75">${it.slot.classroom || ''}</div>
+                  <div class="truncate">${escapeHtml(it.course.name)}</div>
+                  <div class="text-[10px] opacity-75">${escapeHtml(it.slot.classroom || '')}</div>
                 </div>
               `;
             });
@@ -1891,7 +1894,7 @@
       `;
 
       let html = "";
-      HOURS.forEach(h => {
+      visibleHours(slots).forEach(h => {
         html += `<tr><td class="p-3 text-center font-bold bg-slate-950/60 border-r border-slate-800 text-slate-400">${String(h).padStart(2, "0")}:00<br><span class="text-slate-500 font-normal">${String(h).padStart(2, "0")}:45</span></td>`;
         DAYS.forEach(day => {
           const items = slots.filter(s => cleanStr(s.day) === cleanStr(day) && s.hour === h);
@@ -2318,8 +2321,17 @@
       return matched;
     }
 
+    // Başlangıcından 4 saatten fazla geçmiş sınavlar "geçmiş" sayılır
+    function getUpcomingUserExams() {
+      const cutoff = Date.now() - 4 * 60 * 60 * 1000;
+      return getUserMatchedExams().filter(ex => {
+        const dt = parseExamDateObj(ex.date, ex.time);
+        return !dt || dt.getTime() > cutoff;
+      });
+    }
+
     function checkExamAlerts() {
-      const matchedExams = getUserMatchedExams();
+      const matchedExams = getUpcomingUserExams();
       const banner = document.getElementById("exam-alert-banner");
       const badge = document.getElementById("notif-badge");
       const notifContainer = document.getElementById("notification-items-container");
@@ -2339,7 +2351,7 @@
           notifContainer.innerHTML = `
             <div class="p-4 rounded-xl bg-slate-950/50 border border-slate-800 text-center space-y-2">
               <span class="text-2xl">🧩</span>
-              <p class="text-xs font-semibold text-slate-200">Henüz ders programı eklenmedi</p>
+              <p class="text-xs font-semibold text-slate-200">${plannedCourses.length ? "Yaklaşan sınavınız bulunmuyor" : "Henüz ders programı eklenmedi"}</p>
               <p class="text-[11px] text-slate-400">
                 <strong>Ders Taslak</strong> sekmesinden aldığınız dersleri ekleyin; sınavlarınız yaklaştığında burada bildirim ve geri sayım göreceksiniz.
               </p>
@@ -2459,7 +2471,7 @@
       Notification.requestPermission().then(permission => {
         if (permission === "granted") {
           if (window.Auth && Auth.toast) Auth.toast("Sınav bildirimleri aktifleştirildi! 🔔");
-          const matched = getUserMatchedExams();
+          const matched = getUpcomingUserExams();
           if (matched.length > 0) {
             const first = matched[0];
             new Notification("BTÜ Sınav Hatırlatıcı", {
@@ -2746,7 +2758,12 @@
           const facNorm = cleanStr(d.faculty || "");
           const annText = (d.announcements || []).map(a => a.title).join(" ");
           const annNorm = cleanStr(annText);
-          if (!nameNorm.includes(qNorm) && !facNorm.includes(qNorm) && !annNorm.includes(qNorm)) {
+          const inItems = (d.announcements || []).some(a => (a.exam_items || []).some(it =>
+            cleanStr(it.code || "").replace(/\s+/g, "").includes(qNorm.replace(/\s+/g, "")) ||
+            cleanStr(it.name || "").includes(qNorm) ||
+            cleanStr(it.instructor || "").includes(qNorm)
+          ));
+          if (!nameNorm.includes(qNorm) && !facNorm.includes(qNorm) && !annNorm.includes(qNorm) && !inItems) {
             return false;
           }
         }
@@ -2966,14 +2983,18 @@
       renderExams();
       checkExamAlerts();
 
-      // Önbellek Koruması (Cache Invalidation Guard):
-      // Tarayıcı disk veya PWA önbelleğinde eski exam_schedules.js kalmışsa (yayınlanmayan !== 4 veya kesin !== 12),
-      // anında doğrudan taze JSON dosyasını çekip verileri senkronize eder.
-      if (!window.EXAM_DATA || !window.EXAM_DATA.meta || window.EXAM_DATA.meta.not_announced_count !== 4 || window.EXAM_DATA.meta.finalized_count !== 12) {
+      // Önbellek Koruması: yüklü sınav verisi yoksa veya 12 saatten eskiyse taze JSON'u çek,
+      // yalnızca daha yeni bir tarama ise arayüzü güncelle.
+      const parseScanDate = (str) => {
+        const m = String(str || "").match(/(\d{1,2})\.(\d{1,2})\.(\d{4})(?:\s+(\d{1,2}):(\d{2}))?/);
+        return m ? new Date(+m[3], +m[2] - 1, +m[1], +(m[4] || 0), +(m[5] || 0)).getTime() : 0;
+      };
+      const loadedScan = parseScanDate(window.EXAM_DATA && window.EXAM_DATA.meta && window.EXAM_DATA.meta.last_updated);
+      if (!window.EXAM_DATA || !window.EXAM_DATA.departments || Date.now() - loadedScan > 12 * 60 * 60 * 1000) {
         fetch('exam_schedules.json?t=' + Date.now(), { cache: 'no-store' })
           .then(res => res.json())
           .then(freshData => {
-            if (freshData && freshData.departments) {
+            if (freshData && freshData.departments && parseScanDate(freshData.meta && freshData.meta.last_updated) >= loadedScan) {
               window.EXAM_DATA = freshData;
               renderExams();
               checkExamAlerts();

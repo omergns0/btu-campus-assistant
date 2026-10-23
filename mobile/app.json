@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "BTÜ Asistan",
+    "slug": "btu-campus-assistant",
+    "version": "1.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0f172a",
+    "primaryColor": "#2563eb",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.btu.kampusasistani"
+    },
+    "android": {
+      "package": "com.btu.kampusasistani",
+      "versionCode": 2,
+      "adaptiveIcon": {
+        "backgroundColor": "#0f172a",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "softwareKeyboardLayoutMode": "resize"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-font"
+    ]
+  }
+}

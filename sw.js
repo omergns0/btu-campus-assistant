@@ -2,7 +2,16 @@
 // BTÜ Kampüs Asistanı - PWA Service Worker (sw.js)
 // ============================================================
 
-const CACHE_NAME = "btu-pwa-v2";
+const CACHE_NAME = "btu-pwa-v3";
+
+// Yalnızca statik CDN/font kaynakları önbelleğe alınır. Supabase, Gemini gibi API
+// istekleri önbellekten verilirse kullanıcı bayat taslak/yanıt görür.
+const CACHEABLE_HOSTS = [
+  "cdn.tailwindcss.com",
+  "cdn.jsdelivr.net",
+  "fonts.googleapis.com",
+  "fonts.gstatic.com"
+];
 
 const PRECACHE_ASSETS = [
   "./",
@@ -40,8 +49,9 @@ self.addEventListener("fetch", event => {
 
   const url = new URL(event.request.url);
 
-  // Harici CDN veya analytics istekleri
+  // Harici istekler: yalnızca izinli CDN'ler önbellekten, diğerleri doğrudan ağdan
   if (url.origin !== self.location.origin) {
+    if (!CACHEABLE_HOSTS.includes(url.hostname)) return;
     event.respondWith(
       caches.open(CACHE_NAME).then(cache => {
         return cache.match(event.request).then(cached => {

@@ -126,6 +126,49 @@
 </head>
 <body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col">
 
+  <!-- Resmi olmayan proje / test aşaması uyarısı (her zaman görünür) -->
+  <div role="note" class="bg-amber-500/15 border-b border-amber-500/40 text-amber-200 text-[11px] sm:text-xs">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-start sm:items-center gap-2">
+      <span class="shrink-0">⚠️</span>
+      <p class="leading-snug">
+        <strong class="text-amber-100">Bu site bir öğrenci projesidir; Bursa Teknik Üniversitesi ile hiçbir resmi bağlantısı yoktur.</strong>
+        Henüz test aşamasındayız, hatalar olabilir. Ders ve sınav saatlerinizi mutlaka okulun resmi kaynaklarından kontrol ediniz.
+      </p>
+    </div>
+  </div>
+
+  <!-- İlk ziyarette gösterilen bilgilendirme penceresi -->
+  <div id="disclaimer-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="disclaimer-title">
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+    <div class="relative w-full max-w-md bg-slate-900 border border-amber-500/40 rounded-2xl shadow-2xl p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-2xl shrink-0">⚠️</div>
+        <h2 id="disclaimer-title" class="text-base font-bold text-white">Önemli Bilgilendirme</h2>
+      </div>
+      <ul class="space-y-2.5 text-sm text-slate-300 leading-relaxed">
+        <li>🎓 Bu site bir <strong class="text-white">öğrenci projesidir</strong>. <strong class="text-white">Bursa Teknik Üniversitesi ile hiçbir resmi bağlantısı yoktur.</strong></li>
+        <li>🧪 Henüz <strong class="text-white">test aşamasında</strong> bir uygulamayız; verilerde <strong class="text-white">hatalar olabilir</strong>.</li>
+        <li>📅 Ders ve sınav saatlerinizi mutlaka <strong class="text-white">okulun resmi kaynaklarından</strong> kontrol ediniz.</li>
+      </ul>
+      <button id="disclaimer-accept" type="button" class="w-full py-2.5 rounded-xl text-sm font-bold text-white bg-blue-600 hover:bg-blue-500 transition shadow-lg shadow-blue-600/25">
+        Anladım
+      </button>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var KEY = "btu_disclaimer_ack_v1";
+      var modal = document.getElementById("disclaimer-modal");
+      var seen = false;
+      try { seen = localStorage.getItem(KEY) === "1"; } catch (_) {}
+      if (!seen) modal.classList.remove("hidden");
+      document.getElementById("disclaimer-accept").addEventListener("click", function () {
+        try { localStorage.setItem(KEY, "1"); } catch (_) {}
+        modal.classList.add("hidden");
+      });
+    })();
+  </script>
+
   <!-- Üst Navigasyon -->
   <header class="border-b border-slate-800 bg-slate-950/90 backdrop-blur sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -758,6 +801,14 @@
     </section>
 
   </main>
+
+  <!-- Alt bilgi: resmi olmayan proje uyarısı -->
+  <footer class="mt-auto border-t border-slate-800 bg-slate-950/80">
+    <div class="max-w-7xl mx-auto px-4 py-4 text-center text-[11px] text-slate-500 leading-relaxed">
+      Bu site bir öğrenci projesidir ve <strong class="text-slate-400">Bursa Teknik Üniversitesi ile hiçbir resmi bağlantısı yoktur</strong>.
+      Test aşamasındadır; bilgilerde hata olabilir. Ders ve sınav saatlerinizi okulun resmi kaynaklarından kontrol ediniz.
+    </div>
+  </footer>
 
   <!-- ==================== SINAV PROGRAMI İNCELEME MODALI ==================== -->
   <div id="exam-preview-modal" class="hidden fixed inset-0 z-[105] flex items-center justify-center p-3 sm:p-5" role="dialog" aria-modal="true">

@@ -1,10 +1,11 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer, DarkTheme } from '@react-navigation/native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import AppNavigator from './src/navigation/AppNavigator';
 import { ErrorBoundary } from './src/components/ErrorBoundary';
 import { PlanProvider } from './src/context/PlanContext';
+import { DisclaimerBanner, DisclaimerModal } from './src/components/Disclaimer';
 import { COLORS } from './src/theme/colors';
 
 const CustomDarkTheme = {
@@ -24,10 +25,15 @@ export default function App() {
     <ErrorBoundary>
       <SafeAreaProvider>
         <PlanProvider>
-          <NavigationContainer theme={CustomDarkTheme}>
-            <StatusBar style="light" />
-            <AppNavigator />
-          </NavigationContainer>
+          {/* Üst güvenli alan burada uygulanır; ekranlar yalnızca sol/sağ payı kullanır */}
+          <SafeAreaView edges={['top']} style={{ flex: 1, backgroundColor: COLORS.bg }}>
+            <DisclaimerBanner />
+            <NavigationContainer theme={CustomDarkTheme}>
+              <StatusBar style="light" />
+              <AppNavigator />
+            </NavigationContainer>
+          </SafeAreaView>
+          <DisclaimerModal />
         </PlanProvider>
       </SafeAreaProvider>
     </ErrorBoundary>

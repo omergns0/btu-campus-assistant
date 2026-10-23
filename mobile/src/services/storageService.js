@@ -4,6 +4,7 @@ const PLAN_KEY = '@btu_user_planned_courses_v1';
 const DEPT_KEY = '@btu_favorite_department_v1';
 const PROGRAM_KEY = '@btu_favorite_program_v1';
 const API_KEY = '@btu_gemini_api_key_v1';
+const DISCLAIMER_KEY = '@btu_disclaimer_ack_v1';
 
 async function getString(key) {
   try {
@@ -54,6 +55,10 @@ export const StorageService = {
   // Ders programı ekranında en son seçilen program
   saveFavoriteProgram: prog => setString(PROGRAM_KEY, prog),
   getFavoriteProgram: () => getString(PROGRAM_KEY),
+
+  // "Öğrenci projesi / test aşaması" bilgilendirmesi bir kez onaylandı mı
+  saveDisclaimerAck: () => setString(DISCLAIMER_KEY, '1'),
+  getDisclaimerAck: () => getString(DISCLAIMER_KEY),
 
   saveApiKey: key => setString(API_KEY, key),
   getApiKey: () => getString(API_KEY),

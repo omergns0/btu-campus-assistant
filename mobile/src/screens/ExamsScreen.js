@@ -150,7 +150,7 @@ export default function ExamsScreen() {
   );
 
   return (
-    <SafeAreaView style={styles.safeArea} edges={['top', 'left', 'right']}>
+    <SafeAreaView style={styles.safeArea} edges={['left', 'right']}>
       <View style={styles.container}>
 
         {/* Header */}

@@ -1,0 +1,63 @@
+name: Android APK
+
+# mobile/ klasöründe değişiklik olunca APK derlenir ve GitHub Releases'e yüklenir.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "mobile/**"
+      - ".github/workflows/android-apk.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: android-apk
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mobile
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: mobile/package-lock.json
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Bağımlılıkları kur
+        run: npm ci
+
+      - name: Android projesini üret
+        run: npx expo prebuild --platform android --no-install
+
+      - name: APK derle
+        working-directory: mobile/android
+        run: ./gradlew assembleRelease --no-daemon
+
+      - name: Sürüm bilgisi
+        id: ver
+        run: echo "version=$(node -p "require('./app.json').expo.version")" >> "$GITHUB_OUTPUT"
+
+      - name: APK'yı yeniden adlandır
+        run: cp android/app/build/outputs/apk/release/app-release.apk "BTU-Asistan-${{ steps.ver.outputs.version }}.apk"
+
+      - name: GitHub Release'e yükle
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: mobile-v${{ steps.ver.outputs.version }}-${{ github.run_number }}
+          name: BTÜ Asistan ${{ steps.ver.outputs.version }} (Android)
+          body: "Android APK — commit ${{ github.sha }}"
+          files: mobile/BTU-Asistan-${{ steps.ver.outputs.version }}.apk
+          make_latest: true

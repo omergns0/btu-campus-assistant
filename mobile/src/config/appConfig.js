@@ -12,5 +12,5 @@ export const APP_CONFIG = {
   SUPABASE_URL: "https://lgdddnhxdpmjzegotxmu.supabase.co",
   SUPABASE_ANON_KEY: "sb_publishable_4tn02rFpOCaxvVc3mLBv1g_SaKOW_MA",
   APP_TITLE: "BTÜ Kampüs Asistanı",
-  VERSION: "1.2.0"
+  VERSION: "1.2.1"
 };

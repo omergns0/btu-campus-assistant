@@ -237,31 +237,64 @@ export function getExamCountdown(dateStr) {
 }
 
 // Taslaktaki dersleri, seçili bölümün (ve ortak "_genel") sınav listesiyle eşleştirir
-export function matchPlanToExams(plannedCourses, examsData, deptKey) {
+// Programın bölüm adından sınav verisindeki bölüm anahtarını bulur (ör. "Bilgisayar Mühendisliği" -> "bilgisayar")
+function deptKeyForCourse(course, programs, depts) {
+  const prog = programs && programs[course.programKey];
+  const name = cleanStr(prog ? prog.department : '');
+  if (!name) return null;
+  const hit = Object.entries(depts).find(([, d]) => cleanStr(d.name) === name);
+  return hit ? hit[0] : null;
+}
+
+// Taslaktaki dersleri sınav takvimiyle eşleştirir.
+// Her ders önce kendi bölümünün (ve seçili "Bölümüm"ün) sınav listesinde aranır; bulunamazsa
+// (ör. başka bölümün verdiği servis dersi) tüm bölümlere bakılır. Aynı ders birden çok bölümün
+// listesinde aynı tarih/saatte geçiyorsa tek sınav olarak gösterilir.
+export function matchPlanToExams(plannedCourses, examsData, deptKey, programs) {
   const depts = (examsData && examsData.departments) || {};
-  const seen = new Set();
-  const matched = [];
-  (plannedCourses || []).forEach(uc => {
+  const byExam = new Map();
+
+  const findIn = (uc, allowed) => {
     const ucCode = cleanStr(uc.code).replace(/\s+/g, '');
     const ucName = cleanStr(uc.name).replace(/\s*\((lab|uyg)\)\s*$/, '');
+    const found = [];
     Object.entries(depts).forEach(([dKey, d]) => {
-      if (deptKey && dKey !== deptKey && dKey !== '_genel') return;
+      if (allowed && !allowed.has(dKey)) return;
       (d.announcements || []).slice(0, 1).forEach(ann => {
         (ann.exam_items || []).forEach(item => {
           const itCode = cleanStr(item.code).replace(/\s+/g, '');
           const itName = cleanStr(item.name);
           const codeMatch = ucCode && itCode && ucCode === itCode;
           const nameMatch = !codeMatch && ucName.length > 3 && itName && itName === ucName;
-          if (!codeMatch && !nameMatch) return;
-          const uid = `${item.code}_${item.date}_${item.time}_${dKey}`;
-          if (seen.has(uid)) return;
-          seen.add(uid);
-          matched.push({ ...item, deptKey: dKey, deptName: d.name });
+          if (codeMatch || nameMatch) found.push({ item, dKey, d });
         });
       });
     });
+    return found;
+  };
+
+  (plannedCourses || []).forEach(uc => {
+    const own = deptKeyForCourse(uc, programs, depts);
+    const allowed = new Set(['_genel']);
+    if (own) allowed.add(own);
+    if (deptKey) allowed.add(deptKey);
+    let found = allowed.size > 1 ? findIn(uc, allowed) : [];
+    if (!found.length) found = findIn(uc, null);
+
+    found.forEach(({ item, dKey, d }) => {
+      const uid = `${cleanStr(item.code).replace(/\s+/g, '')}_${item.date}_${item.time}`;
+      const prev = byExam.get(uid);
+      if (!prev) {
+        byExam.set(uid, { ...item, deptKey: dKey, deptName: d.name, deptNames: [d.name] });
+      } else if (!prev.deptNames.includes(d.name)) {
+        prev.deptNames.push(d.name);
+        // Öğrencinin kendi bölümünün kaydı (derslik vb.) öncelikli
+        if (dKey === own || dKey === deptKey) Object.assign(prev, item, { deptKey: dKey, deptName: d.name });
+      }
+    });
   });
-  return matched.sort((a, b) => {
+
+  return [...byExam.values()].sort((a, b) => {
     const da = parseExamDate(a.date, a.time);
     const db = parseExamDate(b.date, b.time);
     return (da ? da.getTime() : Infinity) - (db ? db.getTime() : Infinity);

@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from 'react';
+import { useFocusEffect } from '@react-navigation/native';
+import React, { useState, useMemo, useCallback } from 'react';
 import {
   View,
   Text,
@@ -30,7 +31,9 @@ function slotSummary(slots) {
 }
 
 export default function PlannerScreen({ navigation }) {
-  const { plannedCourses, addCourse, removeCourse, toggleAttendance, clearPlan, syncStatus } = usePlan();
+  const { plannedCourses, addCourse, removeCourse, toggleAttendance, clearPlan, syncStatus, refresh } = usePlan();
+  // Sekme her açıldığında web'de yapılan değişiklikleri hesaptan al
+  useFocusEffect(useCallback(() => { refresh(); }, [refresh]));
 
   const [selectedProgKey, setSelectedProgKey] = useState(ALL_PROGRAM_KEYS[0] || '');
   const [progModalVisible, setProgModalVisible] = useState(false);

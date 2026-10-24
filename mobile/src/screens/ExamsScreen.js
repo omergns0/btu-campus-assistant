@@ -1,4 +1,5 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import { useFocusEffect } from '@react-navigation/native';
+import React, { useState, useMemo, useEffect, useCallback } from 'react';
 import {
   View,
   Text,
@@ -16,6 +17,7 @@ import { cleanStr, getExamCountdown, parseExamDate, matchPlanToExams } from '../
 import { StorageService } from '../services/storageService';
 import { usePlan } from '../context/PlanContext';
 import examsData from '../data/exams.json';
+import programsData from '../data/programs.json';
 
 const STATUS_ORDER = { FINAL: 0, DRAFT: 1, PENDING: 2 };
 
@@ -45,7 +47,9 @@ function openLink(url) {
 }
 
 export default function ExamsScreen() {
-  const { plannedCourses } = usePlan();
+  const { plannedCourses, refresh } = usePlan();
+  // Sekme her açıldığında web'de yapılan değişiklikleri hesaptan al
+  useFocusEffect(useCallback(() => { refresh(); }, [refresh]));
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState('ALL'); // ALL, FINAL, DRAFT, PENDING, MY
   const [expandedDeptKey, setExpandedDeptKey] = useState(null);
@@ -72,7 +76,7 @@ export default function ExamsScreen() {
   // Taslaktaki derslerin yaklaşan sınavları (başlangıcından 4 saat geçene kadar gösterilir)
   const myExams = useMemo(() => {
     const cutoff = Date.now() - 4 * 60 * 60 * 1000;
-    return matchPlanToExams(plannedCourses, examsData, myDeptKey).filter(ex => {
+    return matchPlanToExams(plannedCourses, examsData, myDeptKey, programsData).filter(ex => {
       const dt = parseExamDate(ex.date, ex.time);
       return !dt || dt.getTime() > cutoff;
     });

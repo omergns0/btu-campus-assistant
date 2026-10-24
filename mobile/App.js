@@ -5,6 +5,7 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import AppNavigator from './src/navigation/AppNavigator';
 import { ErrorBoundary } from './src/components/ErrorBoundary';
 import { PlanProvider } from './src/context/PlanContext';
+import { AuthProvider } from './src/context/AuthContext';
 import { DisclaimerBanner, DisclaimerModal } from './src/components/Disclaimer';
 import { COLORS } from './src/theme/colors';
 
@@ -24,6 +25,7 @@ export default function App() {
   return (
     <ErrorBoundary>
       <SafeAreaProvider>
+        <AuthProvider>
         <PlanProvider>
           {/* Üst güvenli alan burada uygulanır; ekranlar yalnızca sol/sağ payı kullanır */}
           <SafeAreaView edges={['top']} style={{ flex: 1, backgroundColor: COLORS.bg }}>
@@ -35,6 +37,7 @@ export default function App() {
           </SafeAreaView>
           <DisclaimerModal />
         </PlanProvider>
+        </AuthProvider>
       </SafeAreaProvider>
     </ErrorBoundary>
   );

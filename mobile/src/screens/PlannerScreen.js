@@ -29,8 +29,8 @@ function slotSummary(slots) {
   }).filter(Boolean).join(' • ');
 }
 
-export default function PlannerScreen() {
-  const { plannedCourses, addCourse, removeCourse, toggleAttendance, clearPlan } = usePlan();
+export default function PlannerScreen({ navigation }) {
+  const { plannedCourses, addCourse, removeCourse, toggleAttendance, clearPlan, syncStatus } = usePlan();
 
   const [selectedProgKey, setSelectedProgKey] = useState(ALL_PROGRAM_KEYS[0] || '');
   const [progModalVisible, setProgModalVisible] = useState(false);
@@ -177,6 +177,27 @@ export default function PlannerScreen() {
             </TouchableOpacity>
           </View>
         </View>
+
+        {/* Hesap senkronizasyon durumu */}
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Hesap')}
+          disabled={syncStatus !== 'guest' && syncStatus !== 'error'}
+          style={{ marginBottom: 8 }}
+        >
+          <Text style={[styles.subtitle, {
+            color: syncStatus === 'guest' ? COLORS.primaryLight
+              : syncStatus === 'error' ? COLORS.danger
+              : syncStatus === 'saved' ? COLORS.success : COLORS.warning
+          }]}>
+            {{
+              guest: '☁️ Giriş yaparak taslağını hesabına kaydet →',
+              loading: '⏳ Hesaptaki taslak yükleniyor...',
+              saving: '⏳ Kaydediliyor...',
+              saved: '✅ Hesabına kaydedildi',
+              error: '⚠️ Hesaba kaydedilemedi (dokun: Hesap)',
+            }[syncStatus]}
+          </Text>
+        </TouchableOpacity>
 
         {/* Conflict Alert Banner */}
         {hasClash ? (

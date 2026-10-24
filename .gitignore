@@ -2,3 +2,4 @@ __pycache__/
 *.py[cod]
 *$py.class
 _kaynak_kodlar_yedek/
+*.apk

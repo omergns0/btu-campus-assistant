@@ -9,6 +9,7 @@ import InstructorScreen from '../screens/InstructorScreen';
 import PlannerScreen from '../screens/PlannerScreen';
 import ExamsScreen from '../screens/ExamsScreen';
 import AiAssistantScreen from '../screens/AiAssistantScreen';
+import AccountScreen from '../screens/AccountScreen';
 import { COLORS } from '../theme/colors';
 
 const Tab = createBottomTabNavigator();
@@ -53,6 +54,8 @@ export default function AppNavigator() {
             iconName = focused ? 'document-text' : 'document-text-outline';
           } else if (route.name === 'Asistan') {
             iconName = focused ? 'sparkles' : 'sparkles-outline';
+          } else if (route.name === 'Hesap') {
+            iconName = focused ? 'person-circle' : 'person-circle-outline';
           }
 
           return <Ionicons name={iconName} size={22} color={color} />;
@@ -88,6 +91,11 @@ export default function AppNavigator() {
         name="Asistan"
         component={AiAssistantScreen}
         options={{ tabBarLabel: 'AI Asistan' }}
+      />
+      <Tab.Screen
+        name="Hesap"
+        component={AccountScreen}
+        options={{ tabBarLabel: 'Hesap' }}
       />
     </Tab.Navigator>
   );

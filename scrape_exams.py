@@ -270,19 +270,38 @@ def parse_xlsx_exam_table(xlsx_bytes):
     try:
         wb = openpyxl.load_workbook(io.BytesIO(xlsx_bytes), data_only=True)
         sheet = wb.active
-        
+
+        # Sütunlar başlık satırındaki adlara göre bulunur; dosyadan dosyaya sütun sırası
+        # değişebiliyor (ör. 2026 kesinleşmiş MDBF dosyasında "Tür" sütunu yok).
+        header = [clean_text(sheet.cell(1, c).value).lower() for c in range(1, 25)]
+
+        def hcol(*names, default=None):
+            for i, h in enumerate(header):
+                if h and any(n in h for n in names):
+                    return i
+            return default
+
+        i_name = hcol("ders adı", "ders adi", default=1)
+        i_code = hcol("kodu", default=2)
+        i_dept = hcol("bölüm", "bolum")
+        i_grade = hcol("sınıf", "sinif", default=5)
+        i_inst = hcol("öğretim", "ogretim", default=6)
+        # "Birleşeceği Dersler (Aynı Oturum)" sütunu da "oturum" içerdiği için tam eşleşme önce aranır
+        i_session = header.index("oturum") if "oturum" in header else hcol("oturum", default=11)
+        room_cols = [i for i, h in enumerate(header) if "derslik" in h] or list(range(12, 19))
+
         for row_idx in range(2, sheet.max_row + 1):
-            row = [clean_text(sheet.cell(row_idx, col_idx).value) for col_idx in range(1, 20)]
+            row = [clean_text(sheet.cell(row_idx, col_idx).value) for col_idx in range(1, 25)]
             if not row or not any(row):
                 continue
-            
-            # [Index, Ders Adı, D.Kodu, Şb, Bölüm, Sınıf, Hoca, Mevcut, Sınav, Tür, Birleşen, Oturum, Derslik1...]
-            course_name = row[1] if len(row) > 1 else ""
-            course_code = row[2] if len(row) > 2 else ""
-            grade = row[5] if len(row) > 5 else ""
-            instructor = row[6] if len(row) > 6 else ""
-            session_val = row[11] if len(row) > 11 else ""
-            
+
+            course_name = row[i_name] if i_name < len(row) else ""
+            course_code = row[i_code] if i_code < len(row) else ""
+            grade = row[i_grade] if i_grade < len(row) else ""
+            instructor = row[i_inst] if i_inst < len(row) else ""
+            department = row[i_dept] if i_dept is not None and i_dept < len(row) else ""
+            session_val = row[i_session] if i_session < len(row) else ""
+
             if not session_val:
                 for c in row:
                     if re.search(r"\d{1,2}[./-]\d{1,2}[./-]\d{4}", c):
@@ -304,11 +323,12 @@ def parse_xlsx_exam_table(xlsx_bytes):
                 exam_time = f"{time_match.group(1).replace('.', ':')} - {time_match.group(2).replace('.', ':')}"
                 
             classrooms = []
-            for c in row[12:]:
+            for i in room_cols:
+                c = row[i] if i < len(row) else ""
                 if c and len(c) >= 2 and c.upper() not in ["M", "MS", "YB", "VAR", "YOK"]:
                     classrooms.append(c)
-                    
-            exam_items.append({
+
+            item = {
                 "code": course_code,
                 "name": course_name,
                 "date": exam_date,
@@ -317,7 +337,10 @@ def parse_xlsx_exam_table(xlsx_bytes):
                 "grade": grade,
                 "classrooms": ", ".join(classrooms) if classrooms else "Derslikler Açıklanacak",
                 "raw_session": session_val
-            })
+            }
+            if department:
+                item["department"] = department
+            exam_items.append(item)
     except Exception as e:
         print(f"[-] Excel ayrıştırma hatası: {e}")
         
@@ -346,13 +369,77 @@ def is_exam_file(file_name, file_url):
             return False
     return True
 
-def find_pdf_links_in_page(url, parent_title=""):
+def parse_html_exam_table(soup):
+    """Programı PDF yerine duyuru sayfasında tablo olarak veren bölümler (ör. Fizik)."""
+    items = []
+    for table in soup.find_all("table"):
+        rows = table.find_all("tr")
+        if len(rows) < 2:
+            continue
+        header = [clean_text(c.get_text(" ")).lower() for c in rows[0].find_all(["th", "td"])]
+
+        def col(*names):
+            for i, h in enumerate(header):
+                if any(n in h for n in names):
+                    return i
+            return None
+
+        i_date, i_time = col("tarih"), col("saat")
+        i_name, i_code = col("ders adı", "ders adi"), col("ders kodu", "kod")
+        i_grade, i_inst, i_room = col("sınıf", "sinif"), col("öğretim", "ogretim", "hoca"), col("derslik")
+        if i_date is None or i_code is None:
+            continue
+        for r in rows[1:]:
+            cells = [clean_text(c.get_text(" ")) for c in r.find_all(["td", "th"])]
+            if len(cells) <= max(i for i in [i_date, i_code] if i is not None):
+                continue
+            get = lambda i: cells[i] if i is not None and i < len(cells) else ""
+            date = extract_date(get(i_date))
+            code = get(i_code).replace(" ", "")
+            if not date or not code:
+                continue
+            t = re.findall(r"(\d{1,2})[.:](\d{2})", get(i_time))
+            time = f"{int(t[0][0]):02d}:{t[0][1]} - {int(t[1][0]):02d}:{t[1][1]}" if len(t) >= 2 else get(i_time)
+            grade = re.search(r"\d", get(i_grade))
+            items.append({
+                "code": code,
+                "name": get(i_name),
+                "date": date,
+                "time": time,
+                "instructor": get(i_inst),
+                "grade": grade.group(0) if grade else "",
+                "classrooms": get(i_room),
+                "raw_session": f"{get(i_date)} {get(i_time)}"
+            })
+    return items
+
+
+def find_pdf_links_in_page(url, parent_title="", _depth=0):
     try:
         r = requests.get(url, headers=HEADERS, timeout=10)
         if r.status_code != 200:
             return []
         soup = BeautifulSoup(r.text, "html.parser")
         files = []
+        # Dosya yerine sayfa içi tablo (ör. Fizik bölümü)
+        table_items = parse_html_exam_table(soup)
+        if table_items:
+            files.append({
+                "title": "2026-2027 Güz Ara Sınav Programı (Duyuru sayfası)",
+                "url": url,
+                "ext": "html",
+                "exam_items": table_items
+            })
+        # "Programa ulaşmak için tıklayınız" gibi başka bir duyuruya yönlendirmeler
+        # (ör. Kimya Mühendisliği → MDBF ortak kesinleşmiş program) bir kez takip edilir
+        if _depth == 0:
+            for a in soup.find_all("a", href=True):
+                text = clean_text(a.get_text()).lower()
+                target = urljoin(url, a["href"].strip())
+                if ("tıkla" in text or "tikla" in text) and "/duyuru/detay/" in target and target != url:
+                    linked = find_pdf_links_in_page(target, parent_title, _depth=1)
+                    if linked:
+                        return files + linked
         for a in soup.find_all("a", href=True):
             href = a["href"].strip()
             full_url = urljoin(url, href)
@@ -450,36 +537,70 @@ SPECIFIC_DEPARTMENT_OVERRIDES = {
         "url": "https://mtf.btu.edu.tr/tr/peyzaj/duyuru/detay/55074/2026-2027-güz-dönemi̇-ara-sinav-programi",
         "file_title": "2026-2027 Güz Ara Sınav Programı (PDF)",
         "file_url": "https://depo.btu.edu.tr/img/duyurular//1791531746_b3741f60f104a0713c01.pdf"
-    },
-    "metalurji": {
-        "title": "2026-2027 Güz Dönemi Taslak Arasınav Programı Hk.",
-        "date": "13.10.2026",
-        "url": "https://mdbf.btu.edu.tr/tr/metalurji/duyuru/detay/55129/2026-2027-güz-dönemi-taslak-arasınav-programı-hk",
-        "file_title": "2026-2027 Güz Taslak Ara Sınav Programı (Excel)",
-        "file_url": "https://depo.btu.edu.tr/img/duyurular//1791882265_7945a3106266cf49bc83.xlsx"
-    },
-    "polimer": {
-        "title": "26-27 Güz MDBF Arasınav Programı Programı",
-        "date": "12.10.2026",
-        "url": "https://mdbf.btu.edu.tr/tr/polimer/duyuru/detay/55112/26-27-güz-mdbf-arasınav-programı-programı",
-        "file_title": "2026-2027 Güz Ara Sınav Programı (PDF)",
-        "file_url": "https://depo.btu.edu.tr/img/duyurular//1791811660_279358ccf92d7816ea47.pdf"
-    },
-    "mekatronik": {
-        "title": "26-27 Güz MDBF Taslak Arasınav Programı",
-        "date": "09.10.2026",
-        "url": "https://mdbf.btu.edu.tr/tr/mekatronik/duyuru/detay/55075/26-27-güz-mdbf-taslak-arasınav-programı",
-        "file_title": "2026-2027 Güz MDBF Taslak Ara Sınav Programı (PDF)",
-        "file_url": "https://depo.btu.edu.tr/img/duyurular//1791547882_39838cca1ea951afac62.pdf"
-    },
-    "mekatroniking": {
-        "title": "26-27 Güz MDBF Taslak Arasınav Programı",
-        "date": "09.10.2026",
-        "url": "https://mdbf.btu.edu.tr/tr/mekatronik/duyuru/detay/55075/26-27-güz-mdbf-taslak-arasınav-programı",
-        "file_title": "2026-2027 Güz MDBF Taslak Ara Sınav Programı (PDF)",
-        "file_url": "https://depo.btu.edu.tr/img/duyurular//1791547882_39838cca1ea951afac62.pdf"
     }
 }
+# Not: Metalurji, Polimer ve Mekatronik için eskiden burada sabit taslak duyurular vardı;
+# bu yüzden kesinleşmiş programlar yayınlansa da görülmüyordu. Artık canlı taranıyorlar.
+
+# Kendi duyuru sayfası olmayan, programını başka bir bölümle paylaşan bölümler
+SHARED_DEPARTMENTS = {
+    "mekatroniking": "mekatronik",
+}
+
+# Lisans öğrencileri için olmayan sınav duyuruları
+GRADUATE_WORDS = ["lisans üstü", "lisansüstü", "lisansustu", "yüksek lisans", "yuksek lisans", "doktora", "tezsiz"]
+
+
+def _fold(s):
+    s = (s or "").lower()
+    for a, b in (("ı", "i"), ("İ", "i"), ("i̇", "i"), ("ğ", "g"), ("ü", "u"), ("ş", "s"), ("ö", "o"), ("ç", "c")):
+        s = s.replace(a, b)
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def filter_for_department(items, dept_name):
+    """Fakülte ortak dosyasındaki dersleri (ör. MDBF'nin 382 dersi) bölüme göre süzer.
+    Dosyada bölüm bilgisi yoksa ya da hiçbir satır eşleşmezse liste olduğu gibi kalır."""
+    target = _fold(re.sub(r"\(.*?\)", "", dept_name))
+    if not target:
+        return items
+    # Tam eşleşme: "Kimya" bölümünün dersleri "Kimya Mühendisliği"ne karışmasın
+    own = [it for it in items if it.get("department") and
+           _fold(re.sub(r"\(.*?\)", "", it["department"])) == target]
+    return own or items
+
+
+# Fakültenin tüm bölümleri için ortak kesinleşmiş program; bir bölümün kendi dosyası
+# okunamazsa (ör. Kimya'nın döndürülmüş PDF'i) dersleri buradan bölüme göre süzülür.
+FACULTY_COMMON_FINAL = {
+    "Mühendislik ve Doğa Bilimleri Fakültesi":
+        "https://mdbf.btu.edu.tr/tr/duyuru/detay/55175/26-27-güz-mdbf-kesinleşmiş-arasınav-programı",
+}
+_common_cache = {}
+
+
+def common_faculty_items(faculty, dept_name):
+    url = FACULTY_COMMON_FINAL.get(faculty)
+    if not url:
+        return [], []
+    if url not in _common_cache:
+        _common_cache[url] = find_pdf_links_in_page(url)
+    files = _common_cache[url]
+    items = [it for f in files if f.get("ext") in ("xlsx", "xls") for it in f.get("exam_items", [])]
+    own = filter_for_department(items, dept_name)
+    if own is items:  # hiçbir satır bu bölüme ait değil
+        return [], []
+    return own, [f for f in files if f.get("ext") in ("xlsx", "xls")]
+
+
+def announcement_sort_key(ann):
+    """Sınav programı duyurularını öne, aynı grupta en yeni tarihliyi en başa alır."""
+    title = (ann.get("title") or "").lower()
+    is_program = "program" in title
+    d = ann.get("date") or ""
+    m = re.match(r"(\d{2})\.(\d{2})\.(\d{4})", d)
+    date_key = (m.group(3), m.group(2), m.group(1)) if m else ("0000", "00", "00")
+    return (is_program, date_key)
 
 def scrape_department_exams(dept_key, dept_info):
     url = dept_info.get("url")
@@ -596,7 +717,10 @@ def scrape_department_exams(dept_key, dept_info):
             
             if len(title) < 5:
                 title = unquote(item_url.split("/")[-1].replace("-", " ").capitalize())
-            
+
+            if any(w in title.lower() for w in GRADUATE_WORDS):
+                continue
+
             pub_date = extract_date(title)
             clean_title = re.sub(r"^\d{1,2}[./-]\d{1,2}[./-](?:\d{4}|\d{2})\s*", "", title).strip()
             
@@ -614,9 +738,15 @@ def scrape_department_exams(dept_key, dept_info):
             elif "/duyuru/detay/" in item_url:
                 files = find_pdf_links_in_page(item_url, clean_title)
             
+            # Aynı program hem PDF hem Excel olarak verildiyse Excel tercih edilir:
+            # PDF tablolarında birden çok ders tek satıra yapışabiliyor.
+            excel_files = [f for f in files if f.get("ext") in ("xlsx", "xls") and f.get("exam_items")]
+            source_files = excel_files or files
             all_items = []
-            for f in files:
-                all_items.extend(f.get("exam_items", []))
+            for f in source_files:
+                all_items.extend(it for it in f.get("exam_items", [])
+                                 if len((it.get("code") or "").split()) <= 1)
+            all_items = filter_for_department(all_items, dept_name)
             
             result["announcements"].append({
                 "title": clean_title if clean_title else title,
@@ -627,7 +757,15 @@ def scrape_department_exams(dept_key, dept_info):
             })
             
         if result["announcements"]:
+            # Sayfa sırası güvenilir değil: tarihe göre en yeni program duyurusu başa gelir
+            result["announcements"].sort(key=announcement_sort_key, reverse=True)
             result["has_announcement"] = True
+            latest = result["announcements"][0]
+            if not latest["exam_items"] and "kesinle" in latest["title"].lower():
+                own, common_files = common_faculty_items(faculty_name, dept_name)
+                if own:
+                    latest["exam_items"] = own
+                    latest["files"] = latest["files"] + common_files
             status, label = classify_status(result["announcements"])
             result["status"] = status
             result["status_label"] = label
@@ -648,7 +786,13 @@ def main():
     not_announced_count = 0
     
     for key, info in DEPARTMENTS.items():
-        data = scrape_department_exams(key, info)
+        if key in SHARED_DEPARTMENTS and SHARED_DEPARTMENTS[key] in all_results:
+            # Programı paylaşılan bölüm: kaynağın duyurularını kendi adıyla kullan
+            src = all_results[SHARED_DEPARTMENTS[key]]
+            data = dict(src, key=key, name=info.get("name", key),
+                        faculty=FACULTY_MAP.get(key, src.get("faculty")))
+        else:
+            data = scrape_department_exams(key, info)
         all_results[key] = data
         
         st = data.get("status", "PENDING")

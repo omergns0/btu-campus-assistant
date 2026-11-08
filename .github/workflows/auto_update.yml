@@ -1,0 +1,54 @@
+name: BTU Otomatik Guncelleyici
+
+on:
+  schedule:
+    - cron: '0 5,15 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check-and-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repoyu Cek
+        uses: actions/checkout@v4
+
+      - name: Python Kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Node Kur
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Paketleri Yukle
+        run: |
+          pip install requests beautifulsoup4 openpyxl pdfplumber python-docx
+
+      - name: Ders Programlarini Tara ve Guncelle
+        run: |
+          python auto_watcher.py
+
+      - name: Sinav Programlarini Tara
+        # Fakulte sitelerinden biri gecici olarak erisilemezse tum is basarisiz olmasin
+        continue-on-error: true
+        run: |
+          python scrape_exams.py
+
+      - name: Mobil Uygulama Verilerini Disa Aktar
+        run: |
+          node export_data.js
+
+      - name: Degisiklik Varsa Push Et
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add courses_data.js data.js file_hashes.json kaynak_dosyalar/ \
+            exam_schedules.json exam_schedules.js \
+            extension/courses_data.js extension/data.js extension/exam_schedules.js \
+            mobile/src/data/
+          git diff --staged --quiet || (git commit -m "chore(auto): ders ve sinav programlari guncellendi" && git push)

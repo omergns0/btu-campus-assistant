@@ -1,4 +1,4 @@
-// BTÜ 2026-2027 Güz Ara Sınav Programları - Güncellendi: 12.11.2026 21:52
+// BTÜ 2026-2027 Güz Ara Sınav Programları - Güncellendi: 13.11.2026 13:00
 window.EXAM_DATA = {
   "meta": {
     "term": "2026-2027 Güz Dönemi",
@@ -8,7 +8,7 @@ window.EXAM_DATA = {
     "finalized_count": 30,
     "draft_count": 1,
     "not_announced_count": 1,
-    "last_updated": "12.11.2026 21:52"
+    "last_updated": "13.11.2026 13:00"
   },
   "departments": {
     "bilgisayar": {
@@ -1173,7 +1173,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:49"
+      "last_checked": "13.11.2026 12:58"
     },
     "biyomuh": {
       "key": "biyomuh",
@@ -10083,7 +10083,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:50"
+      "last_checked": "13.11.2026 12:58"
     },
     "cevre": {
       "key": "cevre",
@@ -10611,7 +10611,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:50"
+      "last_checked": "13.11.2026 12:58"
     },
     "insaat": {
       "key": "insaat",
@@ -11895,7 +11895,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:50"
+      "last_checked": "13.11.2026 12:58"
     },
     "gida": {
       "key": "gida",
@@ -11906,7 +11906,7 @@ window.EXAM_DATA = {
       "status": "PENDING",
       "status_label": "Henüz Yayınlanmadı",
       "announcements": [],
-      "last_checked": "12.11.2026 21:50"
+      "last_checked": "13.11.2026 12:58"
     },
     "fizik": {
       "key": "fizik",
@@ -12274,7 +12274,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:50"
+      "last_checked": "13.11.2026 12:58"
     },
     "endustri": {
       "key": "endustri",
@@ -12288,7 +12288,7 @@ window.EXAM_DATA = {
         {
           "title": "2026-2027 Güz Dönemi Kesinleşmiş Ara Sınav Programı",
           "date": "19.10.2026",
-          "url": "https://mdbf.btu.edu.tr//tr/endustri/duyuru/detay/55165/2026-2027-güz-dönemi-kesinleşmiş-ara-sınav-programı",
+          "url": "https://mdbf.btu.edu.tr/tr/endustri/duyuru/detay/55165/2026-2027-güz-dönemi-kesinleşmiş-ara-sınav-programı",
           "files": [
             {
               "title": "2026-2027 Güz Ara Sınav Programı (PDF)",
@@ -12860,9 +12860,585 @@ window.EXAM_DATA = {
               "raw_session": "01/11/2026 13.00-14.45"
             }
           ]
+        },
+        {
+          "title": "2026-2027 Eğitim-Öğretim Yılı Güz Dönemi Taslak Ara Sınav Programı",
+          "date": "09.10.2026",
+          "url": "https://mdbf.btu.edu.tr/tr/endustri/duyuru/detay/55077/2026-2027-eğitim-öğretim-yılı-güz-dönemi-taslak-ara-sınav-programı",
+          "files": [
+            {
+              "title": "2026-2027 Güz Ara Sınav Programı (PDF)",
+              "url": "https://depo.btu.edu.tr/img/duyurular//1791548373_a777bc26f82bf6d5879f.pdf",
+              "ext": "pdf",
+              "exam_items": [
+                {
+                  "code": "ENM0101",
+                  "name": "Endüstri Mühendisliğine Giriş",
+                  "date": "04.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Arş. Gör. Dr. ASLIHAN KARAŞ ÇELİK",
+                  "grade": "1",
+                  "classrooms": "G-154, G-Z54",
+                  "raw_session": "04/11/2026 11.00-12.45"
+                },
+                {
+                  "code": "MAT0103",
+                  "name": "Lineer Cebir",
+                  "date": "03.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Arş. Gör. GÖKÇEN DİLAVER TUNÇ",
+                  "grade": "1",
+                  "classrooms": "E-446, E-225",
+                  "raw_session": "03/11/2026 09.00-10.45"
+                },
+                {
+                  "code": "FZK0101",
+                  "name": "Fizik I",
+                  "date": "01.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Dr. Öğr. Üyesi HÜSEYİN DAĞ",
+                  "grade": "1",
+                  "classrooms": "E-104, E-346, E-347, E-124",
+                  "raw_session": "01/11/2026 09.00-10.45"
+                },
+                {
+                  "code": "ENM0103",
+                  "name": "Bilgisayar Programlama",
+                  "date": "06.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Dr. Öğr. Üyesi İLKNUR TÜKENMEZ",
+                  "grade": "1",
+                  "classrooms": "G-Z53",
+                  "raw_session": "06/11/2026 11.00-12.45"
+                },
+                {
+                  "code": "ENM0103",
+                  "name": "Bilgisayar Programlama",
+                  "date": "06.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Dr. Öğr. Üyesi İLKNUR TÜKENMEZ",
+                  "grade": "1",
+                  "classrooms": "G-Z52",
+                  "raw_session": "06/11/2026 11.00-12.45"
+                },
+                {
+                  "code": "KIM0193",
+                  "name": "Genel Kimya",
+                  "date": "05.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Dr. Öğr. Üyesi MUSTAFA SALİH HIZIR",
+                  "grade": "1",
+                  "classrooms": "G-Z04, G-Z52",
+                  "raw_session": "05/11/2026 09.00-10.45"
+                },
+                {
+                  "code": "MAK0191",
+                  "name": "Bilgisayar Destekli Teknik Resim",
+                  "date": "01.11.2026",
+                  "time": "13:00 - 14:45",
+                  "instructor": "Dr. Öğr. Üyesi OSMAN BAYRAK",
+                  "grade": "1",
+                  "classrooms": "E-304",
+                  "raw_session": "01/11/2026 13.00-14.45"
+                },
+                {
+                  "code": "MAT0101",
+                  "name": "Matematik I",
+                  "date": "02.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Prof. Dr. EMEL AŞICI",
+                  "grade": "1",
+                  "classrooms": "G-152, G-153",
+                  "raw_session": "02/11/2026 11.00-12.45"
+                },
+                {
+                  "code": "ENM0203",
+                  "name": "Sistem Analizi",
+                  "date": "04.11.2026",
+                  "time": "13:00 - 14:45",
+                  "instructor": "Doç. Dr. HAMİD YILMAZ",
+                  "grade": "2",
+                  "classrooms": "G-Z05, G-Z51",
+                  "raw_session": "04/11/2026 13.00-14.45"
+                },
+                {
+                  "code": "MAT0201",
+                  "name": "Diferansiyel Denklemler",
+                  "date": "03.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Doç. Dr. YÜCEL ÇENESİZ",
+                  "grade": "2",
+                  "classrooms": "G-153, G-154, G-251, G-252, G-Z52",
+                  "raw_session": "03/11/2026 11.00-12.45"
+                },
+                {
+                  "code": "END0201",
+                  "name": "Malzeme Bilimi",
+                  "date": "01.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Dr. Öğr. Üyesi BURAK KÜÇÜKELYAS",
+                  "grade": "2",
+                  "classrooms": "E-203",
+                  "raw_session": "01/11/2026 11.00-12.45"
+                },
+                {
+                  "code": "ENM0201",
+                  "name": "Olasılık",
+                  "date": "05.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Dr. Öğr. Üyesi İSMAİL ENES PARLAK",
+                  "grade": "2",
+                  "classrooms": "G-154, G-251",
+                  "raw_session": "05/11/2026 11.00-12.45"
+                },
+                {
+                  "code": "ENM0205",
+                  "name": "Mühendislik Ekonomisi",
+                  "date": "07.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Dr. Öğr. Üyesi MUHAMMET FEHMİ ÇAPANOĞLU",
+                  "grade": "2",
+                  "classrooms": "E-104, E-346",
+                  "raw_session": "07/11/2026 09.00-10.45"
+                },
+                {
+                  "code": "ENM0207",
+                  "name": "Mesleki İngilizce",
+                  "date": "02.11.2026",
+                  "time": "13:00 - 14:45",
+                  "instructor": "Dr. Öğr. Üyesi MUHAMMET FEHMİ ÇAPANOĞLU",
+                  "grade": "2",
+                  "classrooms": "G-154, G-Z54",
+                  "raw_session": "02/11/2026 13.00-14.45"
+                },
+                {
+                  "code": "EDY0201",
+                  "name": "Eleştirel Düşünme Yöntemleri",
+                  "date": "06.11.2026",
+                  "time": "16:00 - 17:00",
+                  "instructor": "Prof. Dr. İBRAHİM DİLER",
+                  "grade": "2",
+                  "classrooms": "E-104, E-346, E-347, E-348, E-446, E-447, E-448, E-Z32, E-138",
+                  "raw_session": "06/11/2026 16.00-17.00"
+                },
+                {
+                  "code": "EDY0201",
+                  "name": "Eleştirel Düşünme Yöntemleri",
+                  "date": "06.11.2026",
+                  "time": "16:00 - 17:00",
+                  "instructor": "Prof. Dr. İBRAHİM DİLER",
+                  "grade": "2",
+                  "classrooms": "G-Z04, G-Z05, G-151, G-152, G-153, G-154, G-251, G-252, G-253, G-254",
+                  "raw_session": "06/11/2026 16.00-17.00"
+                },
+                {
+                  "code": "EDY0201",
+                  "name": "Eleştirel Düşünme Yöntemleri",
+                  "date": "06.11.2026",
+                  "time": "16:00 - 17:00",
+                  "instructor": "Prof. Dr. İBRAHİM DİLER",
+                  "grade": "2",
+                  "classrooms": "G-Z04",
+                  "raw_session": "06/11/2026 16.00-17.00"
+                },
+                {
+                  "code": "END0302",
+                  "name": "Yönetim Bilgi Sistemleri",
+                  "date": "05.11.2026",
+                  "time": "13:00 - 14:45",
+                  "instructor": "Doç. Dr. GÜRKAN IŞIK",
+                  "grade": "3",
+                  "classrooms": "G-Z53",
+                  "raw_session": "05/11/2026 13.00-14.45"
+                },
+                {
+                  "code": "ENM0325",
+                  "name": "Toplam Kalite Yönetimi",
+                  "date": "01.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Doç. Dr. HASAN ŞAHİN",
+                  "grade": "3",
+                  "classrooms": "E-331",
+                  "raw_session": "01/11/2026 11.00-12.45"
+                },
+                {
+                  "code": "ENM0305",
+                  "name": "Sistem Simülasyonu",
+                  "date": "05.11.2026",
+                  "time": "13:00 - 14:45",
+                  "instructor": "Doç. Dr. KORAY ALTUN",
+                  "grade": "3",
+                  "classrooms": "E-204",
+                  "raw_session": "05/11/2026 13.00-14.45"
+                },
+                {
+                  "code": "ENM0305",
+                  "name": "Sistem Simülasyonu",
+                  "date": "05.11.2026",
+                  "time": "15:00 - 16:45",
+                  "instructor": "Doç. Dr. KORAY ALTUN",
+                  "grade": "3",
+                  "classrooms": "E-204",
+                  "raw_session": "05/11/2026 15.00-16.45"
+                },
+                {
+                  "code": "ENM0319",
+                  "name": "Sistematik İnovasyon",
+                  "date": "03.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Doç. Dr. KORAY ALTUN",
+                  "grade": "3",
+                  "classrooms": "G-Z54",
+                  "raw_session": "03/11/2026 09.00-10.45"
+                },
+                {
+                  "code": "ENM0301",
+                  "name": "Yöneylem Araştırması I",
+                  "date": "02.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Doç. Dr. YUNUS DEMİR",
+                  "grade": "3",
+                  "classrooms": "G-151, G-152, G-Z54",
+                  "raw_session": "02/11/2026 09.00-10.45"
+                },
+                {
+                  "code": "ENM0317",
+                  "name": "Veri Bilimi",
+                  "date": "01.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Dr. Öğr. Üyesi İSMAİL ENES PARLAK",
+                  "grade": "3",
+                  "classrooms": "E-404",
+                  "raw_session": "01/11/2026 09.00-10.45"
+                },
+                {
+                  "code": "ENM0313",
+                  "name": "Endüstri 4.0 ve Akıllı Üretim Sistemleri",
+                  "date": "01.11.2026",
+                  "time": "13:00 - 14:45",
+                  "instructor": "Öğretim Görevlisi SERHAT KAAN",
+                  "grade": "3",
+                  "classrooms": "G-Z51",
+                  "raw_session": "01/11/2026 13.00-14.45"
+                },
+                {
+                  "code": "ENM0303",
+                  "name": "Üretim Planlama ve Kontrol",
+                  "date": "06.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Prof. Dr. AYTAÇ YILDIZ",
+                  "grade": "3",
+                  "classrooms": "E-346, E-103",
+                  "raw_session": "06/11/2026 09.00-10.45"
+                },
+                {
+                  "code": "ENM0315",
+                  "name": "Yalın Üretim",
+                  "date": "03.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Prof. Dr. AYTAÇ YILDIZ",
+                  "grade": "3",
+                  "classrooms": "G-Z53",
+                  "raw_session": "03/11/2026 09.00-10.45"
+                },
+                {
+                  "code": "ENM0307",
+                  "name": "Ergonomi",
+                  "date": "04.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Prof. Dr. ÖMER FARUK EFE",
+                  "grade": "3",
+                  "classrooms": "G-151, G-Z54",
+                  "raw_session": "04/11/2026 09.00-10.45"
+                }
+              ]
+            }
+          ],
+          "exam_items": [
+            {
+              "code": "ENM0101",
+              "name": "Endüstri Mühendisliğine Giriş",
+              "date": "04.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Arş. Gör. Dr. ASLIHAN KARAŞ ÇELİK",
+              "grade": "1",
+              "classrooms": "G-154, G-Z54",
+              "raw_session": "04/11/2026 11.00-12.45"
+            },
+            {
+              "code": "MAT0103",
+              "name": "Lineer Cebir",
+              "date": "03.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Arş. Gör. GÖKÇEN DİLAVER TUNÇ",
+              "grade": "1",
+              "classrooms": "E-446, E-225",
+              "raw_session": "03/11/2026 09.00-10.45"
+            },
+            {
+              "code": "FZK0101",
+              "name": "Fizik I",
+              "date": "01.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Dr. Öğr. Üyesi HÜSEYİN DAĞ",
+              "grade": "1",
+              "classrooms": "E-104, E-346, E-347, E-124",
+              "raw_session": "01/11/2026 09.00-10.45"
+            },
+            {
+              "code": "ENM0103",
+              "name": "Bilgisayar Programlama",
+              "date": "06.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Dr. Öğr. Üyesi İLKNUR TÜKENMEZ",
+              "grade": "1",
+              "classrooms": "G-Z53",
+              "raw_session": "06/11/2026 11.00-12.45"
+            },
+            {
+              "code": "ENM0103",
+              "name": "Bilgisayar Programlama",
+              "date": "06.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Dr. Öğr. Üyesi İLKNUR TÜKENMEZ",
+              "grade": "1",
+              "classrooms": "G-Z52",
+              "raw_session": "06/11/2026 11.00-12.45"
+            },
+            {
+              "code": "KIM0193",
+              "name": "Genel Kimya",
+              "date": "05.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Dr. Öğr. Üyesi MUSTAFA SALİH HIZIR",
+              "grade": "1",
+              "classrooms": "G-Z04, G-Z52",
+              "raw_session": "05/11/2026 09.00-10.45"
+            },
+            {
+              "code": "MAK0191",
+              "name": "Bilgisayar Destekli Teknik Resim",
+              "date": "01.11.2026",
+              "time": "13:00 - 14:45",
+              "instructor": "Dr. Öğr. Üyesi OSMAN BAYRAK",
+              "grade": "1",
+              "classrooms": "E-304",
+              "raw_session": "01/11/2026 13.00-14.45"
+            },
+            {
+              "code": "MAT0101",
+              "name": "Matematik I",
+              "date": "02.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Prof. Dr. EMEL AŞICI",
+              "grade": "1",
+              "classrooms": "G-152, G-153",
+              "raw_session": "02/11/2026 11.00-12.45"
+            },
+            {
+              "code": "ENM0203",
+              "name": "Sistem Analizi",
+              "date": "04.11.2026",
+              "time": "13:00 - 14:45",
+              "instructor": "Doç. Dr. HAMİD YILMAZ",
+              "grade": "2",
+              "classrooms": "G-Z05, G-Z51",
+              "raw_session": "04/11/2026 13.00-14.45"
+            },
+            {
+              "code": "MAT0201",
+              "name": "Diferansiyel Denklemler",
+              "date": "03.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Doç. Dr. YÜCEL ÇENESİZ",
+              "grade": "2",
+              "classrooms": "G-153, G-154, G-251, G-252, G-Z52",
+              "raw_session": "03/11/2026 11.00-12.45"
+            },
+            {
+              "code": "END0201",
+              "name": "Malzeme Bilimi",
+              "date": "01.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Dr. Öğr. Üyesi BURAK KÜÇÜKELYAS",
+              "grade": "2",
+              "classrooms": "E-203",
+              "raw_session": "01/11/2026 11.00-12.45"
+            },
+            {
+              "code": "ENM0201",
+              "name": "Olasılık",
+              "date": "05.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Dr. Öğr. Üyesi İSMAİL ENES PARLAK",
+              "grade": "2",
+              "classrooms": "G-154, G-251",
+              "raw_session": "05/11/2026 11.00-12.45"
+            },
+            {
+              "code": "ENM0205",
+              "name": "Mühendislik Ekonomisi",
+              "date": "07.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Dr. Öğr. Üyesi MUHAMMET FEHMİ ÇAPANOĞLU",
+              "grade": "2",
+              "classrooms": "E-104, E-346",
+              "raw_session": "07/11/2026 09.00-10.45"
+            },
+            {
+              "code": "ENM0207",
+              "name": "Mesleki İngilizce",
+              "date": "02.11.2026",
+              "time": "13:00 - 14:45",
+              "instructor": "Dr. Öğr. Üyesi MUHAMMET FEHMİ ÇAPANOĞLU",
+              "grade": "2",
+              "classrooms": "G-154, G-Z54",
+              "raw_session": "02/11/2026 13.00-14.45"
+            },
+            {
+              "code": "EDY0201",
+              "name": "Eleştirel Düşünme Yöntemleri",
+              "date": "06.11.2026",
+              "time": "16:00 - 17:00",
+              "instructor": "Prof. Dr. İBRAHİM DİLER",
+              "grade": "2",
+              "classrooms": "E-104, E-346, E-347, E-348, E-446, E-447, E-448, E-Z32, E-138",
+              "raw_session": "06/11/2026 16.00-17.00"
+            },
+            {
+              "code": "EDY0201",
+              "name": "Eleştirel Düşünme Yöntemleri",
+              "date": "06.11.2026",
+              "time": "16:00 - 17:00",
+              "instructor": "Prof. Dr. İBRAHİM DİLER",
+              "grade": "2",
+              "classrooms": "G-Z04, G-Z05, G-151, G-152, G-153, G-154, G-251, G-252, G-253, G-254",
+              "raw_session": "06/11/2026 16.00-17.00"
+            },
+            {
+              "code": "EDY0201",
+              "name": "Eleştirel Düşünme Yöntemleri",
+              "date": "06.11.2026",
+              "time": "16:00 - 17:00",
+              "instructor": "Prof. Dr. İBRAHİM DİLER",
+              "grade": "2",
+              "classrooms": "G-Z04",
+              "raw_session": "06/11/2026 16.00-17.00"
+            },
+            {
+              "code": "END0302",
+              "name": "Yönetim Bilgi Sistemleri",
+              "date": "05.11.2026",
+              "time": "13:00 - 14:45",
+              "instructor": "Doç. Dr. GÜRKAN IŞIK",
+              "grade": "3",
+              "classrooms": "G-Z53",
+              "raw_session": "05/11/2026 13.00-14.45"
+            },
+            {
+              "code": "ENM0325",
+              "name": "Toplam Kalite Yönetimi",
+              "date": "01.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Doç. Dr. HASAN ŞAHİN",
+              "grade": "3",
+              "classrooms": "E-331",
+              "raw_session": "01/11/2026 11.00-12.45"
+            },
+            {
+              "code": "ENM0305",
+              "name": "Sistem Simülasyonu",
+              "date": "05.11.2026",
+              "time": "13:00 - 14:45",
+              "instructor": "Doç. Dr. KORAY ALTUN",
+              "grade": "3",
+              "classrooms": "E-204",
+              "raw_session": "05/11/2026 13.00-14.45"
+            },
+            {
+              "code": "ENM0305",
+              "name": "Sistem Simülasyonu",
+              "date": "05.11.2026",
+              "time": "15:00 - 16:45",
+              "instructor": "Doç. Dr. KORAY ALTUN",
+              "grade": "3",
+              "classrooms": "E-204",
+              "raw_session": "05/11/2026 15.00-16.45"
+            },
+            {
+              "code": "ENM0319",
+              "name": "Sistematik İnovasyon",
+              "date": "03.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Doç. Dr. KORAY ALTUN",
+              "grade": "3",
+              "classrooms": "G-Z54",
+              "raw_session": "03/11/2026 09.00-10.45"
+            },
+            {
+              "code": "ENM0301",
+              "name": "Yöneylem Araştırması I",
+              "date": "02.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Doç. Dr. YUNUS DEMİR",
+              "grade": "3",
+              "classrooms": "G-151, G-152, G-Z54",
+              "raw_session": "02/11/2026 09.00-10.45"
+            },
+            {
+              "code": "ENM0317",
+              "name": "Veri Bilimi",
+              "date": "01.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Dr. Öğr. Üyesi İSMAİL ENES PARLAK",
+              "grade": "3",
+              "classrooms": "E-404",
+              "raw_session": "01/11/2026 09.00-10.45"
+            },
+            {
+              "code": "ENM0313",
+              "name": "Endüstri 4.0 ve Akıllı Üretim Sistemleri",
+              "date": "01.11.2026",
+              "time": "13:00 - 14:45",
+              "instructor": "Öğretim Görevlisi SERHAT KAAN",
+              "grade": "3",
+              "classrooms": "G-Z51",
+              "raw_session": "01/11/2026 13.00-14.45"
+            },
+            {
+              "code": "ENM0303",
+              "name": "Üretim Planlama ve Kontrol",
+              "date": "06.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Prof. Dr. AYTAÇ YILDIZ",
+              "grade": "3",
+              "classrooms": "E-346, E-103",
+              "raw_session": "06/11/2026 09.00-10.45"
+            },
+            {
+              "code": "ENM0315",
+              "name": "Yalın Üretim",
+              "date": "03.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Prof. Dr. AYTAÇ YILDIZ",
+              "grade": "3",
+              "classrooms": "G-Z53",
+              "raw_session": "03/11/2026 09.00-10.45"
+            },
+            {
+              "code": "ENM0307",
+              "name": "Ergonomi",
+              "date": "04.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Prof. Dr. ÖMER FARUK EFE",
+              "grade": "3",
+              "classrooms": "G-151, G-Z54",
+              "raw_session": "04/11/2026 09.00-10.45"
+            }
+          ]
         }
       ],
-      "last_checked": "12.11.2026 21:50"
+      "last_checked": "13.11.2026 12:58"
     },
     "elektrik": {
       "key": "elektrik",
@@ -13297,7 +13873,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:50"
+      "last_checked": "13.11.2026 12:58"
     },
     "kimya": {
       "key": "kimya",
@@ -17654,7 +18230,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:50"
+      "last_checked": "13.11.2026 12:58"
     },
     "kimyamuh": {
       "key": "kimyamuh",
@@ -24468,7 +25044,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:50"
+      "last_checked": "13.11.2026 12:59"
     },
     "makine": {
       "key": "makine",
@@ -29009,7 +29585,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:50"
+      "last_checked": "13.11.2026 12:59"
     },
     "matematik": {
       "key": "matematik",
@@ -34091,7 +34667,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:50"
+      "last_checked": "13.11.2026 12:59"
     },
     "mekatronik": {
       "key": "mekatronik",
@@ -35239,7 +35815,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:50"
+      "last_checked": "13.11.2026 12:59"
     },
     "mekatroniking": {
       "key": "mekatroniking",
@@ -36387,7 +36963,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:50"
+      "last_checked": "13.11.2026 12:59"
     },
     "metalurji": {
       "key": "metalurji",
@@ -40991,7 +41567,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:51"
+      "last_checked": "13.11.2026 12:59"
     },
     "polimer": {
       "key": "polimer",
@@ -41915,7 +42491,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:51"
+      "last_checked": "13.11.2026 12:59"
     },
     "veribilimi": {
       "key": "veribilimi",
@@ -42851,7 +43427,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:51"
+      "last_checked": "13.11.2026 12:59"
     },
     "yapayzeka": {
       "key": "yapayzeka",
@@ -43239,7 +43815,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:51"
+      "last_checked": "13.11.2026 12:59"
     },
     "sosyoloji": {
       "key": "sosyoloji",
@@ -43687,7 +44263,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:51"
+      "last_checked": "13.11.2026 12:59"
     },
     "ui": {
       "key": "ui",
@@ -44095,7 +44671,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:51"
+      "last_checked": "13.11.2026 13:00"
     },
     "ui_ing": {
       "key": "ui_ing",
@@ -44563,7 +45139,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:51"
+      "last_checked": "13.11.2026 13:00"
     },
     "utl": {
       "key": "utl",
@@ -45211,7 +45787,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:51"
+      "last_checked": "13.11.2026 13:00"
     },
     "isletme": {
       "key": "isletme",
@@ -45639,7 +46215,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:51"
+      "last_checked": "13.11.2026 13:00"
     },
     "imtb": {
       "key": "imtb",
@@ -45665,7 +46241,7 @@ window.EXAM_DATA = {
           "exam_items": []
         }
       ],
-      "last_checked": "12.11.2026 21:51"
+      "last_checked": "13.11.2026 13:00"
     },
     "psikoloji": {
       "key": "psikoloji",
@@ -46393,7 +46969,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:51"
+      "last_checked": "13.11.2026 13:00"
     },
     "mimarlik": {
       "key": "mimarlik",
@@ -46541,7 +47117,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:51"
+      "last_checked": "13.11.2026 13:00"
     },
     "sehir": {
       "key": "sehir",
@@ -46567,7 +47143,7 @@ window.EXAM_DATA = {
           "exam_items": []
         }
       ],
-      "last_checked": "12.11.2026 21:51"
+      "last_checked": "13.11.2026 13:00"
     },
     "peyzaj": {
       "key": "peyzaj",
@@ -46955,7 +47531,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:51"
+      "last_checked": "13.11.2026 13:00"
     },
     "ormanendustri": {
       "key": "ormanendustri",
@@ -47543,7 +48119,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:51"
+      "last_checked": "13.11.2026 13:00"
     },
     "orman": {
       "key": "orman",
@@ -48291,7 +48867,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:51"
+      "last_checked": "13.11.2026 13:00"
     },
     "diy": {
       "key": "diy",
@@ -48545,7 +49121,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "12.11.2026 21:51"
+      "last_checked": "13.11.2026 13:00"
     },
     "gigm": {
       "key": "gigm",
@@ -48571,7 +49147,7 @@ window.EXAM_DATA = {
           "exam_items": []
         }
       ],
-      "last_checked": "12.11.2026 21:52"
+      "last_checked": "13.11.2026 13:00"
     }
   }
 };

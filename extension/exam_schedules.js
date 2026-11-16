@@ -1,4 +1,4 @@
-// BTÜ 2026-2027 Güz Ara Sınav Programları - Güncellendi: 16.11.2026 13:31
+// BTÜ 2026-2027 Güz Ara Sınav Programları - Güncellendi: 16.11.2026 23:50
 window.EXAM_DATA = {
   "meta": {
     "term": "2026-2027 Güz Dönemi",
@@ -8,7 +8,7 @@ window.EXAM_DATA = {
     "finalized_count": 30,
     "draft_count": 1,
     "not_announced_count": 1,
-    "last_updated": "16.11.2026 13:31"
+    "last_updated": "16.11.2026 23:50"
   },
   "departments": {
     "bilgisayar": {
@@ -1173,7 +1173,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:28"
+      "last_checked": "16.11.2026 23:47"
     },
     "biyomuh": {
       "key": "biyomuh",
@@ -10083,7 +10083,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:28"
+      "last_checked": "16.11.2026 23:48"
     },
     "cevre": {
       "key": "cevre",
@@ -10611,7 +10611,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:28"
+      "last_checked": "16.11.2026 23:48"
     },
     "insaat": {
       "key": "insaat",
@@ -11895,7 +11895,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:28"
+      "last_checked": "16.11.2026 23:48"
     },
     "gida": {
       "key": "gida",
@@ -11906,7 +11906,7 @@ window.EXAM_DATA = {
       "status": "PENDING",
       "status_label": "Henüz Yayınlanmadı",
       "announcements": [],
-      "last_checked": "16.11.2026 13:28"
+      "last_checked": "16.11.2026 23:48"
     },
     "fizik": {
       "key": "fizik",
@@ -12274,7 +12274,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:28"
+      "last_checked": "16.11.2026 23:48"
     },
     "endustri": {
       "key": "endustri",
@@ -13438,7 +13438,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:28"
+      "last_checked": "16.11.2026 23:48"
     },
     "elektrik": {
       "key": "elektrik",
@@ -13873,7 +13873,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:29"
+      "last_checked": "16.11.2026 23:48"
     },
     "kimya": {
       "key": "kimya",
@@ -18230,7 +18230,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:29"
+      "last_checked": "16.11.2026 23:48"
     },
     "kimyamuh": {
       "key": "kimyamuh",
@@ -25044,7 +25044,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:29"
+      "last_checked": "16.11.2026 23:48"
     },
     "makine": {
       "key": "makine",
@@ -29585,7 +29585,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:29"
+      "last_checked": "16.11.2026 23:49"
     },
     "matematik": {
       "key": "matematik",
@@ -34667,7 +34667,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:29"
+      "last_checked": "16.11.2026 23:49"
     },
     "mekatronik": {
       "key": "mekatronik",
@@ -35815,7 +35815,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:29"
+      "last_checked": "16.11.2026 23:49"
     },
     "mekatroniking": {
       "key": "mekatroniking",
@@ -36963,7 +36963,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:29"
+      "last_checked": "16.11.2026 23:49"
     },
     "metalurji": {
       "key": "metalurji",
@@ -41567,7 +41567,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:29"
+      "last_checked": "16.11.2026 23:49"
     },
     "polimer": {
       "key": "polimer",
@@ -42491,7 +42491,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:29"
+      "last_checked": "16.11.2026 23:49"
     },
     "veribilimi": {
       "key": "veribilimi",
@@ -43427,7 +43427,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:30"
+      "last_checked": "16.11.2026 23:49"
     },
     "yapayzeka": {
       "key": "yapayzeka",
@@ -43815,7 +43815,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:30"
+      "last_checked": "16.11.2026 23:49"
     },
     "sosyoloji": {
       "key": "sosyoloji",
@@ -44263,7 +44263,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:30"
+      "last_checked": "16.11.2026 23:49"
     },
     "ui": {
       "key": "ui",
@@ -44671,7 +44671,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:30"
+      "last_checked": "16.11.2026 23:49"
     },
     "ui_ing": {
       "key": "ui_ing",
@@ -45139,7 +45139,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:30"
+      "last_checked": "16.11.2026 23:49"
     },
     "utl": {
       "key": "utl",
@@ -45787,7 +45787,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:30"
+      "last_checked": "16.11.2026 23:50"
     },
     "isletme": {
       "key": "isletme",
@@ -46215,7 +46215,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:30"
+      "last_checked": "16.11.2026 23:50"
     },
     "imtb": {
       "key": "imtb",
@@ -46241,7 +46241,7 @@ window.EXAM_DATA = {
           "exam_items": []
         }
       ],
-      "last_checked": "16.11.2026 13:30"
+      "last_checked": "16.11.2026 23:50"
     },
     "psikoloji": {
       "key": "psikoloji",
@@ -46969,7 +46969,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:30"
+      "last_checked": "16.11.2026 23:50"
     },
     "mimarlik": {
       "key": "mimarlik",
@@ -47117,7 +47117,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:30"
+      "last_checked": "16.11.2026 23:50"
     },
     "sehir": {
       "key": "sehir",
@@ -47143,7 +47143,7 @@ window.EXAM_DATA = {
           "exam_items": []
         }
       ],
-      "last_checked": "16.11.2026 13:30"
+      "last_checked": "16.11.2026 23:50"
     },
     "peyzaj": {
       "key": "peyzaj",
@@ -47531,7 +47531,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:30"
+      "last_checked": "16.11.2026 23:50"
     },
     "ormanendustri": {
       "key": "ormanendustri",
@@ -48119,7 +48119,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:30"
+      "last_checked": "16.11.2026 23:50"
     },
     "orman": {
       "key": "orman",
@@ -48867,7 +48867,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:30"
+      "last_checked": "16.11.2026 23:50"
     },
     "diy": {
       "key": "diy",
@@ -49121,7 +49121,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "16.11.2026 13:30"
+      "last_checked": "16.11.2026 23:50"
     },
     "gigm": {
       "key": "gigm",
@@ -49147,7 +49147,7 @@ window.EXAM_DATA = {
           "exam_items": []
         }
       ],
-      "last_checked": "16.11.2026 13:31"
+      "last_checked": "16.11.2026 23:50"
     }
   }
 };

@@ -1,4 +1,4 @@
-// BTÜ 2026-2027 Güz Ara Sınav Programları - Güncellendi: 26.11.2026 14:51
+// BTÜ 2026-2027 Güz Ara Sınav Programları - Güncellendi: 26.11.2026 23:37
 window.EXAM_DATA = {
   "meta": {
     "term": "2026-2027 Güz Dönemi",
@@ -8,7 +8,7 @@ window.EXAM_DATA = {
     "finalized_count": 30,
     "draft_count": 1,
     "not_announced_count": 1,
-    "last_updated": "26.11.2026 14:51"
+    "last_updated": "26.11.2026 23:37"
   },
   "departments": {
     "bilgisayar": {
@@ -1173,7 +1173,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:49"
+      "last_checked": "26.11.2026 23:35"
     },
     "biyomuh": {
       "key": "biyomuh",
@@ -10083,7 +10083,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:49"
+      "last_checked": "26.11.2026 23:35"
     },
     "cevre": {
       "key": "cevre",
@@ -10611,7 +10611,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:49"
+      "last_checked": "26.11.2026 23:35"
     },
     "insaat": {
       "key": "insaat",
@@ -11895,7 +11895,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:49"
+      "last_checked": "26.11.2026 23:35"
     },
     "gida": {
       "key": "gida",
@@ -11906,7 +11906,7 @@ window.EXAM_DATA = {
       "status": "PENDING",
       "status_label": "Henüz Yayınlanmadı",
       "announcements": [],
-      "last_checked": "26.11.2026 14:49"
+      "last_checked": "26.11.2026 23:35"
     },
     "fizik": {
       "key": "fizik",
@@ -12274,7 +12274,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:49"
+      "last_checked": "26.11.2026 23:35"
     },
     "endustri": {
       "key": "endustri",
@@ -13438,7 +13438,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:49"
+      "last_checked": "26.11.2026 23:35"
     },
     "elektrik": {
       "key": "elektrik",
@@ -13873,7 +13873,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:49"
+      "last_checked": "26.11.2026 23:35"
     },
     "kimya": {
       "key": "kimya",
@@ -18244,7 +18244,7 @@ window.EXAM_DATA = {
           "exam_items": []
         }
       ],
-      "last_checked": "26.11.2026 14:49"
+      "last_checked": "26.11.2026 23:35"
     },
     "kimyamuh": {
       "key": "kimyamuh",
@@ -29573,7 +29573,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:50"
+      "last_checked": "26.11.2026 23:35"
     },
     "makine": {
       "key": "makine",
@@ -34114,7 +34114,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:50"
+      "last_checked": "26.11.2026 23:35"
     },
     "matematik": {
       "key": "matematik",
@@ -34714,7 +34714,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:50"
+      "last_checked": "26.11.2026 23:35"
     },
     "mekatronik": {
       "key": "mekatronik",
@@ -34728,7 +34728,7 @@ window.EXAM_DATA = {
         {
           "title": "2026-2027 Eğitim-Öğretim Yılı Güz Dönemi Arasınav Programı",
           "date": "20.10.2026",
-          "url": "https://mdbf.btu.edu.tr//tr/mekatronik/duyuru/detay/55193/2026-2027-eğitim-öğretim-yılı-güz-dönemi-arasınav-programı",
+          "url": "https://mdbf.btu.edu.tr/tr/mekatronik/duyuru/detay/55193/2026-2027-eğitim-öğretim-yılı-güz-dönemi-arasınav-programı",
           "files": [
             {
               "title": "Doktora Yeterlilik Sınavı",
@@ -35266,9 +35266,603 @@ window.EXAM_DATA = {
               "raw_session": "01/11/2026 11.00‐12.45"
             }
           ]
+        },
+        {
+          "title": "2026-2027 Eğitim-Öğretim Yılı Güz Dönemi Taslak Arasınav Programı",
+          "date": "15.10.2026",
+          "url": "https://mdbf.btu.edu.tr/tr/mekatronik/duyuru/detay/55141/2026-2027-eğitim-öğretim-yılı-güz-dönemi-taslak-arasınav-programı",
+          "files": [
+            {
+              "title": "Doktora Yeterlilik Sınavı",
+              "url": "https://depo.btu.edu.tr/img/sayfa//1723205283_bbc88a68063e225f033f.pdf",
+              "ext": "pdf",
+              "exam_items": []
+            },
+            {
+              "title": "2026-2027 Güz Ara Sınav Programı (Excel)",
+              "url": "https://depo.btu.edu.tr/img/duyurular//1792056816_041bb970acc306f59c78.xlsx",
+              "ext": "xlsx",
+              "exam_items": [
+                {
+                  "code": "MCH0111",
+                  "name": "Introduction to Mechatronics Engineering",
+                  "date": "04.11.2026",
+                  "time": "13:00 - 14:45",
+                  "instructor": "Arş. Gör. Dr. MERT YILMAZ",
+                  "grade": "1",
+                  "classrooms": "Derslik, G-252",
+                  "raw_session": "04/11/2026 13.00-14.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MCH0113",
+                  "name": "Computer Programming I",
+                  "date": "06.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Arş. Gör. Dr. MERT YILMAZ",
+                  "grade": "1",
+                  "classrooms": "Derslik, G-251",
+                  "raw_session": "06/11/2026 09.00-10.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MAT0101",
+                  "name": "Matematik I",
+                  "date": "02.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Arş. Gör. GÖKÇEN DİLAVER TUNÇ",
+                  "grade": "1",
+                  "classrooms": "Derslik, E-348, E-446, E-124",
+                  "raw_session": "02/11/2026 09.00-10.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MAT0103",
+                  "name": "Lineer Cebir",
+                  "date": "03.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Arş. Gör. GÖKÇEN DİLAVER TUNÇ",
+                  "grade": "1",
+                  "classrooms": "Derslik, E-347, E-348, E-125",
+                  "raw_session": "03/11/2026 09.00-10.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0103",
+                  "name": "Malzeme Bilimi",
+                  "date": "05.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Doç. Dr. İSMAİL ÖZTÜRK",
+                  "grade": "1",
+                  "classrooms": "Derslik, E-104, E-346, E-124",
+                  "raw_session": "05/11/2026 09.00-10.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0105",
+                  "name": "Mekatronik Mühendisliğine Giriş",
+                  "date": "04.11.2026",
+                  "time": "13:00 - 14:45",
+                  "instructor": "Dr. Öğr. Üyesi OĞUZ MISIR",
+                  "grade": "1",
+                  "classrooms": "Derslik, G-154, G-251, G-Z54",
+                  "raw_session": "04/11/2026 13.00-14.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0101",
+                  "name": "Bilgisayar Programlama I",
+                  "date": "06.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Dr. Öğr. Üyesi SELMA YILMAZYILDIZ KAYAARMA",
+                  "grade": "1",
+                  "classrooms": "Derslik, G-152, G-Z54",
+                  "raw_session": "06/11/2026 09.00-10.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0101",
+                  "name": "Bilgisayar Programlama I",
+                  "date": "06.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Dr. Öğr. Üyesi SELMA YILMAZYILDIZ KAYAARMA",
+                  "grade": "1",
+                  "classrooms": "Derslik, G-153, G-154",
+                  "raw_session": "06/11/2026 09.00-10.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "FZK0101",
+                  "name": "Fizik I",
+                  "date": "01.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Prof. Dr. SONGÜL AKBULUT ÖZEN",
+                  "grade": "1",
+                  "classrooms": "Derslik, E-348, E-446, E-125",
+                  "raw_session": "01/11/2026 11.00-12.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MAT0291",
+                  "name": "Diferansiyel Denklemler",
+                  "date": "05.11.2026",
+                  "time": "15:00 - 16:45",
+                  "instructor": "Dış Grv. MÜGE TOGAN",
+                  "grade": "2",
+                  "classrooms": "Derslik, G-Z04, G-Z05, G-Z51",
+                  "raw_session": "05/11/2026 15.00-16.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0203",
+                  "name": "Mantık Devreleri",
+                  "date": "01.11.2026",
+                  "time": "13:00 - 14:45",
+                  "instructor": "Doç. Dr. MURAT PEKER",
+                  "grade": "2",
+                  "classrooms": "Derslik, E-446, E-447, E-448, E-406",
+                  "raw_session": "01/11/2026 13.00-14.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MECH0201",
+                  "name": "Engineering Mechanics -Statics",
+                  "date": "02.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Doç. Dr. NURETTİN GÖKHAN ADAR",
+                  "grade": "2",
+                  "classrooms": "Derslik, E-124",
+                  "raw_session": "02/11/2026 11.00-12.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0205",
+                  "name": "Mühendislik Mekaniği I",
+                  "date": "02.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Doç. Dr. NURETTİN GÖKHAN ADAR",
+                  "grade": "2",
+                  "classrooms": "Derslik, E-348, E-446, E-139",
+                  "raw_session": "02/11/2026 11.00-12.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MKT0211",
+                  "name": "Elektronik I",
+                  "date": "04.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Dr. Öğr. Üyesi EKREM DÜVEN",
+                  "grade": "2",
+                  "classrooms": "Derslik, E-347",
+                  "raw_session": "04/11/2026 11.00-12.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0201",
+                  "name": "Elektronik I",
+                  "date": "04.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Dr. Öğr. Üyesi EKREM DÜVEN",
+                  "grade": "2",
+                  "classrooms": "Derslik, E-104, E-346, E-347",
+                  "raw_session": "04/11/2026 11.00-12.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0207",
+                  "name": "Sayısal Yöntemler",
+                  "date": "03.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Dr. Öğr. Üyesi İLHAN TUNÇ",
+                  "grade": "2",
+                  "classrooms": "Derslik, E-447, E-448, E-406",
+                  "raw_session": "03/11/2026 11.00-12.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0309",
+                  "name": "Olasılık ve İstatistik",
+                  "date": "02.11.2026",
+                  "time": "13:00 - 14:45",
+                  "instructor": "Arş. Gör. Dr. FATİH ONAY",
+                  "grade": "3",
+                  "classrooms": "Derslik, E-346, E-331",
+                  "raw_session": "02/11/2026 13.00-14.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MCH0313",
+                  "name": "Electric Machines and Energy Conversion",
+                  "date": "03.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Arş. Gör. Dr. MERT YILMAZ",
+                  "grade": "3",
+                  "classrooms": "Derslik, E-331",
+                  "raw_session": "03/11/2026 09.00-10.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MCH0315",
+                  "name": "Measurement Techniques and Instrumentation",
+                  "date": "05.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Doç. Dr. AHMET REMZİ ÖZCAN",
+                  "grade": "3",
+                  "classrooms": "Derslik, G-Z54",
+                  "raw_session": "05/11/2026 11.00-12.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0307",
+                  "name": "Mikrodenetleyiciler",
+                  "date": "04.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Doç. Dr. AHMET REMZİ ÖZCAN",
+                  "grade": "3",
+                  "classrooms": "Derslik, E-348, E-125",
+                  "raw_session": "04/11/2026 09.00-10.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MKT0311",
+                  "name": "Mikroişlemci Tabanlı Sistem Tasarımı",
+                  "date": "04.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Doç. Dr. AHMET REMZİ ÖZCAN",
+                  "grade": "3",
+                  "classrooms": "Derslik, E-225",
+                  "raw_session": "04/11/2026 09.00-10.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0305",
+                  "name": "Makine Elemanları",
+                  "date": "06.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Doç. Dr. MEHMET ONUR GENÇ",
+                  "grade": "3",
+                  "classrooms": "Derslik, G-153, G-Z54",
+                  "raw_session": "06/11/2026 11.00-12.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MCH0311",
+                  "name": "Control Systems II",
+                  "date": "01.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Doç. Dr. NURETTİN GÖKHAN ADAR",
+                  "grade": "3",
+                  "classrooms": "Derslik, E-241",
+                  "raw_session": "01/11/2026 11.00-12.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0301",
+                  "name": "Elektrik Makineleri",
+                  "date": "03.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Prof. Dr. AHMET FENERCİOĞLU",
+                  "grade": "3",
+                  "classrooms": "Derslik, E-447, E-103",
+                  "raw_session": "03/11/2026 09.00-10.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0311",
+                  "name": "Ölçme Tekniği ve Enstrümantasyon",
+                  "date": "05.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Prof. Dr. AHMET MERT",
+                  "grade": "3",
+                  "classrooms": "Derslik, G-153, G-Z53",
+                  "raw_session": "05/11/2026 11.00-12.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0303",
+                  "name": "Kontrol Sistemleri II",
+                  "date": "01.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Prof. Dr. GÖKHAN GELEN",
+                  "grade": "3",
+                  "classrooms": "Derslik, E-140, E-240, E-404",
+                  "raw_session": "01/11/2026 11.00-12.45",
+                  "department": "Mekatronik Mühendisliği"
+                }
+              ]
+            }
+          ],
+          "exam_items": [
+            {
+              "code": "MCH0111",
+              "name": "Introduction to Mechatronics Engineering",
+              "date": "04.11.2026",
+              "time": "13:00 - 14:45",
+              "instructor": "Arş. Gör. Dr. MERT YILMAZ",
+              "grade": "1",
+              "classrooms": "Derslik, G-252",
+              "raw_session": "04/11/2026 13.00-14.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MCH0113",
+              "name": "Computer Programming I",
+              "date": "06.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Arş. Gör. Dr. MERT YILMAZ",
+              "grade": "1",
+              "classrooms": "Derslik, G-251",
+              "raw_session": "06/11/2026 09.00-10.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MAT0101",
+              "name": "Matematik I",
+              "date": "02.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Arş. Gör. GÖKÇEN DİLAVER TUNÇ",
+              "grade": "1",
+              "classrooms": "Derslik, E-348, E-446, E-124",
+              "raw_session": "02/11/2026 09.00-10.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MAT0103",
+              "name": "Lineer Cebir",
+              "date": "03.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Arş. Gör. GÖKÇEN DİLAVER TUNÇ",
+              "grade": "1",
+              "classrooms": "Derslik, E-347, E-348, E-125",
+              "raw_session": "03/11/2026 09.00-10.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0103",
+              "name": "Malzeme Bilimi",
+              "date": "05.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Doç. Dr. İSMAİL ÖZTÜRK",
+              "grade": "1",
+              "classrooms": "Derslik, E-104, E-346, E-124",
+              "raw_session": "05/11/2026 09.00-10.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0105",
+              "name": "Mekatronik Mühendisliğine Giriş",
+              "date": "04.11.2026",
+              "time": "13:00 - 14:45",
+              "instructor": "Dr. Öğr. Üyesi OĞUZ MISIR",
+              "grade": "1",
+              "classrooms": "Derslik, G-154, G-251, G-Z54",
+              "raw_session": "04/11/2026 13.00-14.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0101",
+              "name": "Bilgisayar Programlama I",
+              "date": "06.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Dr. Öğr. Üyesi SELMA YILMAZYILDIZ KAYAARMA",
+              "grade": "1",
+              "classrooms": "Derslik, G-152, G-Z54",
+              "raw_session": "06/11/2026 09.00-10.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0101",
+              "name": "Bilgisayar Programlama I",
+              "date": "06.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Dr. Öğr. Üyesi SELMA YILMAZYILDIZ KAYAARMA",
+              "grade": "1",
+              "classrooms": "Derslik, G-153, G-154",
+              "raw_session": "06/11/2026 09.00-10.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "FZK0101",
+              "name": "Fizik I",
+              "date": "01.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Prof. Dr. SONGÜL AKBULUT ÖZEN",
+              "grade": "1",
+              "classrooms": "Derslik, E-348, E-446, E-125",
+              "raw_session": "01/11/2026 11.00-12.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MAT0291",
+              "name": "Diferansiyel Denklemler",
+              "date": "05.11.2026",
+              "time": "15:00 - 16:45",
+              "instructor": "Dış Grv. MÜGE TOGAN",
+              "grade": "2",
+              "classrooms": "Derslik, G-Z04, G-Z05, G-Z51",
+              "raw_session": "05/11/2026 15.00-16.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0203",
+              "name": "Mantık Devreleri",
+              "date": "01.11.2026",
+              "time": "13:00 - 14:45",
+              "instructor": "Doç. Dr. MURAT PEKER",
+              "grade": "2",
+              "classrooms": "Derslik, E-446, E-447, E-448, E-406",
+              "raw_session": "01/11/2026 13.00-14.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MECH0201",
+              "name": "Engineering Mechanics -Statics",
+              "date": "02.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Doç. Dr. NURETTİN GÖKHAN ADAR",
+              "grade": "2",
+              "classrooms": "Derslik, E-124",
+              "raw_session": "02/11/2026 11.00-12.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0205",
+              "name": "Mühendislik Mekaniği I",
+              "date": "02.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Doç. Dr. NURETTİN GÖKHAN ADAR",
+              "grade": "2",
+              "classrooms": "Derslik, E-348, E-446, E-139",
+              "raw_session": "02/11/2026 11.00-12.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MKT0211",
+              "name": "Elektronik I",
+              "date": "04.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Dr. Öğr. Üyesi EKREM DÜVEN",
+              "grade": "2",
+              "classrooms": "Derslik, E-347",
+              "raw_session": "04/11/2026 11.00-12.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0201",
+              "name": "Elektronik I",
+              "date": "04.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Dr. Öğr. Üyesi EKREM DÜVEN",
+              "grade": "2",
+              "classrooms": "Derslik, E-104, E-346, E-347",
+              "raw_session": "04/11/2026 11.00-12.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0207",
+              "name": "Sayısal Yöntemler",
+              "date": "03.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Dr. Öğr. Üyesi İLHAN TUNÇ",
+              "grade": "2",
+              "classrooms": "Derslik, E-447, E-448, E-406",
+              "raw_session": "03/11/2026 11.00-12.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0309",
+              "name": "Olasılık ve İstatistik",
+              "date": "02.11.2026",
+              "time": "13:00 - 14:45",
+              "instructor": "Arş. Gör. Dr. FATİH ONAY",
+              "grade": "3",
+              "classrooms": "Derslik, E-346, E-331",
+              "raw_session": "02/11/2026 13.00-14.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MCH0313",
+              "name": "Electric Machines and Energy Conversion",
+              "date": "03.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Arş. Gör. Dr. MERT YILMAZ",
+              "grade": "3",
+              "classrooms": "Derslik, E-331",
+              "raw_session": "03/11/2026 09.00-10.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MCH0315",
+              "name": "Measurement Techniques and Instrumentation",
+              "date": "05.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Doç. Dr. AHMET REMZİ ÖZCAN",
+              "grade": "3",
+              "classrooms": "Derslik, G-Z54",
+              "raw_session": "05/11/2026 11.00-12.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0307",
+              "name": "Mikrodenetleyiciler",
+              "date": "04.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Doç. Dr. AHMET REMZİ ÖZCAN",
+              "grade": "3",
+              "classrooms": "Derslik, E-348, E-125",
+              "raw_session": "04/11/2026 09.00-10.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MKT0311",
+              "name": "Mikroişlemci Tabanlı Sistem Tasarımı",
+              "date": "04.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Doç. Dr. AHMET REMZİ ÖZCAN",
+              "grade": "3",
+              "classrooms": "Derslik, E-225",
+              "raw_session": "04/11/2026 09.00-10.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0305",
+              "name": "Makine Elemanları",
+              "date": "06.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Doç. Dr. MEHMET ONUR GENÇ",
+              "grade": "3",
+              "classrooms": "Derslik, G-153, G-Z54",
+              "raw_session": "06/11/2026 11.00-12.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MCH0311",
+              "name": "Control Systems II",
+              "date": "01.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Doç. Dr. NURETTİN GÖKHAN ADAR",
+              "grade": "3",
+              "classrooms": "Derslik, E-241",
+              "raw_session": "01/11/2026 11.00-12.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0301",
+              "name": "Elektrik Makineleri",
+              "date": "03.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Prof. Dr. AHMET FENERCİOĞLU",
+              "grade": "3",
+              "classrooms": "Derslik, E-447, E-103",
+              "raw_session": "03/11/2026 09.00-10.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0311",
+              "name": "Ölçme Tekniği ve Enstrümantasyon",
+              "date": "05.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Prof. Dr. AHMET MERT",
+              "grade": "3",
+              "classrooms": "Derslik, G-153, G-Z53",
+              "raw_session": "05/11/2026 11.00-12.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0303",
+              "name": "Kontrol Sistemleri II",
+              "date": "01.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Prof. Dr. GÖKHAN GELEN",
+              "grade": "3",
+              "classrooms": "Derslik, E-140, E-240, E-404",
+              "raw_session": "01/11/2026 11.00-12.45",
+              "department": "Mekatronik Mühendisliği"
+            }
+          ]
         }
       ],
-      "last_checked": "26.11.2026 14:50"
+      "last_checked": "26.11.2026 23:36"
     },
     "mekatroniking": {
       "key": "mekatroniking",
@@ -35282,7 +35876,7 @@ window.EXAM_DATA = {
         {
           "title": "2026-2027 Eğitim-Öğretim Yılı Güz Dönemi Arasınav Programı",
           "date": "20.10.2026",
-          "url": "https://mdbf.btu.edu.tr//tr/mekatronik/duyuru/detay/55193/2026-2027-eğitim-öğretim-yılı-güz-dönemi-arasınav-programı",
+          "url": "https://mdbf.btu.edu.tr/tr/mekatronik/duyuru/detay/55193/2026-2027-eğitim-öğretim-yılı-güz-dönemi-arasınav-programı",
           "files": [
             {
               "title": "Doktora Yeterlilik Sınavı",
@@ -35820,9 +36414,603 @@ window.EXAM_DATA = {
               "raw_session": "01/11/2026 11.00‐12.45"
             }
           ]
+        },
+        {
+          "title": "2026-2027 Eğitim-Öğretim Yılı Güz Dönemi Taslak Arasınav Programı",
+          "date": "15.10.2026",
+          "url": "https://mdbf.btu.edu.tr/tr/mekatronik/duyuru/detay/55141/2026-2027-eğitim-öğretim-yılı-güz-dönemi-taslak-arasınav-programı",
+          "files": [
+            {
+              "title": "Doktora Yeterlilik Sınavı",
+              "url": "https://depo.btu.edu.tr/img/sayfa//1723205283_bbc88a68063e225f033f.pdf",
+              "ext": "pdf",
+              "exam_items": []
+            },
+            {
+              "title": "2026-2027 Güz Ara Sınav Programı (Excel)",
+              "url": "https://depo.btu.edu.tr/img/duyurular//1792056816_041bb970acc306f59c78.xlsx",
+              "ext": "xlsx",
+              "exam_items": [
+                {
+                  "code": "MCH0111",
+                  "name": "Introduction to Mechatronics Engineering",
+                  "date": "04.11.2026",
+                  "time": "13:00 - 14:45",
+                  "instructor": "Arş. Gör. Dr. MERT YILMAZ",
+                  "grade": "1",
+                  "classrooms": "Derslik, G-252",
+                  "raw_session": "04/11/2026 13.00-14.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MCH0113",
+                  "name": "Computer Programming I",
+                  "date": "06.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Arş. Gör. Dr. MERT YILMAZ",
+                  "grade": "1",
+                  "classrooms": "Derslik, G-251",
+                  "raw_session": "06/11/2026 09.00-10.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MAT0101",
+                  "name": "Matematik I",
+                  "date": "02.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Arş. Gör. GÖKÇEN DİLAVER TUNÇ",
+                  "grade": "1",
+                  "classrooms": "Derslik, E-348, E-446, E-124",
+                  "raw_session": "02/11/2026 09.00-10.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MAT0103",
+                  "name": "Lineer Cebir",
+                  "date": "03.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Arş. Gör. GÖKÇEN DİLAVER TUNÇ",
+                  "grade": "1",
+                  "classrooms": "Derslik, E-347, E-348, E-125",
+                  "raw_session": "03/11/2026 09.00-10.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0103",
+                  "name": "Malzeme Bilimi",
+                  "date": "05.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Doç. Dr. İSMAİL ÖZTÜRK",
+                  "grade": "1",
+                  "classrooms": "Derslik, E-104, E-346, E-124",
+                  "raw_session": "05/11/2026 09.00-10.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0105",
+                  "name": "Mekatronik Mühendisliğine Giriş",
+                  "date": "04.11.2026",
+                  "time": "13:00 - 14:45",
+                  "instructor": "Dr. Öğr. Üyesi OĞUZ MISIR",
+                  "grade": "1",
+                  "classrooms": "Derslik, G-154, G-251, G-Z54",
+                  "raw_session": "04/11/2026 13.00-14.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0101",
+                  "name": "Bilgisayar Programlama I",
+                  "date": "06.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Dr. Öğr. Üyesi SELMA YILMAZYILDIZ KAYAARMA",
+                  "grade": "1",
+                  "classrooms": "Derslik, G-152, G-Z54",
+                  "raw_session": "06/11/2026 09.00-10.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0101",
+                  "name": "Bilgisayar Programlama I",
+                  "date": "06.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Dr. Öğr. Üyesi SELMA YILMAZYILDIZ KAYAARMA",
+                  "grade": "1",
+                  "classrooms": "Derslik, G-153, G-154",
+                  "raw_session": "06/11/2026 09.00-10.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "FZK0101",
+                  "name": "Fizik I",
+                  "date": "01.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Prof. Dr. SONGÜL AKBULUT ÖZEN",
+                  "grade": "1",
+                  "classrooms": "Derslik, E-348, E-446, E-125",
+                  "raw_session": "01/11/2026 11.00-12.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MAT0291",
+                  "name": "Diferansiyel Denklemler",
+                  "date": "05.11.2026",
+                  "time": "15:00 - 16:45",
+                  "instructor": "Dış Grv. MÜGE TOGAN",
+                  "grade": "2",
+                  "classrooms": "Derslik, G-Z04, G-Z05, G-Z51",
+                  "raw_session": "05/11/2026 15.00-16.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0203",
+                  "name": "Mantık Devreleri",
+                  "date": "01.11.2026",
+                  "time": "13:00 - 14:45",
+                  "instructor": "Doç. Dr. MURAT PEKER",
+                  "grade": "2",
+                  "classrooms": "Derslik, E-446, E-447, E-448, E-406",
+                  "raw_session": "01/11/2026 13.00-14.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MECH0201",
+                  "name": "Engineering Mechanics -Statics",
+                  "date": "02.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Doç. Dr. NURETTİN GÖKHAN ADAR",
+                  "grade": "2",
+                  "classrooms": "Derslik, E-124",
+                  "raw_session": "02/11/2026 11.00-12.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0205",
+                  "name": "Mühendislik Mekaniği I",
+                  "date": "02.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Doç. Dr. NURETTİN GÖKHAN ADAR",
+                  "grade": "2",
+                  "classrooms": "Derslik, E-348, E-446, E-139",
+                  "raw_session": "02/11/2026 11.00-12.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MKT0211",
+                  "name": "Elektronik I",
+                  "date": "04.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Dr. Öğr. Üyesi EKREM DÜVEN",
+                  "grade": "2",
+                  "classrooms": "Derslik, E-347",
+                  "raw_session": "04/11/2026 11.00-12.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0201",
+                  "name": "Elektronik I",
+                  "date": "04.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Dr. Öğr. Üyesi EKREM DÜVEN",
+                  "grade": "2",
+                  "classrooms": "Derslik, E-104, E-346, E-347",
+                  "raw_session": "04/11/2026 11.00-12.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0207",
+                  "name": "Sayısal Yöntemler",
+                  "date": "03.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Dr. Öğr. Üyesi İLHAN TUNÇ",
+                  "grade": "2",
+                  "classrooms": "Derslik, E-447, E-448, E-406",
+                  "raw_session": "03/11/2026 11.00-12.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0309",
+                  "name": "Olasılık ve İstatistik",
+                  "date": "02.11.2026",
+                  "time": "13:00 - 14:45",
+                  "instructor": "Arş. Gör. Dr. FATİH ONAY",
+                  "grade": "3",
+                  "classrooms": "Derslik, E-346, E-331",
+                  "raw_session": "02/11/2026 13.00-14.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MCH0313",
+                  "name": "Electric Machines and Energy Conversion",
+                  "date": "03.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Arş. Gör. Dr. MERT YILMAZ",
+                  "grade": "3",
+                  "classrooms": "Derslik, E-331",
+                  "raw_session": "03/11/2026 09.00-10.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MCH0315",
+                  "name": "Measurement Techniques and Instrumentation",
+                  "date": "05.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Doç. Dr. AHMET REMZİ ÖZCAN",
+                  "grade": "3",
+                  "classrooms": "Derslik, G-Z54",
+                  "raw_session": "05/11/2026 11.00-12.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0307",
+                  "name": "Mikrodenetleyiciler",
+                  "date": "04.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Doç. Dr. AHMET REMZİ ÖZCAN",
+                  "grade": "3",
+                  "classrooms": "Derslik, E-348, E-125",
+                  "raw_session": "04/11/2026 09.00-10.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MKT0311",
+                  "name": "Mikroişlemci Tabanlı Sistem Tasarımı",
+                  "date": "04.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Doç. Dr. AHMET REMZİ ÖZCAN",
+                  "grade": "3",
+                  "classrooms": "Derslik, E-225",
+                  "raw_session": "04/11/2026 09.00-10.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0305",
+                  "name": "Makine Elemanları",
+                  "date": "06.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Doç. Dr. MEHMET ONUR GENÇ",
+                  "grade": "3",
+                  "classrooms": "Derslik, G-153, G-Z54",
+                  "raw_session": "06/11/2026 11.00-12.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MCH0311",
+                  "name": "Control Systems II",
+                  "date": "01.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Doç. Dr. NURETTİN GÖKHAN ADAR",
+                  "grade": "3",
+                  "classrooms": "Derslik, E-241",
+                  "raw_session": "01/11/2026 11.00-12.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0301",
+                  "name": "Elektrik Makineleri",
+                  "date": "03.11.2026",
+                  "time": "09:00 - 10:45",
+                  "instructor": "Prof. Dr. AHMET FENERCİOĞLU",
+                  "grade": "3",
+                  "classrooms": "Derslik, E-447, E-103",
+                  "raw_session": "03/11/2026 09.00-10.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0311",
+                  "name": "Ölçme Tekniği ve Enstrümantasyon",
+                  "date": "05.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Prof. Dr. AHMET MERT",
+                  "grade": "3",
+                  "classrooms": "Derslik, G-153, G-Z53",
+                  "raw_session": "05/11/2026 11.00-12.45",
+                  "department": "Mekatronik Mühendisliği"
+                },
+                {
+                  "code": "MEK0303",
+                  "name": "Kontrol Sistemleri II",
+                  "date": "01.11.2026",
+                  "time": "11:00 - 12:45",
+                  "instructor": "Prof. Dr. GÖKHAN GELEN",
+                  "grade": "3",
+                  "classrooms": "Derslik, E-140, E-240, E-404",
+                  "raw_session": "01/11/2026 11.00-12.45",
+                  "department": "Mekatronik Mühendisliği"
+                }
+              ]
+            }
+          ],
+          "exam_items": [
+            {
+              "code": "MCH0111",
+              "name": "Introduction to Mechatronics Engineering",
+              "date": "04.11.2026",
+              "time": "13:00 - 14:45",
+              "instructor": "Arş. Gör. Dr. MERT YILMAZ",
+              "grade": "1",
+              "classrooms": "Derslik, G-252",
+              "raw_session": "04/11/2026 13.00-14.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MCH0113",
+              "name": "Computer Programming I",
+              "date": "06.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Arş. Gör. Dr. MERT YILMAZ",
+              "grade": "1",
+              "classrooms": "Derslik, G-251",
+              "raw_session": "06/11/2026 09.00-10.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MAT0101",
+              "name": "Matematik I",
+              "date": "02.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Arş. Gör. GÖKÇEN DİLAVER TUNÇ",
+              "grade": "1",
+              "classrooms": "Derslik, E-348, E-446, E-124",
+              "raw_session": "02/11/2026 09.00-10.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MAT0103",
+              "name": "Lineer Cebir",
+              "date": "03.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Arş. Gör. GÖKÇEN DİLAVER TUNÇ",
+              "grade": "1",
+              "classrooms": "Derslik, E-347, E-348, E-125",
+              "raw_session": "03/11/2026 09.00-10.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0103",
+              "name": "Malzeme Bilimi",
+              "date": "05.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Doç. Dr. İSMAİL ÖZTÜRK",
+              "grade": "1",
+              "classrooms": "Derslik, E-104, E-346, E-124",
+              "raw_session": "05/11/2026 09.00-10.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0105",
+              "name": "Mekatronik Mühendisliğine Giriş",
+              "date": "04.11.2026",
+              "time": "13:00 - 14:45",
+              "instructor": "Dr. Öğr. Üyesi OĞUZ MISIR",
+              "grade": "1",
+              "classrooms": "Derslik, G-154, G-251, G-Z54",
+              "raw_session": "04/11/2026 13.00-14.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0101",
+              "name": "Bilgisayar Programlama I",
+              "date": "06.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Dr. Öğr. Üyesi SELMA YILMAZYILDIZ KAYAARMA",
+              "grade": "1",
+              "classrooms": "Derslik, G-152, G-Z54",
+              "raw_session": "06/11/2026 09.00-10.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0101",
+              "name": "Bilgisayar Programlama I",
+              "date": "06.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Dr. Öğr. Üyesi SELMA YILMAZYILDIZ KAYAARMA",
+              "grade": "1",
+              "classrooms": "Derslik, G-153, G-154",
+              "raw_session": "06/11/2026 09.00-10.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "FZK0101",
+              "name": "Fizik I",
+              "date": "01.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Prof. Dr. SONGÜL AKBULUT ÖZEN",
+              "grade": "1",
+              "classrooms": "Derslik, E-348, E-446, E-125",
+              "raw_session": "01/11/2026 11.00-12.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MAT0291",
+              "name": "Diferansiyel Denklemler",
+              "date": "05.11.2026",
+              "time": "15:00 - 16:45",
+              "instructor": "Dış Grv. MÜGE TOGAN",
+              "grade": "2",
+              "classrooms": "Derslik, G-Z04, G-Z05, G-Z51",
+              "raw_session": "05/11/2026 15.00-16.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0203",
+              "name": "Mantık Devreleri",
+              "date": "01.11.2026",
+              "time": "13:00 - 14:45",
+              "instructor": "Doç. Dr. MURAT PEKER",
+              "grade": "2",
+              "classrooms": "Derslik, E-446, E-447, E-448, E-406",
+              "raw_session": "01/11/2026 13.00-14.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MECH0201",
+              "name": "Engineering Mechanics -Statics",
+              "date": "02.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Doç. Dr. NURETTİN GÖKHAN ADAR",
+              "grade": "2",
+              "classrooms": "Derslik, E-124",
+              "raw_session": "02/11/2026 11.00-12.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0205",
+              "name": "Mühendislik Mekaniği I",
+              "date": "02.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Doç. Dr. NURETTİN GÖKHAN ADAR",
+              "grade": "2",
+              "classrooms": "Derslik, E-348, E-446, E-139",
+              "raw_session": "02/11/2026 11.00-12.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MKT0211",
+              "name": "Elektronik I",
+              "date": "04.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Dr. Öğr. Üyesi EKREM DÜVEN",
+              "grade": "2",
+              "classrooms": "Derslik, E-347",
+              "raw_session": "04/11/2026 11.00-12.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0201",
+              "name": "Elektronik I",
+              "date": "04.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Dr. Öğr. Üyesi EKREM DÜVEN",
+              "grade": "2",
+              "classrooms": "Derslik, E-104, E-346, E-347",
+              "raw_session": "04/11/2026 11.00-12.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0207",
+              "name": "Sayısal Yöntemler",
+              "date": "03.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Dr. Öğr. Üyesi İLHAN TUNÇ",
+              "grade": "2",
+              "classrooms": "Derslik, E-447, E-448, E-406",
+              "raw_session": "03/11/2026 11.00-12.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0309",
+              "name": "Olasılık ve İstatistik",
+              "date": "02.11.2026",
+              "time": "13:00 - 14:45",
+              "instructor": "Arş. Gör. Dr. FATİH ONAY",
+              "grade": "3",
+              "classrooms": "Derslik, E-346, E-331",
+              "raw_session": "02/11/2026 13.00-14.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MCH0313",
+              "name": "Electric Machines and Energy Conversion",
+              "date": "03.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Arş. Gör. Dr. MERT YILMAZ",
+              "grade": "3",
+              "classrooms": "Derslik, E-331",
+              "raw_session": "03/11/2026 09.00-10.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MCH0315",
+              "name": "Measurement Techniques and Instrumentation",
+              "date": "05.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Doç. Dr. AHMET REMZİ ÖZCAN",
+              "grade": "3",
+              "classrooms": "Derslik, G-Z54",
+              "raw_session": "05/11/2026 11.00-12.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0307",
+              "name": "Mikrodenetleyiciler",
+              "date": "04.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Doç. Dr. AHMET REMZİ ÖZCAN",
+              "grade": "3",
+              "classrooms": "Derslik, E-348, E-125",
+              "raw_session": "04/11/2026 09.00-10.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MKT0311",
+              "name": "Mikroişlemci Tabanlı Sistem Tasarımı",
+              "date": "04.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Doç. Dr. AHMET REMZİ ÖZCAN",
+              "grade": "3",
+              "classrooms": "Derslik, E-225",
+              "raw_session": "04/11/2026 09.00-10.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0305",
+              "name": "Makine Elemanları",
+              "date": "06.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Doç. Dr. MEHMET ONUR GENÇ",
+              "grade": "3",
+              "classrooms": "Derslik, G-153, G-Z54",
+              "raw_session": "06/11/2026 11.00-12.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MCH0311",
+              "name": "Control Systems II",
+              "date": "01.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Doç. Dr. NURETTİN GÖKHAN ADAR",
+              "grade": "3",
+              "classrooms": "Derslik, E-241",
+              "raw_session": "01/11/2026 11.00-12.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0301",
+              "name": "Elektrik Makineleri",
+              "date": "03.11.2026",
+              "time": "09:00 - 10:45",
+              "instructor": "Prof. Dr. AHMET FENERCİOĞLU",
+              "grade": "3",
+              "classrooms": "Derslik, E-447, E-103",
+              "raw_session": "03/11/2026 09.00-10.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0311",
+              "name": "Ölçme Tekniği ve Enstrümantasyon",
+              "date": "05.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Prof. Dr. AHMET MERT",
+              "grade": "3",
+              "classrooms": "Derslik, G-153, G-Z53",
+              "raw_session": "05/11/2026 11.00-12.45",
+              "department": "Mekatronik Mühendisliği"
+            },
+            {
+              "code": "MEK0303",
+              "name": "Kontrol Sistemleri II",
+              "date": "01.11.2026",
+              "time": "11:00 - 12:45",
+              "instructor": "Prof. Dr. GÖKHAN GELEN",
+              "grade": "3",
+              "classrooms": "Derslik, E-140, E-240, E-404",
+              "raw_session": "01/11/2026 11.00-12.45",
+              "department": "Mekatronik Mühendisliği"
+            }
+          ]
         }
       ],
-      "last_checked": "26.11.2026 14:50"
+      "last_checked": "26.11.2026 23:36"
     },
     "metalurji": {
       "key": "metalurji",
@@ -40426,7 +41614,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:50"
+      "last_checked": "26.11.2026 23:36"
     },
     "polimer": {
       "key": "polimer",
@@ -41350,7 +42538,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:50"
+      "last_checked": "26.11.2026 23:36"
     },
     "veribilimi": {
       "key": "veribilimi",
@@ -42286,7 +43474,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:50"
+      "last_checked": "26.11.2026 23:36"
     },
     "yapayzeka": {
       "key": "yapayzeka",
@@ -42674,7 +43862,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:50"
+      "last_checked": "26.11.2026 23:36"
     },
     "sosyoloji": {
       "key": "sosyoloji",
@@ -43122,7 +44310,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:50"
+      "last_checked": "26.11.2026 23:36"
     },
     "ui": {
       "key": "ui",
@@ -43530,7 +44718,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:51"
+      "last_checked": "26.11.2026 23:36"
     },
     "ui_ing": {
       "key": "ui_ing",
@@ -43998,7 +45186,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:51"
+      "last_checked": "26.11.2026 23:36"
     },
     "utl": {
       "key": "utl",
@@ -44646,7 +45834,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:51"
+      "last_checked": "26.11.2026 23:36"
     },
     "isletme": {
       "key": "isletme",
@@ -45074,7 +46262,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:51"
+      "last_checked": "26.11.2026 23:36"
     },
     "imtb": {
       "key": "imtb",
@@ -45100,7 +46288,7 @@ window.EXAM_DATA = {
           "exam_items": []
         }
       ],
-      "last_checked": "26.11.2026 14:51"
+      "last_checked": "26.11.2026 23:36"
     },
     "psikoloji": {
       "key": "psikoloji",
@@ -45828,7 +47016,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:51"
+      "last_checked": "26.11.2026 23:36"
     },
     "mimarlik": {
       "key": "mimarlik",
@@ -45976,7 +47164,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:51"
+      "last_checked": "26.11.2026 23:36"
     },
     "sehir": {
       "key": "sehir",
@@ -46002,7 +47190,7 @@ window.EXAM_DATA = {
           "exam_items": []
         }
       ],
-      "last_checked": "26.11.2026 14:51"
+      "last_checked": "26.11.2026 23:36"
     },
     "peyzaj": {
       "key": "peyzaj",
@@ -46390,7 +47578,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:51"
+      "last_checked": "26.11.2026 23:36"
     },
     "ormanendustri": {
       "key": "ormanendustri",
@@ -46978,7 +48166,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:51"
+      "last_checked": "26.11.2026 23:36"
     },
     "orman": {
       "key": "orman",
@@ -47726,7 +48914,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:51"
+      "last_checked": "26.11.2026 23:36"
     },
     "diy": {
       "key": "diy",
@@ -47980,7 +49168,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 14:51"
+      "last_checked": "26.11.2026 23:36"
     },
     "gigm": {
       "key": "gigm",
@@ -48006,7 +49194,7 @@ window.EXAM_DATA = {
           "exam_items": []
         }
       ],
-      "last_checked": "26.11.2026 14:51"
+      "last_checked": "26.11.2026 23:37"
     }
   }
 };

@@ -1,14 +1,14 @@
-// BTÜ 2026-2027 Güz Ara Sınav Programları - Güncellendi: 26.11.2026 23:37
+// BTÜ 2026-2027 Güz Ara Sınav Programları - Güncellendi: 27.11.2026 14:53
 window.EXAM_DATA = {
   "meta": {
     "term": "2026-2027 Güz Dönemi",
     "exam_type": "Ara Sınav (Vize)",
     "total_departments": 32,
-    "announced_count": 31,
-    "finalized_count": 30,
+    "announced_count": 30,
+    "finalized_count": 29,
     "draft_count": 1,
-    "not_announced_count": 1,
-    "last_updated": "26.11.2026 23:37"
+    "not_announced_count": 2,
+    "last_updated": "27.11.2026 14:53"
   },
   "departments": {
     "bilgisayar": {
@@ -1173,7 +1173,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:35"
+      "last_checked": "27.11.2026 14:50"
     },
     "biyomuh": {
       "key": "biyomuh",
@@ -10083,7 +10083,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:35"
+      "last_checked": "27.11.2026 14:50"
     },
     "cevre": {
       "key": "cevre",
@@ -10611,7 +10611,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:35"
+      "last_checked": "27.11.2026 14:50"
     },
     "insaat": {
       "key": "insaat",
@@ -11895,7 +11895,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:35"
+      "last_checked": "27.11.2026 14:51"
     },
     "gida": {
       "key": "gida",
@@ -11906,7 +11906,7 @@ window.EXAM_DATA = {
       "status": "PENDING",
       "status_label": "Henüz Yayınlanmadı",
       "announcements": [],
-      "last_checked": "26.11.2026 23:35"
+      "last_checked": "27.11.2026 14:51"
     },
     "fizik": {
       "key": "fizik",
@@ -12274,7 +12274,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:35"
+      "last_checked": "27.11.2026 14:51"
     },
     "endustri": {
       "key": "endustri",
@@ -13438,442 +13438,18 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:35"
+      "last_checked": "27.11.2026 14:51"
     },
     "elektrik": {
       "key": "elektrik",
       "name": "Elektrik-Elektronik Mühendisliği",
       "faculty": "Mühendislik ve Doğa Bilimleri Fakültesi",
       "url": "https://mdbf.btu.edu.tr/tr/elektrik",
-      "has_announcement": true,
-      "status": "FINAL",
-      "status_label": "Kesinleşmiş Program",
-      "announcements": [
-        {
-          "title": "2026-2027 Eğitim-Öğretim Yılı Güz Dönemi Kesinleşmiş Ara Sınav Programı",
-          "date": "19.10.2026",
-          "url": "https://mdbf.btu.edu.tr//tr/elektrik/duyuru/detay/55182/2026-2027-eğitim-öğretim-yılı-güz-dönemi-kesinleşmiş-ara-sınav-programı",
-          "files": [
-            {
-              "title": "Doktora Yeterlilik Sınavı",
-              "url": "https://depo.btu.edu.tr/img/duyurular//1696330874_a6762b211e9bcd517ff8.pdf",
-              "ext": "pdf",
-              "exam_items": [
-                {
-                  "code": "",
-                  "name": "tekniği ile gerçekleştirilen NMOS eviriciler, NMOS kapı devreleri, CMOS eviriciler, CMOS kapı devrelerinin statik ve dinamik karakteristikleri. Kombinezonsal CMOS mantık devreleri.",
-                  "date": "00.07.2460",
-                  "time": "",
-                  "instructor": "",
-                  "grade": "",
-                  "classrooms": "Derslikler Açıklanacak",
-                  "raw_session": "2003, ISBN: 0-07-246053-9."
-                }
-              ]
-            },
-            {
-              "title": "2026-2027 Güz Ara Sınav Programı (PDF)",
-              "url": "https://depo.btu.edu.tr/img/duyurular//1792411735_1ef6b2159fe9ba699a44.pdf",
-              "ext": "pdf",
-              "exam_items": [
-                {
-                  "code": "EEM0201",
-                  "name": "Devre Teorisi I",
-                  "date": "01.11.2026",
-                  "time": "09:00 - 10:45",
-                  "instructor": "202",
-                  "grade": "Prof. Dr. HAKAN GÜRKAN",
-                  "classrooms": "E-241, E-242, E-103, E-203, E-304, E-431",
-                  "raw_session": "01/11/2026 09.00-10.45"
-                },
-                {
-                  "code": "EEM0303",
-                  "name": "Elektrik Makineleri",
-                  "date": "01.11.2026",
-                  "time": "11:00 - 12:45",
-                  "instructor": "127",
-                  "grade": "Dr. Öğr. Üyesi GÜRKAN AYDEMİR",
-                  "classrooms": "E-448, E-103, E-Z32",
-                  "raw_session": "01/11/2026 11.00-12.45"
-                },
-                {
-                  "code": "EEM0101",
-                  "name": "Elektrik-Elektronik Mühendisliğine Giriş",
-                  "date": "01.11.2026",
-                  "time": "13:00 - 14:45",
-                  "instructor": "110",
-                  "grade": "Dr. Öğr. Üyesi ALPER YILMAZ",
-                  "classrooms": "G-Z05, G-151",
-                  "raw_session": "01/11/2026 13.00-14.45"
-                },
-                {
-                  "code": "MAT0101",
-                  "name": "Matematik I",
-                  "date": "02.11.2026",
-                  "time": "09:00 - 10:45",
-                  "instructor": "151",
-                  "grade": "Arş. Gör. GÖKÇEN DİLAVER TUNÇ",
-                  "classrooms": "E-104, E-346, E-347",
-                  "raw_session": "02/11/2026 09.00-10.45"
-                },
-                {
-                  "code": "EEM0305",
-                  "name": "Otomatik Kontrol",
-                  "date": "02.11.2026",
-                  "time": "09:00 - 10:45",
-                  "instructor": "120",
-                  "grade": "Prof. Dr. GÖKAY BAYRAK",
-                  "classrooms": "E-448, E-125, E-Z32",
-                  "raw_session": "02/11/2026 09.00-10.45"
-                },
-                {
-                  "code": "EEM0205",
-                  "name": "Lojik Devreler",
-                  "date": "02.11.2026",
-                  "time": "13:00 - 14:45",
-                  "instructor": "115",
-                  "grade": "Dr. Öğr. Üyesi TAHİR BEKİRYAZICI",
-                  "classrooms": "G-Z04, G-Z05",
-                  "raw_session": "02/11/2026 13.00-14.45"
-                },
-                {
-                  "code": "EEM0205",
-                  "name": "Lojik Devreler",
-                  "date": "02.11.2026",
-                  "time": "13:00 - 14:45",
-                  "instructor": "58",
-                  "grade": "Doç. Dr. MUSTAFA ÖZDEN",
-                  "classrooms": "G-151, G-Z51",
-                  "raw_session": "02/11/2026 13.00-14.45"
-                },
-                {
-                  "code": "EEM0207",
-                  "name": "Elektromanyetik Alanlar",
-                  "date": "03.11.2026",
-                  "time": "09:00 - 10:45",
-                  "instructor": "202",
-                  "grade": "Prof. Dr. MEHMET BARIŞ TABAKCIOĞLU",
-                  "classrooms": "E-448, E-138, E-139, E-431, E-Z32",
-                  "raw_session": "03/11/2026 09.00-10.45"
-                },
-                {
-                  "code": "EEM0307",
-                  "name": "Haberleşme Teorisi",
-                  "date": "03.11.2026",
-                  "time": "11:00 - 12:45",
-                  "instructor": "113",
-                  "grade": "Dr. Öğr. Üyesi SALİH MEHMED BOSTAN",
-                  "classrooms": "E-138, E-139, E-304",
-                  "raw_session": "03/11/2026 11.00-12.45"
-                },
-                {
-                  "code": "MAT0103",
-                  "name": "Lineer Cebir",
-                  "date": "03.11.2026",
-                  "time": "13:00 - 14:45",
-                  "instructor": "99",
-                  "grade": "Dış Grv. MÜGE TOGAN",
-                  "classrooms": "G-152, G-153, G-Z54",
-                  "raw_session": "03/11/2026 13.00-14.45"
-                },
-                {
-                  "code": "EEM0309",
-                  "name": "Elektromanyetik Dalgalar",
-                  "date": "04.11.2026",
-                  "time": "09:00 - 10:45",
-                  "instructor": "126",
-                  "grade": "Doç. Dr. ÖMER ZOR",
-                  "classrooms": "E-104, E-346, E-124",
-                  "raw_session": "04/11/2026 09.00-10.45"
-                },
-                {
-                  "code": "FZK0101",
-                  "name": "Fizik I",
-                  "date": "04.11.2026",
-                  "time": "11:00 - 12:45",
-                  "instructor": "103",
-                  "grade": "Dr. Öğr. Üyesi ZEKERİYA DOĞRUYOL",
-                  "classrooms": "G-151, G-152, G-Z52",
-                  "raw_session": "04/11/2026 11.00-12.45"
-                },
-                {
-                  "code": "MAT0293",
-                  "name": "Olasılık ve İstatistik",
-                  "date": "04.11.2026",
-                  "time": "13:00 - 14:45",
-                  "instructor": "187",
-                  "grade": "Prof. Dr. CEMAL HANİLÇİ",
-                  "classrooms": "E-347, E-348, E-446, E-447",
-                  "raw_session": "04/11/2026 13.00-14.45"
-                },
-                {
-                  "code": "EEM0311",
-                  "name": "Enerji Üretimi ve İletimi",
-                  "date": "05.11.2026",
-                  "time": "09:00 - 10:45",
-                  "instructor": "103",
-                  "grade": "Dr. Öğr. Üyesi İBRAHİM GÜRSU TEKDEMİR",
-                  "classrooms": "E-347, E-348, E-125",
-                  "raw_session": "05/11/2026 09.00-10.45"
-                },
-                {
-                  "code": "EEM0103",
-                  "name": "Bilgisayar Programlama",
-                  "date": "05.11.2026",
-                  "time": "11:00 - 12:45",
-                  "instructor": "125",
-                  "grade": "Dr. Öğr. Üyesi AYKUT BIÇAK",
-                  "classrooms": "E-348, E-446, E-103",
-                  "raw_session": "05/11/2026 11.00-12.45"
-                },
-                {
-                  "code": "MAT0291",
-                  "name": "Diferansiyel Denklemler",
-                  "date": "05.11.2026",
-                  "time": "15:00 - 16:45",
-                  "instructor": "138",
-                  "grade": "Dış Grv. MÜGE TOGAN",
-                  "classrooms": "G-151, G-152, G-Z52",
-                  "raw_session": "05/11/2026 15.00-16.45"
-                },
-                {
-                  "code": "EEM0301",
-                  "name": "Güç Elektroniği",
-                  "date": "06.11.2026",
-                  "time": "09:00 - 10:45",
-                  "instructor": "100",
-                  "grade": "Doç. Dr. DAVUT ERTEKİN",
-                  "classrooms": "E-447, E-448, E-225",
-                  "raw_session": "06/11/2026 09.00-10.45"
-                },
-                {
-                  "code": "KİM0193",
-                  "name": "Genel Kimya",
-                  "date": "06.11.2026",
-                  "time": "09:00 - 10:45",
-                  "instructor": "107",
-                  "grade": "Doç. Dr. HAVVA ESMA OKUR KUTAY",
-                  "classrooms": "E-347, E-348, E-125",
-                  "raw_session": "06/11/2026 09.00-10.45"
-                },
-                {
-                  "code": "EEM0203",
-                  "name": "Elektronik I",
-                  "date": "06.11.2026",
-                  "time": "11:00 - 12:45",
-                  "instructor": "251",
-                  "grade": "Prof. Dr. MURAT AKSOY",
-                  "classrooms": "E-104, E-346, E-347, E-348, E-446, E-124",
-                  "raw_session": "06/11/2026 11.00-12.45"
-                }
-              ]
-            }
-          ],
-          "exam_items": [
-            {
-              "code": "",
-              "name": "tekniği ile gerçekleştirilen NMOS eviriciler, NMOS kapı devreleri, CMOS eviriciler, CMOS kapı devrelerinin statik ve dinamik karakteristikleri. Kombinezonsal CMOS mantık devreleri.",
-              "date": "00.07.2460",
-              "time": "",
-              "instructor": "",
-              "grade": "",
-              "classrooms": "Derslikler Açıklanacak",
-              "raw_session": "2003, ISBN: 0-07-246053-9."
-            },
-            {
-              "code": "EEM0201",
-              "name": "Devre Teorisi I",
-              "date": "01.11.2026",
-              "time": "09:00 - 10:45",
-              "instructor": "202",
-              "grade": "Prof. Dr. HAKAN GÜRKAN",
-              "classrooms": "E-241, E-242, E-103, E-203, E-304, E-431",
-              "raw_session": "01/11/2026 09.00-10.45"
-            },
-            {
-              "code": "EEM0303",
-              "name": "Elektrik Makineleri",
-              "date": "01.11.2026",
-              "time": "11:00 - 12:45",
-              "instructor": "127",
-              "grade": "Dr. Öğr. Üyesi GÜRKAN AYDEMİR",
-              "classrooms": "E-448, E-103, E-Z32",
-              "raw_session": "01/11/2026 11.00-12.45"
-            },
-            {
-              "code": "EEM0101",
-              "name": "Elektrik-Elektronik Mühendisliğine Giriş",
-              "date": "01.11.2026",
-              "time": "13:00 - 14:45",
-              "instructor": "110",
-              "grade": "Dr. Öğr. Üyesi ALPER YILMAZ",
-              "classrooms": "G-Z05, G-151",
-              "raw_session": "01/11/2026 13.00-14.45"
-            },
-            {
-              "code": "MAT0101",
-              "name": "Matematik I",
-              "date": "02.11.2026",
-              "time": "09:00 - 10:45",
-              "instructor": "151",
-              "grade": "Arş. Gör. GÖKÇEN DİLAVER TUNÇ",
-              "classrooms": "E-104, E-346, E-347",
-              "raw_session": "02/11/2026 09.00-10.45"
-            },
-            {
-              "code": "EEM0305",
-              "name": "Otomatik Kontrol",
-              "date": "02.11.2026",
-              "time": "09:00 - 10:45",
-              "instructor": "120",
-              "grade": "Prof. Dr. GÖKAY BAYRAK",
-              "classrooms": "E-448, E-125, E-Z32",
-              "raw_session": "02/11/2026 09.00-10.45"
-            },
-            {
-              "code": "EEM0205",
-              "name": "Lojik Devreler",
-              "date": "02.11.2026",
-              "time": "13:00 - 14:45",
-              "instructor": "115",
-              "grade": "Dr. Öğr. Üyesi TAHİR BEKİRYAZICI",
-              "classrooms": "G-Z04, G-Z05",
-              "raw_session": "02/11/2026 13.00-14.45"
-            },
-            {
-              "code": "EEM0205",
-              "name": "Lojik Devreler",
-              "date": "02.11.2026",
-              "time": "13:00 - 14:45",
-              "instructor": "58",
-              "grade": "Doç. Dr. MUSTAFA ÖZDEN",
-              "classrooms": "G-151, G-Z51",
-              "raw_session": "02/11/2026 13.00-14.45"
-            },
-            {
-              "code": "EEM0207",
-              "name": "Elektromanyetik Alanlar",
-              "date": "03.11.2026",
-              "time": "09:00 - 10:45",
-              "instructor": "202",
-              "grade": "Prof. Dr. MEHMET BARIŞ TABAKCIOĞLU",
-              "classrooms": "E-448, E-138, E-139, E-431, E-Z32",
-              "raw_session": "03/11/2026 09.00-10.45"
-            },
-            {
-              "code": "EEM0307",
-              "name": "Haberleşme Teorisi",
-              "date": "03.11.2026",
-              "time": "11:00 - 12:45",
-              "instructor": "113",
-              "grade": "Dr. Öğr. Üyesi SALİH MEHMED BOSTAN",
-              "classrooms": "E-138, E-139, E-304",
-              "raw_session": "03/11/2026 11.00-12.45"
-            },
-            {
-              "code": "MAT0103",
-              "name": "Lineer Cebir",
-              "date": "03.11.2026",
-              "time": "13:00 - 14:45",
-              "instructor": "99",
-              "grade": "Dış Grv. MÜGE TOGAN",
-              "classrooms": "G-152, G-153, G-Z54",
-              "raw_session": "03/11/2026 13.00-14.45"
-            },
-            {
-              "code": "EEM0309",
-              "name": "Elektromanyetik Dalgalar",
-              "date": "04.11.2026",
-              "time": "09:00 - 10:45",
-              "instructor": "126",
-              "grade": "Doç. Dr. ÖMER ZOR",
-              "classrooms": "E-104, E-346, E-124",
-              "raw_session": "04/11/2026 09.00-10.45"
-            },
-            {
-              "code": "FZK0101",
-              "name": "Fizik I",
-              "date": "04.11.2026",
-              "time": "11:00 - 12:45",
-              "instructor": "103",
-              "grade": "Dr. Öğr. Üyesi ZEKERİYA DOĞRUYOL",
-              "classrooms": "G-151, G-152, G-Z52",
-              "raw_session": "04/11/2026 11.00-12.45"
-            },
-            {
-              "code": "MAT0293",
-              "name": "Olasılık ve İstatistik",
-              "date": "04.11.2026",
-              "time": "13:00 - 14:45",
-              "instructor": "187",
-              "grade": "Prof. Dr. CEMAL HANİLÇİ",
-              "classrooms": "E-347, E-348, E-446, E-447",
-              "raw_session": "04/11/2026 13.00-14.45"
-            },
-            {
-              "code": "EEM0311",
-              "name": "Enerji Üretimi ve İletimi",
-              "date": "05.11.2026",
-              "time": "09:00 - 10:45",
-              "instructor": "103",
-              "grade": "Dr. Öğr. Üyesi İBRAHİM GÜRSU TEKDEMİR",
-              "classrooms": "E-347, E-348, E-125",
-              "raw_session": "05/11/2026 09.00-10.45"
-            },
-            {
-              "code": "EEM0103",
-              "name": "Bilgisayar Programlama",
-              "date": "05.11.2026",
-              "time": "11:00 - 12:45",
-              "instructor": "125",
-              "grade": "Dr. Öğr. Üyesi AYKUT BIÇAK",
-              "classrooms": "E-348, E-446, E-103",
-              "raw_session": "05/11/2026 11.00-12.45"
-            },
-            {
-              "code": "MAT0291",
-              "name": "Diferansiyel Denklemler",
-              "date": "05.11.2026",
-              "time": "15:00 - 16:45",
-              "instructor": "138",
-              "grade": "Dış Grv. MÜGE TOGAN",
-              "classrooms": "G-151, G-152, G-Z52",
-              "raw_session": "05/11/2026 15.00-16.45"
-            },
-            {
-              "code": "EEM0301",
-              "name": "Güç Elektroniği",
-              "date": "06.11.2026",
-              "time": "09:00 - 10:45",
-              "instructor": "100",
-              "grade": "Doç. Dr. DAVUT ERTEKİN",
-              "classrooms": "E-447, E-448, E-225",
-              "raw_session": "06/11/2026 09.00-10.45"
-            },
-            {
-              "code": "KİM0193",
-              "name": "Genel Kimya",
-              "date": "06.11.2026",
-              "time": "09:00 - 10:45",
-              "instructor": "107",
-              "grade": "Doç. Dr. HAVVA ESMA OKUR KUTAY",
-              "classrooms": "E-347, E-348, E-125",
-              "raw_session": "06/11/2026 09.00-10.45"
-            },
-            {
-              "code": "EEM0203",
-              "name": "Elektronik I",
-              "date": "06.11.2026",
-              "time": "11:00 - 12:45",
-              "instructor": "251",
-              "grade": "Prof. Dr. MURAT AKSOY",
-              "classrooms": "E-104, E-346, E-347, E-348, E-446, E-124",
-              "raw_session": "06/11/2026 11.00-12.45"
-            }
-          ]
-        }
-      ],
-      "last_checked": "26.11.2026 23:35"
+      "has_announcement": false,
+      "status": "PENDING",
+      "status_label": "Henüz Yayınlanmadı",
+      "announcements": [],
+      "last_checked": "27.11.2026 14:51"
     },
     "kimya": {
       "key": "kimya",
@@ -18244,7 +17820,7 @@ window.EXAM_DATA = {
           "exam_items": []
         }
       ],
-      "last_checked": "26.11.2026 23:35"
+      "last_checked": "27.11.2026 14:51"
     },
     "kimyamuh": {
       "key": "kimyamuh",
@@ -29573,7 +29149,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:35"
+      "last_checked": "27.11.2026 14:51"
     },
     "makine": {
       "key": "makine",
@@ -34114,7 +33690,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:35"
+      "last_checked": "27.11.2026 14:51"
     },
     "matematik": {
       "key": "matematik",
@@ -34714,7 +34290,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:35"
+      "last_checked": "27.11.2026 14:52"
     },
     "mekatronik": {
       "key": "mekatronik",
@@ -35862,7 +35438,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:36"
+      "last_checked": "27.11.2026 14:52"
     },
     "mekatroniking": {
       "key": "mekatroniking",
@@ -37010,7 +36586,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:36"
+      "last_checked": "27.11.2026 14:52"
     },
     "metalurji": {
       "key": "metalurji",
@@ -41614,7 +41190,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:36"
+      "last_checked": "27.11.2026 14:52"
     },
     "polimer": {
       "key": "polimer",
@@ -42538,7 +42114,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:36"
+      "last_checked": "27.11.2026 14:52"
     },
     "veribilimi": {
       "key": "veribilimi",
@@ -43474,7 +43050,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:36"
+      "last_checked": "27.11.2026 14:52"
     },
     "yapayzeka": {
       "key": "yapayzeka",
@@ -43862,7 +43438,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:36"
+      "last_checked": "27.11.2026 14:52"
     },
     "sosyoloji": {
       "key": "sosyoloji",
@@ -44310,7 +43886,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:36"
+      "last_checked": "27.11.2026 14:52"
     },
     "ui": {
       "key": "ui",
@@ -44718,7 +44294,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:36"
+      "last_checked": "27.11.2026 14:52"
     },
     "ui_ing": {
       "key": "ui_ing",
@@ -45186,7 +44762,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:36"
+      "last_checked": "27.11.2026 14:52"
     },
     "utl": {
       "key": "utl",
@@ -45834,7 +45410,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:36"
+      "last_checked": "27.11.2026 14:52"
     },
     "isletme": {
       "key": "isletme",
@@ -46262,7 +45838,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:36"
+      "last_checked": "27.11.2026 14:52"
     },
     "imtb": {
       "key": "imtb",
@@ -46288,7 +45864,7 @@ window.EXAM_DATA = {
           "exam_items": []
         }
       ],
-      "last_checked": "26.11.2026 23:36"
+      "last_checked": "27.11.2026 14:52"
     },
     "psikoloji": {
       "key": "psikoloji",
@@ -47016,7 +46592,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:36"
+      "last_checked": "27.11.2026 14:53"
     },
     "mimarlik": {
       "key": "mimarlik",
@@ -47164,7 +46740,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:36"
+      "last_checked": "27.11.2026 14:53"
     },
     "sehir": {
       "key": "sehir",
@@ -47190,7 +46766,7 @@ window.EXAM_DATA = {
           "exam_items": []
         }
       ],
-      "last_checked": "26.11.2026 23:36"
+      "last_checked": "27.11.2026 14:53"
     },
     "peyzaj": {
       "key": "peyzaj",
@@ -47578,7 +47154,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:36"
+      "last_checked": "27.11.2026 14:53"
     },
     "ormanendustri": {
       "key": "ormanendustri",
@@ -48166,7 +47742,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:36"
+      "last_checked": "27.11.2026 14:53"
     },
     "orman": {
       "key": "orman",
@@ -48914,7 +48490,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:36"
+      "last_checked": "27.11.2026 14:53"
     },
     "diy": {
       "key": "diy",
@@ -49168,7 +48744,7 @@ window.EXAM_DATA = {
           ]
         }
       ],
-      "last_checked": "26.11.2026 23:36"
+      "last_checked": "27.11.2026 14:53"
     },
     "gigm": {
       "key": "gigm",
@@ -49194,7 +48770,7 @@ window.EXAM_DATA = {
           "exam_items": []
         }
       ],
-      "last_checked": "26.11.2026 23:37"
+      "last_checked": "27.11.2026 14:53"
     }
   }
 };

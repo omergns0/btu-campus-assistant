@@ -7,7 +7,7 @@
     "finalized_count": 29,
     "draft_count": 1,
     "not_announced_count": 2,
-    "last_updated": "27.11.2026 14:53"
+    "last_updated": "27.11.2026 23:22"
   },
   "departments": {
     "bilgisayar": {
@@ -1172,7 +1172,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:50"
+      "last_checked": "27.11.2026 23:20"
     },
     "biyomuh": {
       "key": "biyomuh",
@@ -10082,7 +10082,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:50"
+      "last_checked": "27.11.2026 23:20"
     },
     "cevre": {
       "key": "cevre",
@@ -10610,7 +10610,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:50"
+      "last_checked": "27.11.2026 23:20"
     },
     "insaat": {
       "key": "insaat",
@@ -11894,7 +11894,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:51"
+      "last_checked": "27.11.2026 23:20"
     },
     "gida": {
       "key": "gida",
@@ -11905,7 +11905,7 @@
       "status": "PENDING",
       "status_label": "Henüz Yayınlanmadı",
       "announcements": [],
-      "last_checked": "27.11.2026 14:51"
+      "last_checked": "27.11.2026 23:20"
     },
     "fizik": {
       "key": "fizik",
@@ -12273,7 +12273,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:51"
+      "last_checked": "27.11.2026 23:20"
     },
     "endustri": {
       "key": "endustri",
@@ -13437,7 +13437,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:51"
+      "last_checked": "27.11.2026 23:20"
     },
     "elektrik": {
       "key": "elektrik",
@@ -13448,7 +13448,7 @@
       "status": "PENDING",
       "status_label": "Henüz Yayınlanmadı",
       "announcements": [],
-      "last_checked": "27.11.2026 14:51"
+      "last_checked": "27.11.2026 23:20"
     },
     "kimya": {
       "key": "kimya",
@@ -17819,7 +17819,7 @@
           "exam_items": []
         }
       ],
-      "last_checked": "27.11.2026 14:51"
+      "last_checked": "27.11.2026 23:20"
     },
     "kimyamuh": {
       "key": "kimyamuh",
@@ -29148,7 +29148,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:51"
+      "last_checked": "27.11.2026 23:21"
     },
     "makine": {
       "key": "makine",
@@ -33689,7 +33689,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:51"
+      "last_checked": "27.11.2026 23:21"
     },
     "matematik": {
       "key": "matematik",
@@ -34289,7 +34289,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:52"
+      "last_checked": "27.11.2026 23:21"
     },
     "mekatronik": {
       "key": "mekatronik",
@@ -35437,7 +35437,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:52"
+      "last_checked": "27.11.2026 23:21"
     },
     "mekatroniking": {
       "key": "mekatroniking",
@@ -36585,7 +36585,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:52"
+      "last_checked": "27.11.2026 23:21"
     },
     "metalurji": {
       "key": "metalurji",
@@ -41189,7 +41189,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:52"
+      "last_checked": "27.11.2026 23:21"
     },
     "polimer": {
       "key": "polimer",
@@ -42113,7 +42113,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:52"
+      "last_checked": "27.11.2026 23:21"
     },
     "veribilimi": {
       "key": "veribilimi",
@@ -43049,7 +43049,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:52"
+      "last_checked": "27.11.2026 23:21"
     },
     "yapayzeka": {
       "key": "yapayzeka",
@@ -43437,7 +43437,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:52"
+      "last_checked": "27.11.2026 23:21"
     },
     "sosyoloji": {
       "key": "sosyoloji",
@@ -43885,7 +43885,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:52"
+      "last_checked": "27.11.2026 23:22"
     },
     "ui": {
       "key": "ui",
@@ -44293,7 +44293,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:52"
+      "last_checked": "27.11.2026 23:22"
     },
     "ui_ing": {
       "key": "ui_ing",
@@ -44761,7 +44761,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:52"
+      "last_checked": "27.11.2026 23:22"
     },
     "utl": {
       "key": "utl",
@@ -45409,7 +45409,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:52"
+      "last_checked": "27.11.2026 23:22"
     },
     "isletme": {
       "key": "isletme",
@@ -45837,7 +45837,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:52"
+      "last_checked": "27.11.2026 23:22"
     },
     "imtb": {
       "key": "imtb",
@@ -45863,7 +45863,7 @@
           "exam_items": []
         }
       ],
-      "last_checked": "27.11.2026 14:52"
+      "last_checked": "27.11.2026 23:22"
     },
     "psikoloji": {
       "key": "psikoloji",
@@ -46591,7 +46591,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:53"
+      "last_checked": "27.11.2026 23:22"
     },
     "mimarlik": {
       "key": "mimarlik",
@@ -46739,7 +46739,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:53"
+      "last_checked": "27.11.2026 23:22"
     },
     "sehir": {
       "key": "sehir",
@@ -46765,7 +46765,7 @@
           "exam_items": []
         }
       ],
-      "last_checked": "27.11.2026 14:53"
+      "last_checked": "27.11.2026 23:22"
     },
     "peyzaj": {
       "key": "peyzaj",
@@ -47153,7 +47153,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:53"
+      "last_checked": "27.11.2026 23:22"
     },
     "ormanendustri": {
       "key": "ormanendustri",
@@ -47741,7 +47741,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:53"
+      "last_checked": "27.11.2026 23:22"
     },
     "orman": {
       "key": "orman",
@@ -48489,7 +48489,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:53"
+      "last_checked": "27.11.2026 23:22"
     },
     "diy": {
       "key": "diy",
@@ -48743,7 +48743,7 @@
           ]
         }
       ],
-      "last_checked": "27.11.2026 14:53"
+      "last_checked": "27.11.2026 23:22"
     },
     "gigm": {
       "key": "gigm",
@@ -48769,7 +48769,7 @@
           "exam_items": []
         }
       ],
-      "last_checked": "27.11.2026 14:53"
+      "last_checked": "27.11.2026 23:22"
     }
   }
 }
